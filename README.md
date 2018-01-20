@@ -12,6 +12,9 @@ az extension remove --name azure-cli-sbz
 az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.2.0-py2.py3-none-any.whl
 ```
 
+# Resource Manager APIs
+[The SeaBreeze Resource Manager APIs](https://github.com/Azure/seabreeze-preview-pr/blob/master/doc/seabreeze-index.md) allows you to create and manager resources in SeaBreeze.
+
 # Contributing
 
 This project has adopted the
