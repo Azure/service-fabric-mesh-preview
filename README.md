@@ -1,11 +1,16 @@
-# Installation
+# SeaBreeze CLI Installation
 
-Install Azure CLI if it is not there, choose according to your OS type:
-[Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+Install Azure CLI if not, choose according to your OS type:
+[Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+The minimum version of Azure CLI is 2.0.24.
+
 You could alternatively use Cloud Shell. 
 
+```bash
 az extension remove --name azure-cli-sbz 
 az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.2.0-py2.py3-none-any.whl
+```
 
 # Contributing
 
