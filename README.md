@@ -1,9 +1,9 @@
 # SeaBreeze CLI Installation
 
-Install Azure CLI if not, choose according to your OS type:
+Install Azure CLI if have not, choose according to your OS type:
 [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-The minimum version of Azure CLI is 2.0.24.
+The minimum version of Azure CLI required is 2.0.24.
 
 You could alternatively use Cloud Shell. 
 
