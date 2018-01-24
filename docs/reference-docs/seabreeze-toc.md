@@ -16,6 +16,7 @@
 ### [Delete](seabreeze-api-containergroups_delete.md)
 ### [Listby Resource Group](seabreeze-api-containergroups_listbyresourcegroup.md)
 ### [List By Subscription](seabreeze-api-containergroups_listbysubscription.md)
+## [ContainerGroupContainerLogs](seabreeze-index-containergroupcontainerlogs.md)
 ### [Get](seabreeze-api-containergroupscontainerlogs_get.md)
 ## [Operations](seabreeze-index-operations.md)
 ### [List](seabreeze-api-operations_list.md)

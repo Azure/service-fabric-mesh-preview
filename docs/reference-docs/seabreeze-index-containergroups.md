@@ -20,5 +20,4 @@ helpviewer_keywords:
 | [Delete](seabreeze-api-containergroups_delete.md) | Deletes the specified container group.<br/> |
 | [Listby Resource Group](seabreeze-api-containergroups_listbyresourcegroup.md) | Get a list of containers group in the specified resource group.<br/> |
 | [List By Subscription](seabreeze-api-containergroups_listbysubscription.md) | Get a list of containers group in the specified subscription.<br/> |
-| [Get](seabreeze-api-containergroupscontainerlogs_get.md) |  |
 
