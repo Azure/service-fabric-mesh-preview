@@ -1,0 +1,12 @@
+{
+  "parameters": {
+    "subscriptionId": "subid",
+    "api-version": "2017-11-01-privatepreview",
+    "resourceGroupName": "demo",
+    "containerGroupName": "demo1"
+  },
+  "responses": {
+    "200": {}
+  }
+}
+

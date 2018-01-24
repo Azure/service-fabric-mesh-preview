@@ -1,0 +1,1476 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SeaBreezeManagementClient",
+    "description": "APIs to deploy and manage resources to SeaBreeze.",
+    "version": "2017-11-01-privatepreview"
+  },
+  "host": "management.azure.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "azure_auth": {
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "description": "Azure Active Directory OAuth2 Flow",
+      "flow": "implicit",
+      "scopes": {
+        "user_impersonation": "impersonate your user account"
+      },
+      "type": "oauth2"
+    }
+  },
+  "security": [
+    {
+      "azure_auth": [
+        "user_impersonation"
+      ]
+    }
+  ],
+  "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/containerGroupSets/{containerGroupSetName}": {
+      "put": {
+        "operationId": "ContainerGroupSet_Create",
+        "x-ms-examples": {
+          "ContainerGroupSetCreateOrUpdate": {
+            "$ref": "./examples/ContainerGroupSetCreateOrUpdate.json"
+          }
+        },
+        "summary": "Creates or updates the container group set with the specified name and description.",
+        "description": "Creates a container group set with the specified name and description. If a container group set with the same name already exists, then its description are updated to the one indicated in this request.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupSetNameRequiredPathParam"
+          },
+          {
+            "name": "containerGroupSet",
+            "description": "The description of the container group set to be created or updated.",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupSetDescription"
+            }
+          }
+        ],
+        "tags": [
+          "ContainerGroupSet"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupSetDescription"
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupSetDescription"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "ContainerGroupSet_Get",
+        "x-ms-examples": {
+          "ContainerGroupSetGet": {
+            "$ref": "./examples/ContainerGroupSetGet.json"
+          }
+        },
+        "summary": "Gets the container groups in the given container group set.",
+        "description": "Gets the container groups in the given container group set. This includes the common properties for all the container group sets and the names of the container group set instances created.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupSetNameRequiredPathParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroupSet"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupSetDescription"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "ContainerGroupSet_Delete",
+        "x-ms-examples": {
+          "ContainerGroupSetsDelete": {
+            "$ref": "./examples/ContainerGroupSetsDelete.json"
+          }
+        },
+        "summary": "Deletes the specified container group set.",
+        "description": "Deletes the container group set identified by the name.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupSetNameRequiredPathParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroupSet"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content - the specified container group set was not found."
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.ServiceFabric/containerGroupSets": {
+      "get": {
+        "operationId": "ContainerGroupSets_ListBySubscriptionId",
+        "x-ms-examples": {
+          "ContainerGroupSetGet": {
+            "$ref": "./examples/ContainerGroupSetGet.json"
+          }
+        },
+        "summary": "Gets all the container groups sets in the given subscription.",
+        "description": "Gets all the container group sets and its properties in the given subscription.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroupSet"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupSetDescriptionList"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/containerGroupSets": {
+      "get": {
+        "operationId": "ContainerGroupSets_ListByResourceGroup",
+        "x-ms-examples": {
+          "ContainerGroupSetGet": {
+            "$ref": "./examples/ContainerGroupSetGet.json"
+          }
+        },
+        "summary": "Gets all the container groups sets in the given resource group.",
+        "description": "Gets all the container group sets and its properties in the given resource group.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroupSet"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupSetDescriptionList"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/containerGroupSets/{containerGroupSetName}/instances/{containerGroupInstanceName}": {
+      "get": {
+        "operationId": "ContainerGroupSetInstance_Get",
+        "x-ms-examples": {
+          "ContainerGroupInstancesGet": {
+            "$ref": "./examples/ContainerGroupInstanceGet.json"
+          }
+        },
+        "summary": "Gets the properties of the specified container group.",
+        "description": "The operation returns the properties of the container group including containers, image registry credentials,\n  restart policy, IP address type, OS type, state, and volumes.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupSetNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupInstanceNameRequiredPathParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroupSetInstance"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupInstanceDescription"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/containerGroupSets/{containerGroupSetName}/instances": {
+      "get": {
+        "operationId": "ContainerGroupSetInstance_List",
+        "x-ms-examples": {
+          "ContainerGroupInstancesGetAll": {
+            "$ref": "./examples/ContainerGroupInstancesGet.json"
+          }
+        },
+        "summary": "Gets the properties of all container groups in the container group set.",
+        "description": "The operation returns the properties of all the container groups including containers, image registry credentials,\n  restart policy, IP address type, OS type, state, and volumes.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupSetNameRequiredPathParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroupSetInstance"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupInstanceDescriptionList"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/containerGroupSets/{containerGroupSetName}/instances/{containerGroupInstanceName}/containers/{containerName}/logs": {
+      "get": {
+        "operationId": "ContainerGroupSetContainerLogs_Get",
+        "x-ms-examples": {
+          "ContainerLogsList": {
+            "$ref": "./examples/ContainerLogsList.json"
+          }
+        },
+        "summary": "Gets the logs for a specific container.",
+        "description": "Get the logs for a specific container.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupSetNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupInstanceNameRequiredPathParam"
+          },
+          {
+            "name": "containerName",
+            "in": "path",
+            "description": "Container name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tail",
+            "in": "query",
+            "description": "Only show this number of log lines. If not provided, all available logs are shown.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "ContainerGroupSetContainerLogs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ContainerLogs"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/containerGroups/{containerGroupName}": {
+      "put": {
+        "operationId": "ContainerGroups_Create",
+        "x-ms-examples": {
+          "ContainerGroupsCreateOrUpdate": {
+            "$ref": "./examples/ContainerGroup_CreateOrUpdate.json"
+          }
+        },
+        "summary": "Creates or updates the container group with the specified name and description.",
+        "description": "Creates a container group with the specified name and description. If a container group with the same name already exists, then its description are updated to the one indicated in this request.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupNameRequiredPathParam"
+          },
+          {
+            "name": "containerGroup",
+            "description": "The description of the container group to be created or updated.",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupDescription"
+            }
+          }
+        ],
+        "tags": [
+          "ContainerGroups"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupDescription"
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupDescription"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "ContainerGroups_Get",
+        "x-ms-examples": {
+          "ContainerGroupsGet": {
+            "$ref": "./examples/ContainerGroup_Get.json"
+          }
+        },
+        "summary": "Gets the container group with the given name.",
+        "description": "Gets the container group with the given name. This includes the information about all the containers and its properties.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupNameRequiredPathParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroups"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupDescription"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "ContainerGroups_Delete",
+        "x-ms-examples": {
+          "ContainerGroupsDelete": {
+            "$ref": "./examples/ContainerGroup_Delete.json"
+          }
+        },
+        "summary": "Deletes the specified container group.",
+        "description": "Deletes the container group identified by the name.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupNameRequiredPathParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroups"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content - the specified container group was not found."
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/containerGroups": {
+      "get": {
+        "operationId": "ContainerGroups_ListbyResourceGroup",
+        "x-ms-examples": {
+          "ContainerGroupInstancesList": {
+            "$ref": "./examples/ContainerGroupsByResourceGroupName.json"
+          }
+        },
+        "summary": "Get a list of containers group in the specified resource group.",
+        "description": "Get a list of containers and the properties of the container group in the specified resourceGroup.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroups"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupDescriptionList"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.ServiceFabric/containerGroups": {
+      "get": {
+        "operationId": "ContainerGroups_ListBySubscription",
+        "x-ms-examples": {
+          "ContainerGroupInstancesList": {
+            "$ref": "./examples/ContainerGroupsBySubscriptionId.json"
+          }
+        },
+        "summary": "Get a list of containers group in the specified subscription.",
+        "description": "Get a list of containers and the properties of the container group in the specified subscription.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          }
+        ],
+        "tags": [
+          "ContainerGroups"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContainerGroupDescriptionList"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/containerGroups/{containerGroupName}/containers/{containerName}/logs": {
+      "get": {
+        "operationId": "ContainerGroupsContainerLogs_Get",
+        "x-ms-examples": {
+          "ContainerGroupContainerLogsList": {
+            "$ref": "./examples/ContainerGroups_ContainerLogs.json"
+          }
+        },
+        "summary": "Gets the logs for a specific container.",
+        "description": "Get the logs for a specific container.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameRequiredPathParam"
+          },
+          {
+            "$ref": "#/parameters/api-versionRequiredQueryParam"
+          },
+          {
+            "$ref": "#/parameters/ContainerGroupNameRequiredPathParam"
+          },
+          {
+            "name": "containerName",
+            "in": "path",
+            "description": "Container name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tail",
+            "in": "query",
+            "description": "Only show this number of log lines. If not provided, all available logs are shown.",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "ContainerGroupContainerLogs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ContainerLogs"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      }
+    },
+    "/providers/Microsoft.ServiceFabric/operations": {
+      "get": {
+        "tags": [
+          "Operations"
+        ],
+        "summary": "Lists all of the available ServiceFabric Resource Manager REST API operations.",
+        "description": "Lists all the available ServiceFabric Resource Manager REST API operations.",
+        "operationId": "Operations_List",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "description": "The version of the ServiceFabric resouce provider api",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The request has succeeded.",
+            "schema": {
+              "$ref": "#/definitions/OperationListResult"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AzureFileVolume": {
+      "description": "The Azure file volume.",
+      "type": "object",
+      "properties": {
+        "shareName": {
+          "description": "The Azure file share name.",
+          "type": "string"
+        },
+        "readOnly": {
+          "description": "The flag indicating whether the Azure file volume is read only.",
+          "type": "boolean"
+        },
+        "storageAccountName": {
+          "description": "The storage account name to access to the Azure file.",
+          "type": "string"
+        },
+        "storageAccountKey": {
+          "description": "The storage account key to access to the Azure file.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "shareName",
+        "storageAccountName"
+      ]
+    },
+    "Container": {
+      "description": "A container instance.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The user-provided name of this container",
+          "type": "string"
+        },
+        "properties": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/ContainerProperties",
+          "description": "The container properties."
+        }
+      },
+      "required": [
+        "properties",
+        "name"
+      ]
+    },
+    "ContainerEvent": {
+      "description": "A container event.",
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "description": "The count of the event."
+        },
+        "firstTimestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date/time of the first event."
+        },
+        "lastTimestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date/time of the last event."
+        },
+        "message": {
+          "type": "string",
+          "description": "The event message"
+        },
+        "type": {
+          "type": "string",
+          "description": "The event type."
+        }
+      }
+    },
+    "ContainerGroupDescription": {
+      "type": "object",
+      "description": "Describes a Container group.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        },
+        {
+          "type": "object",
+          "description": "Describes a Container group.",
+          "properties": {
+            "properties": {
+              "x-ms-client-flatten": true,
+              "$ref": "#/definitions/ContainerGroupProperties",
+              "description": "Describes the properties of a Container group."
+            }
+          },
+          "required": [
+            "properties"
+          ]
+        }
+      ]
+    },
+    "ContainerGroupProperties": {
+      "type": "object",
+      "description": "Describes the properties of a Container group.",
+      "properties": {
+        "containers": {
+          "type": "array",
+          "description": "The containers in this container group.",
+          "items": {
+            "$ref": "#/definitions/Container"
+          }
+        },
+        "imageRegistryCredentials": {
+          "type": "array",
+          "description": "The image registry credentials by which the container group is created from.",
+          "items": {
+            "$ref": "#/definitions/ImageRegistryCredential"
+          }
+        },
+        "restartPolicy": {
+          "type": "string",
+          "description": "- `always` Always restart\n",
+          "enum": [
+            "always"
+          ],
+          "x-ms-enum": {
+            "name": "ContainerRestartPolicy",
+            "modelAsString": true
+          }
+        },
+        "ipAddress": {
+          "$ref": "#/definitions/IpAddress",
+          "description": "IP address for the container group."
+        },
+        "osType": {
+          "type": "string",
+          "description": "The base level OS type required by the containers in the group.",
+          "enum": [
+            "Windows",
+            "Linux"
+          ],
+          "x-ms-enum": {
+            "name": "OperatingSystemTypes",
+            "modelAsString": true
+          }
+        },
+        "state": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The state of the container group. Only valid in response."
+        },
+        "volumes": {
+          "type": "array",
+          "description": "The volumes for this container group.",
+          "items": {
+            "$ref": "#/definitions/Volume"
+          }
+        }
+      },
+      "required": [
+        "containers",
+        "osType"
+      ]
+    },
+    "ContainerGroupDescriptionList": {
+      "description": "The container group instance list response that contains the container group properties.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContainerGroupDescription"
+          },
+          "description": "The list of container group instances."
+        },
+        "nextLink": {
+          "type": "string",
+          "description": "The URI to fetch the next page of container group instances."
+        }
+      }
+    },
+    "ContainerGroupInstanceDescription": {
+      "type": "object",
+      "description": "Describes a Container group instance.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProxyResource"
+        },
+        {
+          "type": "object",
+          "description": "Describes a Container group.",
+          "properties": {
+            "properties": {
+              "x-ms-client-flatten": true,
+              "$ref": "#/definitions/ContainerGroupProperties",
+              "description": "Describes the properties of a Container group."
+            }
+          },
+          "required": [
+            "properties"
+          ]
+        }
+      ]
+    },
+    "ContainerGroupInstanceDescriptionList": {
+      "description": "The container group instance list response that contains the container group properties.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContainerGroupInstanceDescription"
+          },
+          "description": "The list of container group instances."
+        },
+        "nextLink": {
+          "type": "string",
+          "description": "The URI to fetch the next page of container group instances."
+        }
+      }
+    },
+    "ContainerGroupSetDescription": {
+      "type": "object",
+      "description": "Describes a Container group set.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        },
+        {
+          "type": "object",
+          "description": "Describes a Container group set.",
+          "properties": {
+            "properties": {
+              "x-ms-client-flatten": true,
+              "$ref": "#/definitions/ContainerGroupSetProperties",
+              "description": "Container group set properties."
+            }
+          },
+          "required": [
+            "properties"
+          ]
+        }
+      ]
+    },
+    "ContainerGroupSetDescriptionList": {
+      "description": "The container group set list response that contains the container group set properties.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContainerGroupSetDescription"
+          },
+          "description": "The list of container group sets."
+        },
+        "nextLink": {
+          "type": "string",
+          "description": "The URI to fetch the next page of container group sets."
+        }
+      }
+    },
+    "ContainerGroupSetProperties": {
+      "description": "Container group set properties.",
+      "type": "object",
+      "properties": {
+        "provisioningState": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The provisioning state, which only appears in the response."
+        },
+        "containerGroup": {
+          "$ref": "#/definitions/ContainerGroupProperties",
+          "description": "The properties of the container groups in this container group set."
+        },
+        "instanceNames": {
+          "readOnly": true,
+          "type": "array",
+          "description": "The names of the container group instances.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "instanceCount": {
+          "type": "integer",
+          "description": "The number of container group instances to create. Defaults to 1 if this parameter is not specified."
+        }
+      }
+    },
+    "ContainerInstanceView": {
+      "description": "Information specific to a container instance.",
+      "type": "object",
+      "properties": {
+        "restartCount": {
+          "type": "integer",
+          "description": "The number of times that the container has been restarted."
+        },
+        "currentState": {
+          "$ref": "#/definitions/ContainerState",
+          "description": "Current container instance state.."
+        },
+        "previousState": {
+          "$ref": "#/definitions/ContainerState",
+          "description": "Previous container instance state.."
+        },
+        "events": {
+          "description": "The events of this container instance.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContainerEvent"
+          }
+        }
+      }
+    },
+    "ContainerLogs": {
+      "description": "The logs of the container.",
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "content of the log."
+        }
+      }
+    },
+    "ContainerPort": {
+      "description": "The container port.",
+      "type": "object",
+      "properties": {
+        "port": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Port number to expose within the container group."
+        }
+      },
+      "required": [
+        "port"
+      ]
+    },
+    "ContainerProperties": {
+      "description": "The container properties.",
+      "type": "object",
+      "properties": {
+        "image": {
+          "description": "The name of the image used when creating this container",
+          "type": "string"
+        },
+        "command": {
+          "description": "Command array to execute within the container in exec form.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ports": {
+          "description": "The ports exposed by this container",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContainerPort"
+          }
+        },
+        "environmentVariables": {
+          "description": "The environment variables to set in this container",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EnvironmentVariable"
+          }
+        },
+        "instanceView": {
+          "readOnly": true,
+          "$ref": "#/definitions/ContainerInstanceView",
+          "description": "Information specific to a container instance."
+        },
+        "resources": {
+          "$ref": "#/definitions/ResourceRequirements",
+          "description": "The resource requirements."
+        },
+        "volumeMounts": {
+          "description": "The volume mounts.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/VolumeMount"
+          }
+        }
+      },
+      "required": [
+        "image",
+        "resources"
+      ]
+    },
+    "ContainerState": {
+      "description": "The container state.",
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "description": "The state of this container"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date/time when the container state started."
+        },
+        "exitCode": {
+          "type": "integer",
+          "description": "The container exit code."
+        },
+        "finishTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date/time when the container state finished."
+        },
+        "detailStatus": {
+          "description": "Human-readable status of this state.",
+          "type": "string"
+        }
+      }
+    },
+    "EnvironmentVariable": {
+      "description": "Environment variable to set within the container.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the environment variable."
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the environment variable."
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ]
+    },
+    "ImageRegistryCredential": {
+      "description": "Image registry credential.",
+      "type": "object",
+      "properties": {
+        "server": {
+          "type": "string",
+          "description": "Docker image registry server, without protocol such as \"http\" and \"https\"."
+        },
+        "username": {
+          "type": "string",
+          "description": "The username for the private registry."
+        },
+        "password": {
+          "type": "string",
+          "description": "The password for the private registry."
+        }
+      },
+      "required": [
+        "server",
+        "username"
+      ]
+    },
+    "IpAddress": {
+      "description": "IP address for the container group.",
+      "type": "object",
+      "properties": {
+        "ports": {
+          "type": "array",
+          "description": "The ports.",
+          "items": {
+            "$ref": "#/definitions/ContainerPort"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Determines whether the IP is exposed to the public internet.",
+          "enum": [
+            "Public"
+          ],
+          "x-ms-enum": {
+            "name": "ContainerGroupIpAddressType",
+            "modelAsString": true
+          }
+        },
+        "ip": {
+          "type": "string",
+          "description": "The IP exposed to the public internet."
+        }
+      },
+      "required": [
+        "ports",
+        "type"
+      ]
+    },
+    "Resource": {
+      "description": "The resource model definition.",
+      "required": [
+        "location"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Azure resource ID.",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Azure resource name.",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "description": "Azure resource type.",
+          "readOnly": true
+        },
+        "location": {
+          "type": "string",
+          "description": "Resource location.",
+          "x-ms-mutability": [
+            "create",
+            "read"
+          ]
+        },
+        "tags": {
+          "type": "object",
+          "description": "Resource tags.",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "ResourceLimits": {
+      "description": "The resource limits.",
+      "type": "object",
+      "properties": {
+        "memoryInGB": {
+          "description": "The memory limit in GB of this container.",
+          "type": "number",
+          "format": "double"
+        },
+        "cpu": {
+          "description": "The CPU limit of this container.",
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "ResourceRequests": {
+      "description": "The resource requests.",
+      "type": "object",
+      "properties": {
+        "memoryInGB": {
+          "description": "The memory request in GB of this container.",
+          "type": "number",
+          "format": "double"
+        },
+        "cpu": {
+          "description": "The CPU request of this container.",
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "memoryInGB",
+        "cpu"
+      ]
+    },
+    "ResourceRequirements": {
+      "description": "The resource requirements.",
+      "type": "object",
+      "properties": {
+        "requests": {
+          "$ref": "#/definitions/ResourceRequests",
+          "description": "The resource requests of this container."
+        },
+        "limits": {
+          "$ref": "#/definitions/ResourceLimits",
+          "description": "The resource limits of this container."
+        }
+      },
+      "required": [
+        "requests"
+      ]
+    },
+    "Volume": {
+      "description": "The volume definition for the container group.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The volume name.",
+          "type": "string"
+        },
+        "azureFile": {
+          "$ref": "#/definitions/AzureFileVolume",
+          "description": "The Azure file volume."
+        }
+      },
+      "required": [
+        "name",
+        "azureFile"
+      ]
+    },
+    "VolumeMount": {
+      "description": "The volume mount.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The volume name.",
+          "type": "string"
+        },
+        "mountPath": {
+          "description": "The path with in the container at which the volume should be mounted. Must not contain ':'. type: string"
+        },
+        "readOnly": {
+          "description": "The flag indicating whether the volume mount is read only.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "mountPath"
+      ]
+    },
+    "ProxyResource": {
+      "required": [
+        "location"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Azure resource ID.",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Azure resource name.",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "description": "Azure resource type.",
+          "readOnly": true
+        },
+        "location": {
+          "type": "string",
+          "description": "Resource location."
+        }
+      },
+      "description": "The resource model definition."
+    },
+    "OperationListResult": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "List of Service Fabric operations supported by the Microsoft.ServiceFabric resource provider.",
+          "items": {
+            "$ref": "#/definitions/OperationResult"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "description": "URL to get the next set of operation list results if there are any.",
+          "readOnly": true
+        }
+      },
+      "description": "Describes the result of the request to list Service Fabric operations."
+    },
+    "OperationResult": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the operation."
+        },
+        "display": {
+          "description": "The object that represents the operation.",
+          "$ref": "#/definitions/AvailableOperationDisplay"
+        },
+        "origin": {
+          "type": "string",
+          "description": "Origin result"
+        },
+        "nextLink": {
+          "type": "string",
+          "description": "The URL to use for getting the next set of results."
+        }
+      },
+      "description": "Available operation list result"
+    },
+    "AvailableOperationDisplay": {
+      "properties": {
+        "provider": {
+          "type": "string",
+          "description": "The name of the provider."
+        },
+        "resource": {
+          "type": "string",
+          "description": "The resource on which the operation is performed"
+        },
+        "operation": {
+          "type": "string",
+          "description": "The operation that can be performed."
+        },
+        "description": {
+          "type": "string",
+          "description": "Operation description"
+        }
+      },
+      "description": "Operation supported by Service Fabric resource provider"
+    },
+    "ErrorModel": {
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The error code."
+        },
+        "message": {
+          "type": "string",
+          "description": "The error message."
+        }
+      },
+      "description": "The error details."
+    }
+  },
+  "parameters": {
+    "api-versionRequiredQueryParam": {
+      "name": "api-version",
+      "in": "query",
+      "description": "The version of the API. This is a required parameter and it's value must be \"2017-11-01-privatepreview\".",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "2017-11-01-privatepreview"
+      ],
+      "default": "2017-11-01-privatepreview"
+    },
+    "subscriptionIdRequiredPathParam": {
+      "name": "subscriptionId",
+      "in": "path",
+      "description": "The customer subscription identifier",
+      "required": true,
+      "type": "string"
+    },
+    "ContainerGroupInstanceNameRequiredPathParam": {
+      "name": "containerGroupInstanceName",
+      "in": "path",
+      "x-ms-parameter-location": "method",
+      "x-ms-skip-url-encoding": true,
+      "type": "string",
+      "required": true,
+      "description": "The identity of the of the container group."
+    },
+    "ContainerGroupSetNameRequiredPathParam": {
+      "name": "containerGroupSetName",
+      "in": "path",
+      "x-ms-parameter-location": "method",
+      "x-ms-skip-url-encoding": true,
+      "type": "string",
+      "required": true,
+      "description": "The identity of the container group set."
+    },
+    "ResourceGroupNameRequiredPathParam": {
+      "name": "resourceGroupName",
+      "in": "path",
+      "description": "Azure resource group name",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "ContainerGroupNameRequiredPathParam": {
+      "name": "containerGroupName",
+      "in": "path",
+      "x-ms-parameter-location": "method",
+      "x-ms-skip-url-encoding": true,
+      "type": "string",
+      "required": true,
+      "description": "The identity of the container group."
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "parameters": {
+    "subscriptionId": "00000000-0000-0000-0000-000000000000",
+    "resourceGroupName": "resRg",
+    "clusterName": "myCluster",
+    "api-version": "2017-11-01-privatepreview",
+    "containerGroupSetName": "demo1",
+    "containerGroupSet": {
+      "containerGroups": {
+        "properties": {
+          "containers": [
+            {
+              "name": "FE",
+              "properties": {
+                "command": null,
+                "environmentVariables": [],
+                "image": "nginx",
+                "instanceView": null,
+                "ports": [
+                  {
+                    "port": 80
+                  }
+                ],
+                "resources": {
+                  "limits": null,
+                  "requests": {
+                    "cpu": 1,
+                    "memoryInGb": 1.5
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "mountPath": "/mnt/volume1",
+                    "name": "volume1",
+                    "readOnly": false
+                  }
+                ]
+              }
+            }
+          ],
+          "imageRegistryCredentials": [
+            {
+              "password": null,
+              "server": "azcloudconsoleregistry.azurecr.io",
+              "username": "azcloudconsoleregistry"
+            }
+          ],
+          "ipAddress": {
+            "ip": "10.0.0.1",
+            "ports": [
+              {
+                "port": 80,
+                "protocol": "TCP"
+              }
+            ]
+          },
+          "osType": "Linux",
+          "restartPolicy": null,
+          "state": null,
+          "volumes": [
+            {
+              "azureFile": {
+                "readOnly": null,
+                "shareName": "share1",
+                "storageAccountKey": null,
+                "storageAccountName": "stroage1"
+              },
+              "name": "volume1"
+            }
+          ]
+        }
+      },
+      "instanceCount": 1
+    },
+    "resourceGroup": "demo",
+    "type": "Microsoft.ServiceFabric/containerGroupSets",
+    "tags": null
+  },
+
+  "responses": {
+    "200": {
+      "body": {
+        "id": "/subscriptions/subid/resourceGroups/demo/providers/Microsoft.ServiceFabric/containerGroupSets/demo1",
+        "location": "WestUs",
+        "name": "demo1",
+        "provisioningState": "succeeded",
+        "ContainerGroups": {
+          "properties": {
+            "containers": [
+              {
+                "name": "FE",
+                "properties": {
+                  "command": null,
+                  "environmentVariables": [],
+                  "image": "nginx",
+                  "instanceView": null,
+                  "ports": [
+                    {
+                      "port": 80
+                    }
+                  ],
+                  "resources": {
+                    "limits": null,
+                    "requests": {
+                      "cpu": 1,
+                      "memoryInGb": 1.5
+                    }
+                  },
+                  "volumeMounts": [
+                    {
+                      "mountPath": "/mnt/volume1",
+                      "name": "volume1",
+                      "readOnly": false
+                    }
+                  ]
+                }
+              }
+            ],
+            "imageRegistryCredentials": [
+              {
+                "password": null,
+                "server": "azcloudconsoleregistry.azurecr.io",
+                "username": "azcloudconsoleregistry"
+              }
+            ],
+            "ipAddress": {
+              "ip": "10.0.0.1",
+              "ports": [
+                {
+                  "port": 80,
+                  "protocol": "TCP"
+                }
+              ]
+            },
+            "osType": "Linux",
+            "restartPolicy": null,
+            "state": null,
+            "volumes": [
+              {
+                "azureFile": {
+                  "readOnly": null,
+                  "shareName": "share1",
+                  "storageAccountKey": null,
+                  "storageAccountName": "stroage1"
+                },
+                "name": "volume1"
+              }
+            ]
+          }
+        },
+        "containerGroupInstanceNames": [ "demo1_0" ],
+        "instanceCount": 1,
+        "resourceGroup": "demo",
+        "type": "Microsoft.ServiceFabric/containerGroupSets"
+      }
+    }
+  }
+}

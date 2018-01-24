@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "subscriptionId": "00000000-0000-0000-0000-000000000000",
+    "resourceGroupName": "resRg",
+    "api-version": "2017-11-01-privatepreview",
+    "containerGroupSetName": "demo1"
+  },
+  "responses": {
+    "200": {}
+  }
+}
