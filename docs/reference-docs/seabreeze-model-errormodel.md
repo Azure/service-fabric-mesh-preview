@@ -1,6 +1,6 @@
 ---
 title: "ErrorModel"
-ms.date: "2018-01-20"
+ms.date: "2018-01-23"
 ms.prod: "azure"
 ms.service: "SeaBreeze"
 ms.topic: "reference"

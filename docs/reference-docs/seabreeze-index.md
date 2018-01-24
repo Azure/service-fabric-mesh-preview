@@ -1,6 +1,6 @@
 ---
 title: "SeaBreeze Resource Provider API Reference"
-ms.date: "2018-01-20"
+ms.date: "2018-01-23"
 ms.prod: "azure"
 ms.service: "SeaBreeze"
 ms.topic: "reference"
@@ -19,20 +19,30 @@ helpviewer_keywords:
 
 
 ----
-## [ContainerGroupSet APIs](seabreeze-index-containergroupset.md)
+## [ContainerGroupSetInstance APIs](seabreeze-index-containergroupsetinstance.md)
 
 | Name | Description |
 | --- | --- |
 | [Get](seabreeze-api-containergroupsetinstance_get.md) | Gets the properties of the specified container group.<br/> |
 | [List](seabreeze-api-containergroupsetinstance_list.md) | Gets the properties of all container groups in the container group set.<br/> |
+
+----
+## [ContainerGroupSet APIs](seabreeze-index-containergroupset.md)
+
+| Name | Description |
+| --- | --- |
 | [List By Subscription Id](seabreeze-api-containergroupsets_listbysubscriptionid.md) | Gets all the container groups sets in the given subscription.<br/> |
 | [List By Resource Group](seabreeze-api-containergroupsets_listbyresourcegroup.md) | Gets all the container groups sets in the given resource group.<br/> |
-| [Get](seabreeze-api-containergroupsetcontainerlogs_get.md) |  |
 | [Create](seabreeze-api-containergroupset_create.md) | Creates or updates the container group set with the specified name and description.<br/> |
 | [Get](seabreeze-api-containergroupset_get.md) | Gets the container groups in the given container group set.<br/> |
 | [Delete](seabreeze-api-containergroupset_delete.md) | Deletes the specified container group set.<br/> |
-| [Delete](seabreeze-api-containergroups_delete.md) | Deletes the specified container group.<br/> |
-| [Get](seabreeze-api-containergroupscontainerlogs_get.md) |  |
+
+----
+## [ContainerGroupSetContainerLogs APIs](seabreeze-index-containergroupsetcontainerlogs.md)
+
+| Name | Description |
+| --- | --- |
+| [Get](seabreeze-api-containergroupsetcontainerlogs_get.md) |  |
 
 ----
 ## [ContainerGroups APIs](seabreeze-index-containergroups.md)
@@ -41,8 +51,10 @@ helpviewer_keywords:
 | --- | --- |
 | [Create](seabreeze-api-containergroups_create.md) | Creates or updates the container group with the specified name and description.<br/> |
 | [Get](seabreeze-api-containergroups_get.md) | Gets the container group with the given name.<br/> |
+| [Delete](seabreeze-api-containergroups_delete.md) | Deletes the specified container group.<br/> |
 | [Listby Resource Group](seabreeze-api-containergroups_listbyresourcegroup.md) | Get a list of containers group in the specified resource group.<br/> |
 | [List By Subscription](seabreeze-api-containergroups_listbysubscription.md) | Get a list of containers group in the specified subscription.<br/> |
+| [Get](seabreeze-api-containergroupscontainerlogs_get.md) |  |
 
 ----
 ## [Operations APIs](seabreeze-index-operations.md)
