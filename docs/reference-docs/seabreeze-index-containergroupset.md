@@ -15,9 +15,9 @@ helpviewer_keywords:
 
 | Name | Description |
 | --- | --- |
-| [List By Subscription Id](seabreeze-api-containergroupsets_listbysubscriptionid.md) | Gets all the container groups sets in the given subscription.<br/> |
-| [List By Resource Group](seabreeze-api-containergroupsets_listbyresourcegroup.md) | Gets all the container groups sets in the given resource group.<br/> |
 | [Create](seabreeze-api-containergroupset_create.md) | Creates or updates the container group set with the specified name and description.<br/> |
 | [Get](seabreeze-api-containergroupset_get.md) | Gets the container groups in the given container group set.<br/> |
 | [Delete](seabreeze-api-containergroupset_delete.md) | Deletes the specified container group set.<br/> |
+| [List By Subscription Id](seabreeze-api-containergroupsets_listbysubscriptionid.md) | Gets all the container groups sets in the given subscription.<br/> |
+| [List By Resource Group](seabreeze-api-containergroupsets_listbyresourcegroup.md) | Gets all the container groups sets in the given resource group.<br/> |
 
