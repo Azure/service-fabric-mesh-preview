@@ -1,5 +1,5 @@
 ---
-title: "OperatingSystemTypes"
+title: "ContainerGroupSetContainerLogs"
 ms.date: "2018-01-23"
 ms.prod: "azure"
 ms.service: "SeaBreeze"
@@ -11,9 +11,9 @@ dev_langs:
 helpviewer_keywords: 
   - "SeaBreeze Resource Provider API Reference"
 ---
-# OperatingSystemTypes enum
+# ContainerGroupSetContainerLogs APIs
 
-type: string
-
-Possible values include: 'Windows', 'Linux'
+| Name | Description |
+| --- | --- |
+| [Get](seabreeze-api-containergroupsetcontainerlogs_get.md) | Gets the logs for a specific container.<br/> |
 
