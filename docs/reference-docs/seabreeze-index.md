@@ -45,24 +45,6 @@ helpviewer_keywords:
 | [Get](seabreeze-api-containergroupsetcontainerlogs_get.md) | Gets the logs for a specific container.<br/> |
 
 ----
-## [ContainerGroups APIs](seabreeze-index-containergroups.md)
-
-| Name | Description |
-| --- | --- |
-| [Create](seabreeze-api-containergroups_create.md) | Creates or updates the container group with the specified name and description.<br/> |
-| [Get](seabreeze-api-containergroups_get.md) | Gets the container group with the given name.<br/> |
-| [Delete](seabreeze-api-containergroups_delete.md) | Deletes the specified container group.<br/> |
-| [Listby Resource Group](seabreeze-api-containergroups_listbyresourcegroup.md) | Get a list of containers group in the specified resource group.<br/> |
-| [List By Subscription](seabreeze-api-containergroups_listbysubscription.md) | Get a list of containers group in the specified subscription.<br/> |
-
-----
-## [ContainerGroupContainerLogs APIs](seabreeze-index-containergroupcontainerlogs.md)
-
-| Name | Description |
-| --- | --- |
-| [Get](seabreeze-api-containergroupscontainerlogs_get.md) | Gets the logs for a specific container.<br/> |
-
-----
 ## [Operations APIs](seabreeze-index-operations.md)
 
 | Name | Description |
@@ -78,8 +60,6 @@ helpviewer_keywords:
 | [AzureFileVolume](seabreeze-model-azurefilevolume.md) | The Azure file volume.<br/> |
 | [Container](seabreeze-model-container.md) | A container instance.<br/> |
 | [ContainerEvent](seabreeze-model-containerevent.md) | A container event.<br/> |
-| [ContainerGroupDescription](seabreeze-model-containergroupdescription.md) | Describes a Container group.<br/> |
-| [ContainerGroupDescriptionList](seabreeze-model-containergroupdescriptionlist.md) | The container group instance list response that contains the container group properties.<br/> |
 | [ContainerGroupInstanceDescription](seabreeze-model-containergroupinstancedescription.md) | Describes a Container group instance.<br/> |
 | [ContainerGroupInstanceDescriptionList](seabreeze-model-containergroupinstancedescriptionlist.md) | The container group instance list response that contains the container group properties.<br/> |
 | [ContainerGroupProperties](seabreeze-model-containergroupproperties.md) | Describes the properties of a Container group.<br/> |

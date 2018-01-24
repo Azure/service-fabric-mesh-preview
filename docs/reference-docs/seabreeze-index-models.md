@@ -20,8 +20,6 @@ helpviewer_keywords:
 | [AzureFileVolume](seabreeze-model-azurefilevolume.md) | The Azure file volume.<br/> |
 | [Container](seabreeze-model-container.md) | A container instance.<br/> |
 | [ContainerEvent](seabreeze-model-containerevent.md) | A container event.<br/> |
-| [ContainerGroupDescription](seabreeze-model-containergroupdescription.md) | Describes a Container group.<br/> |
-| [ContainerGroupDescriptionList](seabreeze-model-containergroupdescriptionlist.md) | The container group instance list response that contains the container group properties.<br/> |
 | [ContainerGroupInstanceDescription](seabreeze-model-containergroupinstancedescription.md) | Describes a Container group instance.<br/> |
 | [ContainerGroupInstanceDescriptionList](seabreeze-model-containergroupinstancedescriptionlist.md) | The container group instance list response that contains the container group properties.<br/> |
 | [ContainerGroupProperties](seabreeze-model-containergroupproperties.md) | Describes the properties of a Container group.<br/> |
