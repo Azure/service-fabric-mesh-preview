@@ -42,7 +42,7 @@ helpviewer_keywords:
 
 | Name | Description |
 | --- | --- |
-| [Get](seabreeze-api-containergroupsetcontainerlogs_get.md) |  |
+| [Get](seabreeze-api-containergroupsetcontainerlogs_get.md) | Gets the logs for a specific container.<br/> |
 
 ----
 ## [ContainerGroups APIs](seabreeze-index-containergroups.md)

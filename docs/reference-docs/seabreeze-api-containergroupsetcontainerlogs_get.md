@@ -12,9 +12,9 @@ helpviewer_keywords:
   - "SeaBreeze Resource Provider API Reference"
 ---
 # Get
+Gets the logs for a specific container.
 
-
-Get the logs for this container.
+Get the logs for a specific container.
 
 ## Request
 | Method | Request URI |
