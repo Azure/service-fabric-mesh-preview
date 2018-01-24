@@ -13,7 +13,7 @@ az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azu
 ```
 
 # Resource Manager APIs
-[The SeaBreeze Resource Manager APIs](https://github.com/Azure/seabreeze-preview-pr/blob/master/doc/seabreeze-index.md) allows you to create and manager resources in SeaBreeze.
+[The SeaBreeze Resource Manager APIs](https://github.com/Azure/seabreeze-preview-pr/blob/master/docs/reference-docs/seabreeze-index.md) allows you to create and manager resources in SeaBreeze.
 
 # Contributing
 
