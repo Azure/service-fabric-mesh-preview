@@ -31,20 +31,48 @@ SeaBreeze consists of clusters of thousands of machines at geo-scale that can sp
 
 ## Road Map to public preview.
 
-In order to make the public preview true to its promise and vision, we need your help. We will start with a few limited preview releases every four weeks or so, leading up to a public preview, with each refresh adding more cutting edge features. As participants in the preview, we expect that you will  actively try things out and provide feedback. The feedback you provide will directly impact the experience by accommodating features that matter to you.
+In order to make the public preview true to its promise and vision, we need your help. We will start with a few limited private preview releases every four weeks or so, leading up to a public preview, with each refresh adding more cutting edge features. As participants in the preview, we expect that you will  actively try things out and provide feedback. The feedback you provide will directly impact the experience by accommodating features that matter to you.
+
+This all private previews are free (you don’t pay for anything including underlying resources), but will be quota limited. More details will be provided once you are on-boarded. 
+
+As we progress along the previews, we will update this page to include more details on the feature set.
 
 Here are some of the features you can expect to evaluate and provide feedback along the way. 
 
-Every preview will have a goal, the first one is specifically to get feedback on the basic infrastructure unit of deployment and isolation - Containers and container Groups.
-
-As we progress along the previews, we will update this page to include more details.
-
 ![Milestones]
+## Private preview 1 capabilities 
+
+This release is mainly targeted at getting feedback on the basic building blocks of the SeaBreeze service - the Container Group Set (CGS)* resource. The ability to provision 1 to N containers (or a Container Group) on demand, using CLI, ARM deployment or REST. Each CGS gets a public VIP and DNS for the CGS instances. 
+
+## Introducing Container Group Set resource.
+
+All deployments into SeaBreeze are in containers and as an implementation detail, the most granular deployment block for an application or service deployed into SeaBreeze is the Container Group Set (CGS)* resource.
+
+A *Container Group (CG) is a group of one or more containers (such as Docker containers), with shared storage/network, and a specification for how to run the containers. A container groups contents are always co-located and co-scheduled and run in a shared context. A Container Group models an application-specific “logical host” - it contains one or more application containers which are relatively tightly coupled — in a pre-container world, they would have executed on the same physical or virtual machine. 
+
+The *Container Group Set (CGS) is an ARM resource, which allows the customer to request 1 to N instances of a Container Group (CG). 
+
+For more details on how to deploy a container group resource, refer to our [quickstart guide](container-group-set-quickstart.md).
+
+## "I can" Statements for public preview 1
+
+- I can develop and deploy a new containerized application using services (aka CGS)
+- I can delete the services (aka CGS) resource
+- I can view the running status of my Services/CGS and its instances. 
+- I can specify a volume driver for my containers, so that my container state is not lost, when azure fails over my container to a new host. 
+- I can add multiple containers in a service to enable side care services (aka CGS) like a watch dog.  
+- I can update a deployed service by deploying the updated services (aka CGS) definition (the system deploys new and removes old)
+
+## Scenarios that you can enable in public preview 1
+
+•	“Lift and Shift” existing applications into containers (modernize)
+•	Build new microservice applications in containers (greenfield) 
+
 
 
 ## Next steps
 
-Try deploying a container to Azure with a single command using our [quickstart guide](container-group-set-quickstart.md).
+Try deploying a container /container Group to Azure with a single command using our [quickstart guide](container-group-set-quickstart.md).
 
 <!-- Images -->
 [SeaBreeze-01]: ./media/overview/SeaBreeze.PNG
