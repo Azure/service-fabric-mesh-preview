@@ -1,19 +1,15 @@
-# SeaBreeze CLI Installation
+# Service Fabric SeaBreeze
 
-Install Azure CLI if have not, choose according to your OS type:
-[Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
+SeaBreeze is fully managed serverless offering which enables developers to deploy containerized applications without managing any infrastructure, while still being able to use Service Fabric's runtime features and programming models. SeaBreeze is aiming to be the easiest way to run a containerized worklaod in the cloud, while ensuring production requirements like high availability and scalability. 
 
-The minimum version of Azure CLI required is 2.0.24.
+To learn more about the platform, see [Service Fabric SeaBreeze](./docs/conceptual-docs/seabreeze-overview.md). 
 
-You could alternatively use Cloud Shell. 
+To get started with using the platform, see our [quickstart](./docs/conceptual-docs/container-group-set-quickstart.md).
 
-```bash
-az extension remove --name azure-cli-sbz 
-az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.2.0-py2.py3-none-any.whl
-```
+To learn about the SeaBreeze resource management APIs, see [API reference docs](https://github.com/Azure/seabreeze-preview-pr/blob/master/docs/reference-docs/seabreeze-index.md).
 
-# Resource Manager APIs
-[The SeaBreeze Resource Manager APIs](https://github.com/Azure/seabreeze-preview-pr/blob/master/docs/reference-docs/seabreeze-index.md) allows you to create and manager resources in SeaBreeze.
+
+We look forward to hearing your feedback about SeaBreeze. Please use this repo's *Issues* to inform us of any bugs you come across, or improvements you would like to request. 
 
 # Contributing
 

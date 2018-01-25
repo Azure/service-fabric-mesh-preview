@@ -27,6 +27,19 @@ For more details on how to deploy a container group resource, refer to our [quic
 
 ![Milestones]
 
+# SeaBreeze CLI Installation
+
+In order to deploy and manage a containger group set, you will be using Azure CLI (minimum required version is 2.0.24). If you don't currently have Azure CLI set up or need to update it, see [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+Alternatively, you could use the Cloud Shell in Azure Portal.
+
+To get access to the SeaBreeze CLI commands, use the following commands: 
+
+```bash
+az extension remove --name azure-cli-sbz 
+az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.2.0-py2.py3-none-any.whl
+```
+
 
 ## Next steps
 
