@@ -1,0 +1,1 @@
+server { listen 80; }
