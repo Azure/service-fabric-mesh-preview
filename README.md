@@ -1,6 +1,6 @@
 # Service Fabric SeaBreeze
 
-SeaBreeze is fully managed serverless offering which enables developers to deploy containerized applications without managing any infrastructure, while still being able to use Service Fabric's runtime features and programming models. SeaBreeze is aiming to be the easiest way to run a containerized worklaod in the cloud, while ensuring production requirements like high availability and scalability. 
+SeaBreeze is fully managed serverless offering which enables developers to deploy containerized applications without managing any infrastructure, while still being able to use Service Fabric's runtime features and programming models. SeaBreeze is aiming to be the easiest way to run a containerized workload in the cloud, while ensuring production requirements like high availability and scalability. 
 
 To learn more about the platform, see [Service Fabric SeaBreeze](./docs/conceptual-docs/seabreeze-overview.md). 
 
