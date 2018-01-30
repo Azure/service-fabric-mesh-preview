@@ -17,13 +17,13 @@ ms.editor: chackdan
 ---
 # Container Group Sets
 
-All deployments into SeaBreeze are in containers and as an implementation detail, the most granular deployment block for an application or service deployed into SeaBreeze is the Container Group Set (CGS)* resource.
+All deployments into SeaBreeze are in containers and as an implementation detail, the most granular deployment block for an application or service deployed into SeaBreeze is the Container Group Set (CGS) resource.
 
-A *Container Group (CG) is a group of one or more containers (such as Docker containers), with shared storage/network, and a specification for how to run the containers. A container groups contents are always co-located and co-scheduled and run in a shared context. A Container Group models an application-specific “logical host” - it contains one or more application containers which are relatively tightly coupled — in a pre-container world, they would have executed on the same physical or virtual machine. 
+A Container Group (CG) is a group of one or more containers (such as Docker containers), with shared storage/network, and a specification for how to run the containers. A CG's contents are always co-located and co-scheduled and run in a shared context. A CG models an application-specific “logical host” - it contains one or more application containers which are relatively tightly coupled — in a pre-container world, they would have executed on the same physical or virtual machine. 
 
-The *Container Group Set (CGS) is an ARM resource, which allows the customer to request 1 or N instances of a Container Group (CG). 
+The Container Group Set (CGS) is an ARM resource that allows users to request 1 to N instances of a CG. 
 
-This quickstart will walk you through how to:
+This doc will walk you through how to:
 * deploy a CGS
 * check its status
 * check a CGS instance's logs
