@@ -56,7 +56,7 @@ In order to deploy and manage a containger group set, you will be using Azure CL
 3. Create the CGS using the following command:
 
 	```cli
-	az sbz cgs create --location eastus --resource-group <resourceGroupName> --name <cgsName> --template-uri <URL>
+	az sbz cgs create --location eastus --resource-group <resourceGroupName> --name <cgsName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/cgs-quickstart.json
 	```
 
 ## Check CGS status
