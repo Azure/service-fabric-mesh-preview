@@ -23,9 +23,49 @@ A *Container Group (CG) is a group of one or more containers (such as Docker con
 
 The *Container Group Set (CGS) is an ARM resource, which allows the customer to request 1 or N instances of a Container Group (CG). 
 
-For more details on how to deploy a container group resource, refer to our [quickstart guide](container-group-set-quickstart.md).
+## Deploy a Container Group set.
 
-![Milestones]
+   
+1. Open a [CLI prompt](https://docs.microsoft.com/en-us/cli/azure/overview?view=azure-cli-latest)  or Bash Shell using [Cloud shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
+2. Remove any previous install of the SeaBreeze CLI module
+
+	```CLI
+	
+	az extension remove --name azure-cli-sbz 
+	
+	```
+
+3. Install the SeaBreeze CLI module. For the preview, we are providing a .whl file with the CLI module, at public preview we would ship it as a part of the Azure CLI.
+
+	```CLI
+	
+	az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.2.0-py2.py3-none-any.whl
+	
+	```
+
+4. Login to azure and Set your subscription that has been whitelisted for the preview
+
+	```CLI
+	
+		az login
+		az account set --subscription "13ad2c84-84fa-4798-ad71-e70c07af873f"
+	
+	```
+5. Create a resource group (RG) to deploy the CGS to. you can use can use an existing RG.
+
+	```CLI
+	
+	az group create --name <myResourceGroup> --location eastus 
+	
+	```
+
+6. Create a resource group (RG) to deploy the CGS to. you can use can use an existing RG.
+
+	```CLI
+	
+az group create --name <myResourceGroup> --location eastus 
+	
+	```
 
 # SeaBreeze CLI Installation
 
@@ -47,7 +87,7 @@ az extension remove --name azure-cli-sbz
 
 ## Next steps
 
-Try deploying a container /container Group to Azure with a single command using our [quickstart guide](container-group-set-quickstart.md).
+..
 
 <!-- Images -->
 [SeaBreeze-01]: ./media/overview/SeaBreeze.PNG
