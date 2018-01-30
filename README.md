@@ -11,6 +11,8 @@ To learn about the SeaBreeze resource management APIs, see [API reference docs](
 
 We look forward to hearing your feedback about SeaBreeze. Please use this repo's *Issues* to inform us of any bugs you come across, or improvements you would like to request. 
 
+Here is the [Service Fabric SeaBreeze preview EULA](http://aka.ms/seabreezeprevieweula).
+
 # Contributing
 
 This project has adopted the
