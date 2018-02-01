@@ -54,7 +54,7 @@ The *Container Group Set (CGS) is an ARM resource, which allows the customer to 
 
 For more details on how to deploy a container group resource, refer to our [quickstart guide](container-group-set-quickstart.md).
 
-## "I can" Statements for public preview 1
+## "I can" Statements for private preview 1
 
 - I can develop and deploy a new containerized application using services (aka CGS)
 - I can delete the services (aka CGS) resource
@@ -63,11 +63,58 @@ For more details on how to deploy a container group resource, refer to our [quic
 - I can add multiple containers in a service to enable side care services (aka CGS) like a watch dog.  
 - I can update a deployed service by deploying the updated services (aka CGS) definition (the system deploys new and removes old)
 
-## Scenarios that you can enable in public preview 1
+## Scenarios that you can enable in private preview 1
 
 •	“Lift and Shift” existing applications into containers (modernize)
 •	Build new microservice applications in containers (greenfield) 
 
+## "I can" Statements planned for public preview
+
+The following are some of the high level "I can" statements, we plan to enable along the way to public preview and GA. The list is not exhaustive and are a representative sample to help you folks plan for the usage in your projects/applications. As we progress along the private previews leading up to the public preview, you should see the list of these capabilities move up to be in the previews. If we determine that a certain feature has not reached the preview quality by the release date, then we would move it to the next release.
+
+- I can Deploy/Modify/Delete an application with one or more container services (which in turn might have 1 or more containers each)  using a CLI or Powershell or REST APIs or Portal 
+- I can use the SeaBreeze application model that specifies services within  (manifest.yaml) 
+- I can add a storage volume to my containers including the built-in SF volume driver and Azure Files and also support for managed disks
+- I can connect to other Azure services from my applications.
+- I get streams of monitoring (metrics) and diagnostic (logs) data per container  (optionally by services and application) without requiring the me explicitly instrumenting my code  
+- I can see my application diagnostics and monitoring information by default in AI. The default AI tier gives me the metrics, logs and traces for the last n days. 
+- I can route my application diagnostics and monitoring information to any tool of my choice.
+- I can deploy Linux and Windows (Hyper-V) containers.  
+- I can specify the certificates  in the application.yaml and I can use them inside my container.
+- I can deploy my container (100 MB image) and be up and running in 8 seconds. The measurement starts on request for deployment to when an end is available. 
+- I pay only for the resources (CPU, MEM, transactions/storage for replicated store) I request in the container/application definition in per second interval and able to view the breakdown on the portal
+- I can use service names specified in the application.yaml to communicate between my services.
+- I can use the IP addresses from my existing vNet to deploy my containers.– “Bring your own vNet”  scenario
+- For my services, I can specify if they are public (I get a public IP+port), private (accessible by other services in the app), or shared (two or more apps sharing the VNET)
+- I can specify auto scale rules for services that make up my application.
+- I can get automatic SSL termination
+- I can remote into a container for debugging
+- I can see an application map  between services in portal
+- I can perform Snap-shot debugging on my  .netcore applications in the portal.
+- I am can use SF reliable collections programming  model for statefull services in C#, nodeJS and  Java.
+- I can use visual studio tooling to create/debug/deploy/delete/modify applications with ease.
+- I can leverage the SeaBreeze Market place for solutions very similar to what I can do with the Kubernetes.
+- I can use the SeaBreeze package creation tool to easily create the deployment package (and manifest) for my application.
+- My containers run is an isolated (network and compute) environment, and I do not have to worry about getting affected by a nosy or noisy neighbor.
+- I can use the free tier in SeaBreeze to try out new applications.
+- I can deploy Application, Service and Container Group set as ARM resources
+- All infrastructure for SeaBreeze is invisible to me  and I am not worried about capacity planning
+- I can deploy my Tier1 apps to SeaBreeze, since the platform is already complaint with all the industry complaince standards that Azure supports
+- I can easy create new applications and manage them with confidence, thanks to the excellent samples, documentation that the SeaBreeze team has provided
+- I can perform Blue/Green deployments in SeaBreeze.  I can also choose to route a part of my production deployments to a Green deployment, before I decide to switch to it/ or not.
+- I can subscribe to automatic backup for by statefull containers, when using service fabric simplified programming models (reliable collections and actors)
+- I can have my application more only deployed across azure zones, but also across geo-political regions to achieve an RPO and RTO = 0.
+
+
+
+
+
+
+
+
+
+
+- 
 
 
 ## Next steps
