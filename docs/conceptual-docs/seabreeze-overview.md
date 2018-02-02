@@ -54,6 +54,11 @@ The *Container Group Set (CGS) is an ARM resource, which allows the customer to 
 
 For more details on how to deploy a container group resource, refer to our [quickstart guide](container-group-set-quickstart.md).
 
+## Scenarios enabled in private preview 1
+
+- “Lift and Shift” existing applications into containers (modernize)
+- Build new microservice applications in containers (greenfield) 
+
 ## "I can" Statements for private preview 1
 
 - I can develop and deploy a new containerized application using services (aka CGS)
@@ -62,11 +67,6 @@ For more details on how to deploy a container group resource, refer to our [quic
 - I can specify a volume driver for my containers, so that my container state is not lost, when azure fails over my container to a new host. 
 - I can add multiple containers in a service to enable side care services (aka CGS) like a watch dog.  
 - I can update a deployed service by deploying the updated services (aka CGS) definition (the system deploys new and removes old)
-
-## Scenarios that you can enable in private preview 1
-
-- “Lift and Shift” existing applications into containers (modernize)
-- Build new microservice applications in containers (greenfield) 
 
 ## "I can" Statements planned for public preview
 
