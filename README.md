@@ -12,7 +12,7 @@ To get started with using the platform, see our [quickstart](./docs/conceptual-d
 To learn about the SeaBreeze resource management APIs, see [API reference docs](https://github.com/Azure/seabreeze-preview-pr/blob/master/docs/reference-docs/seabreeze-index.md).
 
 
-We look forward to hearing your feedback about SeaBreeze. Please use this repo's *Issues* to inform us of any bugs you come across, or improvements you would like to request. 
+We look forward to hearing your feedback about SeaBreeze. Please use this repo's [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) to inform us of any bugs you come across, or improvements you would like to request. 
 
 Here is the [Service Fabric SeaBreeze preview EULA](http://aka.ms/seabreezeprevieweula).
 
