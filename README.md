@@ -2,6 +2,9 @@
 
 SeaBreeze is fully managed serverless offering which enables developers to deploy containerized applications without managing any infrastructure, while still being able to use Service Fabric's runtime features and programming models. SeaBreeze is aiming to be the easiest way to run a containerized workload in the cloud, while ensuring production requirements like high availability and scalability. 
 
+
+![Seabreeze-01][Seabreeze-01]
+
 To learn more about the platform, see [Service Fabric SeaBreeze](./docs/conceptual-docs/seabreeze-overview.md). 
 
 To get started with using the platform, see our [quickstart](./docs/conceptual-docs/container-group-set-quickstart.md).
@@ -21,3 +24,9 @@ For more information, see the
 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any
 additional questions or comments.
+
+<!-- Images -->
+
+[Seabreeze-01]: ./docs/conceptual-docs/media/overview/SeaBreeze.PNG
+
+[Milestones]: ./media/overview/Milestones.PNG
