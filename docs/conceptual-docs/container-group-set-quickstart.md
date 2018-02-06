@@ -47,7 +47,7 @@ In order to deploy and manage a containger group set, you will be using Azure CL
 	az login
 	az account set --subscription "<subscriptionName>"
 	```
-2. Create a resource group (RG) to deploy the CGS to. Alternatively, you can an existing RG and skip this step.
+2. Create a resource group (RG) to deploy the CGS to. Alternatively, you can use an existing RG and skip this step. Please note that currently CGS are only available in eastus.
 
 	```cli
 	az group create --name <resourceGroupName> --location eastus 
