@@ -70,13 +70,13 @@ az sbz cgs show --resource-group <resourceGroupName> --name <cgsName>
 
 For each CGS instance, you can check its status as well as the logs coming from the containers in the CGS. 
 
-1. Check status for instance <X>
+1. Check status for a CGS instance
 	
 	```cli
 	az sbz cgs instance --resource-group <resourceGroupName> --name <cgsName> --instance-name <instanceName>
 	```
 
-2. Check the logs for instance <X>
+2. Check the logs for each container instance in a CGS
 
 	```cli
 	az sbz cgs logs --resource-group <resourceGroupName> --name <cgsName> --instance-name <instanceName> --container-name <containerName>
