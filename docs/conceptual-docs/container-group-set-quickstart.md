@@ -79,8 +79,10 @@ For each CGS instance, you can check its status as well as the logs coming from 
 2. Check the logs for instance <X>
 
 	```cli
-	az sbz cgs logs --resource-group <resourceGroupName> --name <cgsName> --instance-name <instanceName>
+	az sbz cgs logs --resource-group <resourceGroupName> --name <cgsName> --instance-name <instanceName> --container-name <containerName>
 	```
+
+	If you do not know the `containerName`, use the `az sbz cgs show` (as used above) to display this and other relevant information about your CGS.
 
 ## Remove the CGS
 To delete the CGS, use the `cgs delete` command. 
