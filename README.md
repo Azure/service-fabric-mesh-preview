@@ -2,7 +2,6 @@
 
 SeaBreeze is fully managed serverless offering which enables developers to deploy containerized applications without managing any infrastructure, while still being able to use Service Fabric's runtime features and programming models. SeaBreeze is aiming to be the easiest way to run a containerized workload in the cloud, while ensuring production requirements like high availability and scalability. 
 
-
 ![Seabreeze-01][Seabreeze-01]
 
 To learn more about the platform, see [Service Fabric SeaBreeze](./docs/conceptual-docs/seabreeze-overview.md). 
@@ -11,8 +10,15 @@ To get started with using the platform, see our [quickstart](./docs/conceptual-d
 
 To learn about the SeaBreeze resource management APIs, see [API reference docs](https://github.com/Azure/seabreeze-preview-pr/blob/master/docs/reference-docs/seabreeze-index.md).
 
-
 We look forward to hearing your feedback about SeaBreeze. Please use this repo's [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) to inform us of any bugs you come across, or improvements you would like to request. 
+
+## SeaBreeze Preview
+
+As you are testing phase 1 of the SeaBreeze Private Preview please be mindful of the following limitations:
+
+* The max core count per Container Group Set (CGS) - 6 (You can deploy 6 containers of 1 core each or 12 containers of 1/2 core each)
+* The max core count per container cannot exceed 2. 
+* The number of parallel CGS you have running should be kept to around 5. You'll need to delete your CGS deployments when you are not actively working with CGS.
 
 Here is the [Service Fabric SeaBreeze preview EULA](http://aka.ms/seabreezeprevieweula).
 
