@@ -36,7 +36,7 @@ In order to deploy and manage a containger group set, you will be using Azure CL
 3. Install the SeaBreeze CLI module. For the preview, we are providing a .whl file with the CLI module, at public preview we would ship it as a part of the Azure CLI.
 
 	```cli
-	az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.2.0-py2.py3-none-any.whl
+	az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.3.0-py2.py3-none-any.whl
 	```
 
 ## Create the CGS Resource
