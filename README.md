@@ -6,9 +6,9 @@ SeaBreeze is fully managed serverless offering which enables developers to deplo
 
 To learn more about the platform, see [Service Fabric SeaBreeze](./docs/conceptual-docs/seabreeze-overview.md). 
 
-To get started with using the platform, see our [quickstart](./docs/conceptual-docs/container-group-set-quickstart.md).
+To get started with using the platform, see our [quickstart](./docs/conceptual-docs/application-deployment-quickstart.md).
 
-To learn about the SeaBreeze resource management APIs, see [API reference docs](https://github.com/Azure/seabreeze-preview-pr/blob/master/docs/reference-docs/seabreeze-index.md).
+To learn about the SeaBreeze resource management APIs, see [API reference docs](https://github.com/Azure/seabreeze-preview-pr/blob/master/docs/reference-docs).
 
 We look forward to hearing your feedback about SeaBreeze. Please use this repo's [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) to inform us of any bugs you come across, or improvements you would like to request. 
 
