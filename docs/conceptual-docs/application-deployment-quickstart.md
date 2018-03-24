@@ -2,7 +2,7 @@
 title: Container group set quick start guide
 description: Quick start guide on deploying Container Group Set.
 services: Azure SeaBreeze
-author: chackdan;dkkapur
+author: chackdan;
 manager: timlt
 
 ms.service: SeaBreeze
