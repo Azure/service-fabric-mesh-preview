@@ -66,7 +66,7 @@ In order to deploy and manage an application, we will be using Azure CLI (minimu
 	```
 In a few seconds, your commands should return with "provisioningState": "Succeeded" 
 
-[AppDepl][AppDepl]
+![AppDepl]
  
 
 ## Check application deployment status
@@ -86,14 +86,13 @@ The network resource for our quickstart is SbzVotingNetwork, so let us fetch its
 az sbz network show --resource-group <resourceGroupName> --network-name SbzVotingNetwork
 ```
 The command should now return, with infromation like the screen shot below, copy the IP address from it.
-[ingress][ingress]
+![ingress]
 
 For example, my service end point IP is 13.90.141.214 and I just open the URL - http://13.90.141.214:80 in your favorite browser.
 
 You can now add voting options to the application and vote on it, or delete the voting options.
 
-[votingapp][votingapp]
-
+![votingapp]
 
 ## Quick review of the quick start application details
 
@@ -121,9 +120,9 @@ For each codepackage (container) in your service instance, you can check its sta
 
 1. Check the logs for each container instance in a CGS. In this example, we are going to fetch the logs from the container VotingWeb.Code, which is in the first replica of the service VotingWeb
 	
-	```cli
-	az sbz container logs --resource-group <myResourceGroup> --application-name <name> --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
-	```
+```cli
+az sbz container logs --resource-group <myResourceGroup> --application-name <name> --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
+```
 
 
 
