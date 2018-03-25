@@ -9,7 +9,7 @@ ms.service: SeaBreeze
 ms.topic: overview
 ms.assetid:
 ms.topic: article
-ms.date: 03/22/2018
+ms.date: 03/24/2018
 ms.author: chackdan
 ms.editor: chackdan
 ---
@@ -17,9 +17,10 @@ ms.editor: chackdan
 # SeaBreeze Application
 
 This doc will walk you through how to:
-* deploy an Application
+* deploy a sample Application
 * check its status
-* check for service logs
+* try out your new application
+* Review the applicaiton.json 
 
 To read more about applications and SeaBreeze, head over to the [SeaBreeze Overview](./seabreeze-overview.md)
 
@@ -28,7 +29,7 @@ To read more about applications and SeaBreeze, head over to the [SeaBreeze Overv
 
 
 ## Set up the SeaBreeze CLI
-In order to deploy and manage an application, we will be using Azure CLI (minimum required version is 2.0.24). If you don't currently have Azure CLI set up or need to update it, see [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
+In order to deploy and manage an application, we will be using Azure CLI (minimum required version is 2.0.24). If you don't currently have Azure CLI set up or need to update it, see [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest). You can run this quickstart on [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 
 1. Open a [CLI prompt](https://docs.microsoft.com/en-us/cli/azure/overview?view=azure-cli-latest) or Bash shell using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 2. Remove any previous install of the SeaBreeze CLI module.
@@ -40,7 +41,7 @@ In order to deploy and manage an application, we will be using Azure CLI (minimu
 3. Install the SeaBreeze CLI module. For the preview, we are providing a .whl file with the CLI module, at public preview we would ship it as a part of the Azure CLI.
 
 	```cli
-	az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.3.0-py2.py3-none-any.whl
+	az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.4.0-py2.py3-none-any.whl
 	```
 
 ## Create the application Resource
@@ -61,12 +62,15 @@ In order to deploy and manage an application, we will be using Azure CLI (minimu
 
 	```cli
 	az sbz app create --location eastus --resource-group <resourceGroupName> --name <cgsName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json
-	```
 
-For a detailed review of what this quick start application does, go to <link to the detail doc>
+	```
+In a few seconds, your commands should return with "provisioningState": "Succeeded" 
+
+[AppDepl][AppDepl]
+ 
 
 ## Check application deployment status
-At this point, your app has been deployed. You can check to see its status by using the `app show` command. 
+At this point, your application has been deployed. You can check to see its status by using the `app show` command. This command is useful, if you wanted to followup on a appliation deployment.
 
 ```cli
 az sbz app show --resource-group <resourceGroupName> --name <applicationName>
@@ -74,45 +78,57 @@ az sbz app show --resource-group <resourceGroupName> --name <applicationName>
 
 ## Go to the application
 
-once the application status is returned as "Deployed", copy the IP address you see for the service, and open it on a browser.
+Once the application status is returned as ""provisioningState": "Succeeded", we need the the ingress endpoint of the service, so let us query the netwokr resource, so get IP address to the container where the service is deployed, and open it on a browser.
 
-<to do - insert picture>
+The network resource for our quickstart is SbzVotingNetwork, so let us fetch its details.
 
-For example, my service end point IP is 23.99.95.109 and I just open the URL - http://23.99.95.104:80
+```cli
+az sbz network show --resource-group <resourceGroupName> --network-name SbzVotingNetwork
+```
+The command should now return, with infromation like the screen shot below, copy the IP address from it.
+[ingress][ingress]
 
-<to do - insert picture>
+For example, my service end point IP is 13.90.141.214 and I just open the URL - http://13.90.141.214:80 in your favorite browser.
+
+You can now add voting options to the application and vote on it, or delete the voting options.
+
+[votingapp][votingapp]
 
 
 ## Quick review of the quick start application details
 
-## See application logs
+For a detailed review of what this quick start application go to the [Samples](https://github.com/Azure/seabreeze-preview-pr/tree/master/samples) folder
+
+## Deleting the application
+
+There are other operations like retrieveing container logs etc,that you can do on the applicaiton. scroll down for those commands. when you are ready to delete the application run the following command. 
+
+```cli
+az sbz app delete --resource-group <resourceGroupName> 
+```
+In order to conserve the limited resources allocated to the preview program, it is encouraged that you do not leave your application running overnight, unless you have a specific need to do so.
+
+## See all the application I have currently running in my subscription
+
+```cli
+az sbz app list -o table
+```
+## See the application logs
+
+For this preview, we have not enabled the ablity for you to pump the logs, events and preformance counters to azure storage. That funtionality will be enabled as we progress towards public preview.
 
 For each codepackage (container) in your service instance, you can check its status as well as the logs coming from the containers in the service. 
 
-1. Check status for a CGS instance
+1. Check the logs for each container instance in a CGS. In this example, we are going to fetch the logs from the container VotingWeb.Code, which is in the first replica of the service VotingWeb
 	
 	```cli
-	az sbz cgs instance --resource-group <resourceGroupName> --name <cgsName> --instance-name <instanceName>
+	az sbz container logs --resource-group <myResourceGroup> --application-name <name> --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
 	```
 
-2. Check the logs for each container instance in a CGS
-
-	```cli
-	az sbz cgs logs --resource-group <resourceGroupName> --name <cgsName> --instance-name <instanceName> --container-name <containerName>
-	```
-
-	If you do not know the `containerName`, use the `az sbz cgs show` (as used above) to display this and other relevant information about your CGS.
-
-## Remove the CGS
-To delete the CGS, use the `cgs delete` command. 
-
-```cli
-az sbz cgs delete --resource-group <resourceGroupName> --name <cgsName>
-```
 
 
-..
 
 <!-- Images -->
-[SeaBreeze-01]: ./media/overview/SeaBreeze.PNG
-[Milestones]: ./media/overview/Milestones.PNG
+[votingapp]: ./media/application-quickstart/voting-app.PNG
+[ingress]: ./media/application-quickstart/app-network.PNG
+[AppDepl]: ./media/application-quickstart/app-deployment.PNG
