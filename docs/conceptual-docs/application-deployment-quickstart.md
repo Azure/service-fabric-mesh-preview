@@ -64,7 +64,7 @@ In order to deploy and manage an application, we will be using Azure CLI (minimu
 	az sbz app create --location eastus --resource-group <resourceGroupName> --name <cgsName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json
 
 	```
-In a few seconds, your commands should return with "provisioningState": "Succeeded" 
+In a few seconds, your command should return with "provisioningState": "Succeeded" 
 
 ![AppDepl]
  
@@ -78,9 +78,9 @@ az sbz app show --resource-group <resourceGroupName> --name <applicationName>
 
 ## Go to the application
 
-Once the application status is returned as ""provisioningState": "Succeeded", we need the the ingress endpoint of the service, so let us query the netwokr resource, so get IP address to the container where the service is deployed, and open it on a browser.
+Once the application status is returned as ""provisioningState": "Succeeded", we need the ingress endpoint of the service, so let us query the netwokr resource, so get IP address to the container where the service is deployed, and open it on a browser.
 
-The network resource for our quickstart is SbzVotingNetwork, so let us fetch its details.
+The network resource for our quickstart application is SbzVotingNetwork, so let us fetch its details.
 
 ```cli
 az sbz network show --resource-group <resourceGroupName> --network-name SbzVotingNetwork
@@ -96,7 +96,26 @@ You can now add voting options to the application and vote on it, or delete the 
 
 ## Quick review of the quick start application details
 
-For a detailed review of what this quick start application go to the [Samples](https://github.com/Azure/seabreeze-preview-pr/tree/master/samples) folder
+For a detailed review of this quick start application and its source code, go to the [Samples includes in the Repo](https://github.com/Azure/seabreeze-preview-pr/tree/master/samples) folder. 
+
+Let us quickly review the [Application-quickstart.Json](https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json)
+
+This application has two Services : VotingWeb  and VotingData . They are marked by the red boxes in the picture below.
+
+![appjson]
+
+Let us now review the VotingWeb service. Its code package is in a container called "VotingWeb.Code". The container details are  marked by the red boxes in the picture below.
+
+![servicejson]
+
+
+## See all the application you have currently deployed to your subscription
+
+You can use the "app list" command to get a list of applications you have deployed to your subscription. 
+
+```cli
+az sbz app list -o table
+```
 
 ## Deleting the application
 
@@ -107,14 +126,9 @@ az sbz app delete --resource-group <resourceGroupName>
 ```
 In order to conserve the limited resources allocated to the preview program, it is encouraged that you do not leave your application running overnight, unless you have a specific need to do so.
 
-## See all the application I have currently running in my subscription
-
-```cli
-az sbz app list -o table
-```
 ## See the application logs
 
-For this preview, we have not enabled the ablity for you to pump the logs, events and preformance counters to azure storage. That funtionality will be enabled as we progress towards public preview.
+For this preview, we have not enabled the ablity for you to pump the logs, events and preformance counters to azure storage for later diagnositics. That funtionality will be enabled as we progress along towards public preview.
 
 For each codepackage (container) in your service instance, you can check its status as well as the logs coming from the containers in the service. 
 
@@ -131,3 +145,5 @@ az sbz container logs --resource-group <myResourceGroup> --application-name <nam
 [votingapp]: ./media/application-quickstart/voting-app.PNG
 [ingress]: ./media/application-quickstart/app-network.PNG
 [AppDepl]: ./media/application-quickstart/app-deployment.PNG
+[appjson]: ./media/application-quickstart/app-json.PNG
+[servicejson]: ./media/application-quickstart/service-json.PNG
