@@ -51,7 +51,7 @@ This release is mainly targeted at getting feedback on the Application model for
 
 **A simple model for applications**
 
-Service Fabric Applications is a simple, unified way of running applications on Service Fabric. Users simply write an application in any language or platform, describe how it should run in a simple YAML definition, and run it on any of the three product SKUS of Service Fabric (Seabreeze, on-premise cluster or Azure SF cluster). 
+Service Fabric Applications is a simple, unified way of running applications on Service Fabric. Users simply write an application in any language or platform, describe how it should run in a simple YAML or JSON definition, and run it on any of the three product SKUS of Service Fabric (Seabreeze, on-premise cluster or Azure SF cluster). 
 
 **Container focused**
 Service Fabric Applications have first-class support for running in containers. In SeaBreeze, all applications must be in containers. On Service Fabric, users would have the option to run their applications without containers, but the experience makes containers the best choice.
@@ -79,7 +79,7 @@ Each of these resources can be described by the developer using a YAML file. At 
  
 When running in Seabreeze, you will need to convert the YAML files to .JSON, using the tool provided so that you can submit it to ARM as an ARM template,refer to the [quickstart guide](application-quickstart.md) on how to. 
 
-**Scope of private preview 2** : Not all the above resources can be defined in an application in private preview 2. The scenarios that are enabled, along with the sample resources are detailed in [Application Model Scenarios](scenarios.md)
+**Scope of private preview 2** : Not all the above resources can be defined in an application in private preview 2. The scenarios that are enabled, along with the sample resources are detailed in [Application Model Scenarios](application-model-scenarios.md)
 
 ## Scenarios enabled in private preview 2 
 
