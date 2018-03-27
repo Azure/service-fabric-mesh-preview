@@ -99,7 +99,7 @@ When running in Seabreeze, you will need to convert the YAML files to .JSON, usi
 8. Specify resource requirements and limits on the service containers
 9. Application with a FrontEnd (reachable via HTTP) and an BackEnd communicating via DNS
 
-These Scenarios along with the sample resources are detailed in [Application Model Scenarios](scenarios.md)
+These Scenarios along with the sample resources are detailed in [Application Model Scenarios](application-model-scenarios.md)
 
 ## "I can" Statements for private preview 2
 
@@ -154,7 +154,13 @@ The following are some of the high level "I can" statements, we plan to enable a
 
 ## Next steps
 
-Try deploying a container /container Group to Azure with a single command using our [quickstart guide](container-group-set-quickstart.md).
+
+
+1. Try deploying an application to Azure   using our [quickstart guide](application-deployment-quickstart.md).
+2. Try out other scenarios detailed at [Application Model Scenarios](application-model-scenarios.md)
+
+
+
 
 <!-- Images -->
 [SeaBreeze-01]: ./media/overview/SeaBreeze.PNG
