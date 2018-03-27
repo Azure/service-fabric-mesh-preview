@@ -18,13 +18,13 @@
                       "publicPort": "80",
                       "applicationName": "SbzVoting",
                       "serviceName": "VotingWeb",
-                      "endpointName": "Endpoint1"
+                      "endpointName": "EndpointFrontEnd"
                     },
                     {
                       "publicPort": "8080",
                       "applicationName": "SbzVoting",
                       "serviceName": "VotingData",
-                      "endpointName": "Endpoint1"
+                      "endpointName": "EndpointBackend"
                     }
                   ]
                 }
@@ -49,7 +49,7 @@
                                     "image": "seabreeze/votingfrontend:1.0-Linux",
                                     "endpoints": [
                                         {
-                                            "name": "Endpoint1",
+                                            "name": "EndpointFrontEnd",
                                             "port": 80
                                         }
                                     ],
@@ -85,7 +85,7 @@
                                     "image": "seabreeze/votingdata:1.0-Linux",
                                     "endpoints": [
                                         {
-                                            "name": "Endpoint1",
+                                            "name": "EndpointBackend",
                                             "port": 8080
                                         }
                                     ],
