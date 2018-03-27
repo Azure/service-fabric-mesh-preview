@@ -86,7 +86,7 @@ When running in Seabreeze, you will need to convert the YAML files to .JSON, usi
 - “Lift and Shift” existing applications into containers (modernize)
 - Build new microservice applications in containers (greenfield) 
 
-###Kinds of applications you can create to enable the above.
+### Kinds of applications you can create to enable the above.
 
 
 1. Application with no external communication or storage, simple compute 
