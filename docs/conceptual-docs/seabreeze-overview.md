@@ -115,7 +115,7 @@ These Scenarios along with the sample resources are detailed in [Application Mod
 
 ## Frequently asked questions and known Issues
 
-Here are the [frequently asked questions and known issues](./docs/conceptual-docs/FAQ-and-KnownIssues.md) with this private preview.
+Here are the [frequently asked questions and known issues](./FAQ-and-KnownIssues.md) with this private preview.
 
 ## Additional "I can" Statements planned for public preview
 
