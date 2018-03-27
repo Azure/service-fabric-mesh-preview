@@ -15,6 +15,9 @@ ms.author: dekapur
 
 # Monitoring and Diagnostics SeaBreeze 
 
+**THIS IS AN OLD DOC, DEEP is working on a new one**
+
+
 Monitoring and diagnostics for SeaBreeze is generally catagorized into three main types of diagnostics data:
 
 1. Application logs - these are defined as the logs from your containerized applications, based on how you have instrumented your application (docker logs)
