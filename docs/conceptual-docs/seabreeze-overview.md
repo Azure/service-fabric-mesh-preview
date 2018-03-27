@@ -1,6 +1,6 @@
 ---
-title: Azure Service fabric SeaBreeze overview
-description: Understand what the SeaBreeze offering is
+title: Azure Service fabric SeaBreeze overview and scope of the current preview.
+description: Understand what the SeaBreeze offering is and what you can do with the current preview
 services: Azure SeaBreeze
 author: chackdan
 manager: timlt
@@ -9,7 +9,7 @@ ms.service: SeaBreeze
 ms.topic: overview
 ms.assetid:
 ms.topic: article
-ms.date: 03/24/2018
+ms.date: 03/25/2018
 ms.author: chackdan
 ms.editor: chackdan
 
@@ -112,6 +112,10 @@ These Scenarios along with the sample resources are detailed in [Application Mod
 - I can connect to other Azure services from my applications.
 - I can deploy services that use Linux or Windows (Hyper-V) containers. 
 - I can use service names specified in the application.yaml to communicate between my services.
+
+## Frequently asked quesitons and known Issues
+
+Here are the [frequently asked questions and known issues](./docs/conceptual-docs/FAQ-and-KnownIssues.md) with this private preview.
 
 ## Additional "I can" Statements planned for public preview
 
