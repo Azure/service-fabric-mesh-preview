@@ -7,38 +7,15 @@
       "name": "myfileshare",
       "type": "Microsoft.ServiceFabric/volumes",
       "location": "EastUS",
-      "dependsOn": [
-        "Microsoft.ServiceFabric/secretStores/myStore"
-      ],
+      "dependsOn": [ ],
       "properties": {
         "description": "File share backed by Azure Files storage.",
         "provider": "SFAzureFile",
         "azureFileParameters": {
           "shareName": "helloworldshare",
           "accountName": "testaccount",
-          "accountKey": "[reference(secret:myStore/azureFilesAccessKey)]"
+          "accountKey": "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6ty/K1SZFPTOtr/KBHBeksoGMGw=="
         }
-      }
-    },
-    {
-      "apiVersion": "2018-03-01-privatepreview",
-      "name": "myStore",
-      "type": "Microsoft.ServiceFabric/secretStores",
-      "location": "EastUS",
-      "dependsOn": [],
-      "properties": {
-        "secrets": [
-          {
-            "name": "imageRegistryPassword",
-            "kind": "inline",
-            "value": "myPassword"
-          },
-          {
-            "name": "azureFilesAccessKey",
-            "kind": "inline",
-            "value": "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6ty/K1SZFPTOtr/KBHBeksoGMGw=="
-          }
-        ]
       }
     },
     {
@@ -68,7 +45,6 @@
       "location": "EastUS",
       "dependsOn": [
         "Microsoft.ServiceFabric/networks/myNetwork",
-        "Microsoft.ServiceFabric/secretStores/myStore",
         "Microsoft.ServiceFabric/volumes/myfileshare"
       ],
       "properties": {
@@ -105,7 +81,9 @@
               ],
               "replicaCount": "5",
               "networkRefs": [
-                "mynetwork"
+                {
+                "name": "mynetwork"
+                }
               ]
             }
           },
@@ -134,7 +112,9 @@
               ],
               "replicaCount": "1",
               "networkRefs": [
-                "mynetwork"
+                {
+                  "name": "mynetwork"
+                  }
               ]
             }
           }

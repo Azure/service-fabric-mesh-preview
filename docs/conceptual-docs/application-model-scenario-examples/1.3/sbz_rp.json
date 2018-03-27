@@ -4,22 +4,6 @@
   "resources": [
     {
       "apiVersion": "2018-03-01-privatepreview",
-      "name": "myStore",
-      "type": "Microsoft.ServiceFabric/secretStores",
-      "location": "EastUS",
-      "dependsOn": [],
-      "properties": {
-        "secrets": [
-          {
-            "name": "imageRegistryPassword",
-            "kind": "inline",
-            "value": "myPassword"
-          }
-        ]
-      }
-    },
-    {
-      "apiVersion": "2018-03-01-privatepreview",
       "name": "myNetwork",
       "type": "Microsoft.ServiceFabric/networks",
       "location": "EastUS",
@@ -44,8 +28,7 @@
       "type": "Microsoft.ServiceFabric/applications",
       "location": "EastUS",
       "dependsOn": [
-        "Microsoft.ServiceFabric/networks/myNetwork",
-        "Microsoft.ServiceFabric/secretStores/myStore"
+        "Microsoft.ServiceFabric/networks/myNetwork"
       ],
       "properties": {
         "schemaVersion": "0.0.1",
@@ -63,7 +46,7 @@
                   "imageRegistryCredential": {
                     "server": "microsoft",
                     "username": "TestUser",
-                    "password": "[reference(secret:myStore/imageRegistryPassword)]"
+                    "password": " password to my image store, you can set this up a parmater and then pass it as a secure string."
                   },
                   "endpoints": [
                     {
@@ -91,7 +74,9 @@
               ],
               "replicaCount": "1",
               "networkRefs": [
-                "myNetwork"
+                {
+                  "name": "mynetwork"
+                  }
               ]
             }
           }

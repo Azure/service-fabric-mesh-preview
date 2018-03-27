@@ -30,19 +30,11 @@ A resource describes how something should run. For example, a service resource d
 This document will walk you through some of the scenarios and use cases that you can leverage when setting up your applications and deploying them to SeaBreeze. Although the application model will 
 support YAML and a local one-box experience, this document for now will be focused on providing you sample JSON that you can use to deploy your application to SeaBreeze (onAzure). 
 
-**Note:** In preview 2, your deployment scenarios are restricted to a quota allocated to you, refer to the FAQ document on Quota details.
+**Note:** In preview 2, your deployment scenarios are restricted to a quota allocated to you, refer to the [FAQ document](./docs/conceptual-docs/FAQ-and-KnownIssues.md) on Quota details.
 
 
-## 1. Create a micro-service composed of multiple code packages that can be scaled from 1 to N instances
-
-#### An application with one micro-service,with no external communication and uses a private container image  
-
-In this scenario the application has a service whose code packages are packaged as container images and the containers can communicate with each other using localhost.
-
-The Sample JSON is available at [sbz_rp.json](./application-model-scenario-examples/1.1/sbz_rp.json)
-
-
-#### An application with one micro-service, that communicates via an external IP and uses a private container image  
+### An application with a micro-service composed of multiple code packages that can be scaled from 1 to N instances
+ 
 
 In this scenario the application has following characteristics 
 
@@ -54,7 +46,7 @@ In this scenario the application has following characteristics
 
 The Sample JSON is available at [sbz_rp.json](./application-model-scenario-examples/1.3/sbz_rp.json)
 
-#### 2. An application with two micro-services, once exposed publically. Services communicate to each other using DNS. Also uses Azure files are a volume driver to store state.
+####  An application with two micro-services, once exposed publically. Services communicate to each other using DNS. Also uses Azure files are a volume driver to store state.
 
 In this scenario the application has following characteristics 
 
