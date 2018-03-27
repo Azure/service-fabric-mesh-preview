@@ -6,7 +6,7 @@
       "apiVersion": "2018-03-01-privatepreview",
       "name": "helloWorldApp",
       "type": "Microsoft.ServiceFabric/applications",
-      "location": "SouthCentralUS",
+      "location": "EastUS",
       "dependsOn": [],
       "properties": {
         "description": "Hello world seabreeze!",

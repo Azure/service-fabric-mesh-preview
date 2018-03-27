@@ -6,7 +6,7 @@
       "apiVersion": "2018-03-01-privatepreview",   
       "name": "myfileshare",
       "type": "Microsoft.ServiceFabric/volumes",
-      "location": "eastus",
+      "location": "EastUS",
       "dependsOn": [
         "Microsoft.ServiceFabric/secretStores/myStore"
       ],
@@ -24,7 +24,7 @@
       "apiVersion": "2018-03-01-privatepreview",
       "name": "myStore",
       "type": "Microsoft.ServiceFabric/secretStores",
-      "location": "eastus",
+      "location": "EastUS",
       "dependsOn": [],
       "properties": {
         "secrets": [
@@ -45,7 +45,7 @@
       "apiVersion": "2018-03-01-privatepreview",
       "name": "myNetwork",
       "type": "Microsoft.ServiceFabric/networks",
-      "location": "eastus",
+      "location": "EastUS",
       "dependsOn": [],
       "properties": {
         "addressPrefix": "10.0.0.4/22",
@@ -65,7 +65,7 @@
       "apiVersion": "2018-03-01-privatepreview",
       "name": "myapp",
       "type": "Microsoft.ServiceFabric/applications",
-      "location": "eastus",
+      "location": "EastUS",
       "dependsOn": [
         "Microsoft.ServiceFabric/networks/myNetwork",
         "Microsoft.ServiceFabric/secretStores/myStore",
