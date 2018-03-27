@@ -9,7 +9,7 @@ ms.service: SeaBreeze
 ms.topic: overview
 ms.assetid:
 ms.topic: article
-ms.date: 03/24/2018
+ms.date: 03/26/2018
 ms.author: chackdan
 ms.editor: chackdan
 ---
@@ -64,13 +64,13 @@ In order to deploy and manage an application, we will be using Azure CLI (minimu
 	az sbz app create --location eastus --resource-group <resourceGroupName> --name <cgsName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json
 
 	```
-In a few seconds, your command should return with "provisioningState": "Succeeded" 
+In a few seconds, your command should return with "provisioningState": "Succeeded" . Given below is the output from the command when using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). 
 
 ![AppDepl]
  
 
 ## Check application deployment status
-At this point, your application has been deployed. You can check to see its status by using the `app show` command. This command is useful, if you wanted to followup on a appliation deployment.
+At this point, your application has been deployed. You can check to see its status by using the `app show` command. This command is useful, if you wanted to followup on a application deployment.
 
 ```cli
 az sbz app show --resource-group <resourceGroupName> --name <applicationName>
@@ -78,14 +78,15 @@ az sbz app show --resource-group <resourceGroupName> --name <applicationName>
 
 ## Go to the application
 
-Once the application status is returned as ""provisioningState": "Succeeded", we need the ingress endpoint of the service, so let us query the netwokr resource, so get IP address to the container where the service is deployed, and open it on a browser.
+Once the application status is returned as ""provisioningState": "Succeeded", we need the ingress endpoint of the service, so let us query the network resource, so get IP address to the container where the service is deployed, and open it on a browser.
 
 The network resource for our quickstart application is SbzVotingNetwork, so let us fetch its details.
 
 ```cli
 az sbz network show --resource-group <resourceGroupName> --network-name SbzVotingNetwork
 ```
-The command should now return, with infromation like the screen shot below, copy the IP address from it.
+The command should now return, with information like the screen shot below when running the command in [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
+From the output, copy the IP address .
 ![ingress]
 
 For example, my service end point IP is 13.90.141.214 and I just open the URL - http://13.90.141.214:80 in your favorite browser.
@@ -119,7 +120,7 @@ az sbz app list -o table
 
 ## Deleting the application
 
-There are other operations like retrieveing container logs etc,that you can do on the applicaiton. scroll down for those commands. when you are ready to delete the application run the following command. 
+There are other operations like retrieving container logs etc,that you can do on the application. scroll down for those commands. when you are ready to delete the application run the following command. 
 
 ```cli
 az sbz app delete --resource-group <resourceGroupName> 
@@ -128,7 +129,7 @@ In order to conserve the limited resources allocated to the preview program, it 
 
 ## See the application logs
 
-For this preview, we have not enabled the ablity for you to pump the logs, events and preformance counters to azure storage for later diagnositics. That funtionality will be enabled as we progress along towards public preview.
+For this preview, we have not enabled the ability for you to pump the logs, events and performance counters to azure storage for later diagnostics. That functionality will be enabled as we progress along towards public preview.
 
 For each codepackage (container) in your service instance, you can check its status as well as the logs coming from the containers in the service. 
 

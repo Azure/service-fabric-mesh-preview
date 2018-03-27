@@ -1,4 +1,4 @@
-# Scenario: An application with one microservice 
+# Scenario 1.1: An application with one microservice 
 
 _**No external communication or storage, simple compute**_
 
@@ -63,6 +63,3 @@ Deploy the following JSON to SeaBreeze RP. This is also available in a file at [
 
 ```
 
-<!-- Files -->
-
-[sbz_rp.json]:./conceptual-docs/application-model-scenario-examples/1.1/sbz_rp.json
