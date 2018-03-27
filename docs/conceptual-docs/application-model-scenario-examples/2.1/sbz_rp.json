@@ -1,0 +1,145 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "apiVersion": "2018-03-01-privatepreview",   
+      "name": "myfileshare",
+      "type": "Microsoft.ServiceFabric/volumes",
+      "location": "EastUS",
+      "dependsOn": [
+        "Microsoft.ServiceFabric/secretStores/myStore"
+      ],
+      "properties": {
+        "description": "File share backed by Azure Files storage.",
+        "provider": "SFAzureFile",
+        "azureFileParameters": {
+          "shareName": "helloworldshare",
+          "accountName": "testaccount",
+          "accountKey": "[reference(secret:myStore/azureFilesAccessKey)]"
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "myStore",
+      "type": "Microsoft.ServiceFabric/secretStores",
+      "location": "EastUS",
+      "dependsOn": [],
+      "properties": {
+        "secrets": [
+          {
+            "name": "imageRegistryPassword",
+            "kind": "inline",
+            "value": "myPassword"
+          },
+          {
+            "name": "azureFilesAccessKey",
+            "kind": "inline",
+            "value": "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6ty/K1SZFPTOtr/KBHBeksoGMGw=="
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "myNetwork",
+      "type": "Microsoft.ServiceFabric/networks",
+      "location": "EastUS",
+      "dependsOn": [],
+      "properties": {
+        "addressPrefix": "10.0.0.4/22",
+        "ingressConfig": {
+          "layer4": [
+            {
+              "publicPort": "80",
+              "applicationName": "myapp",
+              "serviceName": "myFrontendService",
+              "endpointName": "publicListener"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "myapp",
+      "type": "Microsoft.ServiceFabric/applications",
+      "location": "EastUS",
+      "dependsOn": [
+        "Microsoft.ServiceFabric/networks/myNetwork",
+        "Microsoft.ServiceFabric/secretStores/myStore",
+        "Microsoft.ServiceFabric/volumes/myfileshare"
+      ],
+      "properties": {
+        "description": "Hello world seabreeze!",
+        "services": [
+          {
+            "name": "myFrontendService",
+            "properties": {
+              "description": "Seabreeze frontend service.",
+              "osType": "linux",
+              "codePackages": [
+                {
+                  "name": "frontend",
+                  "image": "seabreeze/sbz-frontend:1.0-alpine",
+                  "endpoints": [
+                    {
+                      "name": "publicListener",
+                      "port": "80"
+                    }
+                  ],
+                  "environmentVariables": [
+                    {
+                      "name": "backendName",
+                      "value": "myBackendService"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "1",
+                      "memoryInGB": "1"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "5",
+              "networkRefs": [
+                "mynetwork"
+              ]
+            }
+          },
+          {
+            "name": "myBackendService",
+            "properties": {
+              "description": "Seabreeze backend service.",
+              "osType": "linux",
+              "codePackages": [
+                {
+                  "name": "backend",
+                  "image": "seabreeze/sbz-backend:1.0-alpine",
+                  "volumeRefs": [
+                    {
+                      "name": "myfileshare",
+                      "destinationPath": "/data"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "1",
+                      "memoryInGB": "1"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "networkRefs": [
+                "mynetwork"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
