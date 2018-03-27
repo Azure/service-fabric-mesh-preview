@@ -77,14 +77,14 @@ Each of these resources can be described by the developer using a YAML file. At 
 
 **Deployment**
  
-When running in Seabreeze, you will need to convert the YAML files to .JSON, using the tool provided so that you can submit it to ARM as an ARM template,refer to the [quickstart guide](application-quickstart.md) on how to. 
+When running in Seabreeze, you will need to convert the YAML files to .JSON, using the tool provided so that you can submit it to ARM as an ARM template,refer to the [quickstart guide](application-deployment-quickstart.md) on how to. 
 
 **Scope of private preview 2** : Not all the above resources can be defined in an application in private preview 2. The scenarios that are enabled, along with the sample resources are detailed in [Application Model Scenarios](application-model-scenarios.md)
 
 ## Scenarios enabled in private preview 2 
 
 - “Lift and Shift” existing applications into containers (modernize)
-- Build new microservice applications in containers (greenfield) 
+- Build new micro-service applications in containers (greenfield) 
 
 ### Kinds of applications you can create to enable the above.
 
@@ -113,7 +113,7 @@ These Scenarios along with the sample resources are detailed in [Application Mod
 - I can deploy services that use Linux or Windows (Hyper-V) containers. 
 - I can use service names specified in the application.yaml to communicate between my services.
 
-## Frequently asked quesitons and known Issues
+## Frequently asked questions and known Issues
 
 Here are the [frequently asked questions and known issues](./docs/conceptual-docs/FAQ-and-KnownIssues.md) with this private preview.
 
