@@ -6,7 +6,7 @@ SeaBreeze is fully managed serverless offering which enables developers to deplo
 
 To learn more about the platform,and the scope of the current private preview refer to the [Service Fabric SeaBreeze overview] (./docs/conceptual-docs/seabreeze-overview.md) doument.
 
-To get started with using the platform, see our [quickstart](./docs/conceptual-docs/application-quickstart.md).
+To get started with using the platform, see our [quickstart](./docs/conceptual-docs/application-deployment-quickstart.md).
 
 To learn about the SeaBreeze resource management APIs, see [API reference docs](https://github.com/Azure/seabreeze-preview-pr/blob/master/docs/reference-docs/seabreeze-index.md).
 
