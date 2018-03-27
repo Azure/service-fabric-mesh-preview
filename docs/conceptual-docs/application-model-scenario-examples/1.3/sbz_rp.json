@@ -3,12 +3,12 @@
   "contentVersion": "1.0.0.0",
   "resources": [
     {
+      "apiVersion": "2018-03-01-privatepreview",
       "name": "myStore",
       "type": "Microsoft.ServiceFabric/secretStores",
       "location": "SouthCentralUS",
       "dependsOn": [],
       "properties": {
-        "schemaVersion": "0.0.1",
         "secrets": [
           {
             "name": "imageRegistryPassword",
@@ -19,12 +19,12 @@
       }
     },
     {
+      "apiVersion": "2018-03-01-privatepreview",
       "name": "myNetwork",
       "type": "Microsoft.ServiceFabric/networks",
       "location": "SouthCentralUS",
       "dependsOn": [],
       "properties": {
-        "schemaVersion": "0.0.1",
         "addressPrefix": "10.0.0.4/22",
         "ingressConfig": {
           "layer4": [
@@ -39,6 +39,7 @@
       }
     },
     {
+      "apiVersion": "2018-03-01-privatepreview",
       "name": "myapp",
       "type": "Microsoft.ServiceFabric/applications",
       "location": "SouthCentralUS",
@@ -72,8 +73,8 @@
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "2",
-                      "memoryInGB": "2"
+                      "cpu": "1",
+                      "memoryInGB": "1"
                     }
                   }
                 },

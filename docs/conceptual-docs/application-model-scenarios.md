@@ -35,16 +35,14 @@ support YAML and a local one-box experience, this document for now will be focus
 
 ## 1. Create a micro-service composed of multiple code packages that can be scaled from 1 to N instances
 
-#### 1.1 An application with one micro-service,with no external communication and uses a private container image  
+#### An application with one micro-service,with no external communication and uses a private container image  
 
 In this scenario the application has a service whose code packages are packaged as container images and the containers can communicate with each other using localhost.
-
-For details refer to the [Readme](./application-model-scenario-examples/1.1/README.MD)
 
 The Sample JSON is available at [sbz_rp.json](./application-model-scenario-examples/1.1/sbz_rp.json)
 
 
-#### 1.3 An application with one microservice, that communicates via an external IP and uses a private container image  
+#### An application with one micro-service, that communicates via an external IP and uses a private container image  
 
 In this scenario the application has following characteristics 
 
@@ -54,11 +52,9 @@ In this scenario the application has following characteristics
 - One of the containers listens on an external end point on a specific port.(Create a load balanced TCP port and forward traffic to an endpoint of the microservice)
 - Container images are located in a secure repository that needs credentials
 
-For details refer to the [Readme](./application-model-scenario-examples/1.3/README.MD)
-
 The Sample JSON is available at [sbz_rp.json](./application-model-scenario-examples/1.3/sbz_rp.json)
 
-#### 2.1 An application with two microservices, once exposed publically. Services commincate to ech other using DNS. Also uses Azure files are a volume driver to store state.
+#### 2. An application with two micro-services, once exposed publically. Services communicate to each other using DNS. Also uses Azure files are a volume driver to store state.
 
 In this scenario the application has following characteristics 
 
@@ -68,8 +64,6 @@ In this scenario the application has following characteristics
 - Containers in each service can communicate with each other using localhost
 - Container images are in a secure registry and so need credentials
 - Uses the Azure File Share as a volume to store state.
-
-For details refer to the [Readme](./application-model-scenario-examples/2.1/README.MD)
 
 The Sample JSON is available at [sbz_rp.json](./application-model-scenario-examples/2.1/sbz_rp.json)
 

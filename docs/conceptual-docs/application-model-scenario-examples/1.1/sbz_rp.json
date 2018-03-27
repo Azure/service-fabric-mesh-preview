@@ -3,12 +3,12 @@
   "contentVersion": "1.0.0.0",
   "resources": [
     {
+      "apiVersion": "2018-03-01-privatepreview",
       "name": "helloWorldApp",
       "type": "Microsoft.ServiceFabric/applications",
       "location": "SouthCentralUS",
       "dependsOn": [],
       "properties": {
-        "schemaVersion": "0.0.1",
         "description": "Hello world seabreeze!",
         "services": [
           {
@@ -22,8 +22,8 @@
                   "image": "seabreeze/sbz-helloworld:1.0-alpine",
                   "resources": {
                     "requests": {
-                      "cpu": "2",
-                      "memoryInGB": "2"
+                      "cpu": "1",
+                      "memoryInGB": "1"
                     }
                   }
                 },

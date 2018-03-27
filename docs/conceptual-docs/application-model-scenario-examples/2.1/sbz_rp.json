@@ -3,14 +3,14 @@
   "contentVersion": "1.0.0.0",
   "resources": [
     {
+      "apiVersion": "2018-03-01-privatepreview",   
       "name": "myfileshare",
       "type": "Microsoft.ServiceFabric/volumes",
-      "location": "SouthCentralUS",
+      "location": "eastus",
       "dependsOn": [
         "Microsoft.ServiceFabric/secretStores/myStore"
       ],
       "properties": {
-        "schemaVersion": "0.0.1",
         "description": "File share backed by Azure Files storage.",
         "provider": "SFAzureFile",
         "azureFileParameters": {
@@ -21,12 +21,12 @@
       }
     },
     {
+      "apiVersion": "2018-03-01-privatepreview",
       "name": "myStore",
       "type": "Microsoft.ServiceFabric/secretStores",
-      "location": "SouthCentralUS",
+      "location": "eastus",
       "dependsOn": [],
       "properties": {
-        "schemaVersion": "0.0.1",
         "secrets": [
           {
             "name": "imageRegistryPassword",
@@ -42,17 +42,17 @@
       }
     },
     {
+      "apiVersion": "2018-03-01-privatepreview",
       "name": "myNetwork",
       "type": "Microsoft.ServiceFabric/networks",
-      "location": "SouthCentralUS",
+      "location": "eastus",
       "dependsOn": [],
       "properties": {
-        "schemaVersion": "0.0.1",
         "addressPrefix": "10.0.0.4/22",
         "ingressConfig": {
           "layer4": [
             {
-              "publicPort": "8080",
+              "publicPort": "80",
               "applicationName": "myapp",
               "serviceName": "myFrontendService",
               "endpointName": "publicListener"
@@ -62,16 +62,16 @@
       }
     },
     {
+      "apiVersion": "2018-03-01-privatepreview",
       "name": "myapp",
       "type": "Microsoft.ServiceFabric/applications",
-      "location": "SouthCentralUS",
+      "location": "eastus",
       "dependsOn": [
         "Microsoft.ServiceFabric/networks/myNetwork",
         "Microsoft.ServiceFabric/secretStores/myStore",
         "Microsoft.ServiceFabric/volumes/myfileshare"
       ],
       "properties": {
-        "schemaVersion": "0.0.1",
         "description": "Hello world seabreeze!",
         "services": [
           {
@@ -86,12 +86,7 @@
                   "endpoints": [
                     {
                       "name": "publicListener",
-                      "port": "8080"
-                    }
-                  ],
-                  "certificateRef": [
-                    {
-                      "name": "mycert"
+                      "port": "80"
                     }
                   ],
                   "environmentVariables": [
@@ -102,8 +97,8 @@
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "2",
-                      "memoryInGB": "2"
+                      "cpu": "1",
+                      "memoryInGB": "1"
                     }
                   }
                 }
@@ -125,14 +120,14 @@
                   "image": "seabreeze/sbz-backend:1.0-alpine",
                   "volumeRefs": [
                     {
-                      "name": "dataShare",
+                      "name": "myfileshare",
                       "destinationPath": "/data"
                     }
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "2",
-                      "memoryInGB": "2"
+                      "cpu": "1",
+                      "memoryInGB": "1"
                     }
                   }
                 }
