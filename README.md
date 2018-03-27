@@ -4,7 +4,7 @@ SeaBreeze is fully managed serverless offering which enables developers to deplo
 
 ![Seabreeze-01][Seabreeze-01]
 
-To learn more about the platform,and the scope of the current private preview refer to the [Service Fabric SeaBreeze overview] (./docs/conceptual-docs/seabreeze-overview.md) doument.
+To learn more about the platform,and the scope of the current private preview refer to the [Service Fabric SeaBreeze overview](./docs/conceptual-docs/seabreeze-overview.md) document.
 
 To get started with using the platform, see our [quickstart](./docs/conceptual-docs/application-deployment-quickstart.md).
 
@@ -16,7 +16,7 @@ We look forward to hearing your feedback about SeaBreeze. Please use this repo's
 
 As you are testing and providing feedback on this SeaBreeze Private Preview please be mindful of the following limitations:
 
-* The max core count per Container Group Set (CGS) - 6 (You can deploy 6 containers of 1 core each or 12 containers of 1/2 core each)
+* The max core count per application is limited to 6 (You can deploy 6 containers of 1 core each or 12 containers of 1/2 core each)
 * The max core count per container cannot exceed 2. 
 * The number of parallel applications you have running should be kept to around 5. You'll need to delete your application deployments when you are not actively working with it.
 
