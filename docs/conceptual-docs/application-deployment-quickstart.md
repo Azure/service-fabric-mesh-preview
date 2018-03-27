@@ -64,7 +64,7 @@ In order to deploy and manage an application, we will be using Azure CLI (minimu
 3. Create your application using the following command:
 
 	```cli
-	az sbz app create --location eastus --resource-group <resourceGroupName> --name <cgsName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json
+	az sbz app create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json
 
 	```
 In a few seconds, your command should return with "provisioningState": "Succeeded" . Given below is the output from the command when using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). 
