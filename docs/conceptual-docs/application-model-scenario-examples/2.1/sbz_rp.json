@@ -82,7 +82,7 @@
               "replicaCount": "5",
               "networkRefs": [
                 {
-                "name": "mynetwork"
+                  "name": "resourceId(“Microsoft.ServiceFabric/networks”, “myNetwork”)"
                 }
               ]
             }
@@ -113,8 +113,8 @@
               "replicaCount": "1",
               "networkRefs": [
                 {
-                  "name": "mynetwork"
-                  }
+                  "name": "resourceId(“Microsoft.ServiceFabric/networks”, “myNetwork”)"
+                }
               ]
             }
           }
