@@ -32,7 +32,7 @@ To read more about applications and SeaBreeze, head over to the [SeaBreeze Overv
 
 
 ## Set up the SeaBreeze CLI
-In order to deploy and manage an application, we will be using Azure CLI (minimum required version is 2.0.24). If you don't currently have Azure CLI set up or need to update it, see [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest). You can run this quickstart on [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
+In order to deploy and manage an application, we will be using Azure CLI (minimum required version is 2.0.30). If you don't currently have Azure CLI set up or need to update it, see [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest). You can run this quickstart on [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 
 1. Open a [CLI prompt](https://docs.microsoft.com/en-us/cli/azure/overview?view=azure-cli-latest) or Bash shell using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 2. Remove any previous install of the SeaBreeze CLI module.
