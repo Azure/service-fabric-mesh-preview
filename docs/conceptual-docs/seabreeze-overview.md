@@ -137,7 +137,7 @@ The following are some of the high level "I can" statements, we plan to enable a
 - I can remote into a container for debugging
 - I can see an application map of communications between services in portal
 - I can perform Snap-shot debugging on my  .netcore applications in the portal.
-- I am can use Service Fabric reliable collections programming  model for statefull services in C#, nodeJS and  Java.
+- I can use Service Fabric reliable collections programming  model for stateful services in C#, nodeJS and  Java.
 - I can use visual studio tooling to create/debug/deploy/delete/modify applications with ease.
 - I can leverage the SeaBreeze Market place for solutions very similar to what I can do with the Kubernetes.
 - I can use the SeaBreeze package creation tool to easily create the deployment package (and manifest) for my application.
@@ -145,15 +145,14 @@ The following are some of the high level "I can" statements, we plan to enable a
 - I can use the free tier in SeaBreeze to try out new applications.
 - I can deploy Application, Service and Container Group set as ARM resources
 - All infrastructure for SeaBreeze is invisible to me  and I am not worried about capacity planning
-- I can deploy my Tier1 apps to SeaBreeze, since the platform is already complaint with all the industry complaince standards that Azure supports
+- I can deploy my Tier1 apps to SeaBreeze, since the platform is already complaint with all the industry compliance standards that Azure supports
 - I can easy create new applications and manage them with confidence, thanks to the excellent samples, documentation that the SeaBreeze team has provided
 - I can perform Blue/Green deployments in SeaBreeze.  I can also choose to route a part of my production deployments to a Green deployment, before I decide to switch to it/ or not.
-- I can subscribe to automatic backup for by statefull containers, when using service fabric simplified programming models (reliable collections and actors)
+- I can subscribe to automatic backup for by stateful containers, when using service fabric simplified programming models (reliable collections and actors)
 - I can have my application more only deployed across azure zones, but also across geo-political regions to achieve an RPO and RTO = 0.
 
 
 ## Next steps
-
 
 
 1. Try deploying an application to Azure   using our [quickstart guide](application-deployment-quickstart.md).
