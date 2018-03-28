@@ -86,7 +86,7 @@ Once the application status is returned as ""provisioningState": "Succeeded", we
 The network resource for our quickstart application is SbzVotingNetwork, so let us fetch its details.
 
 ```cli
-az sbz network show --resource-group <resourceGroupName> --network-name SbzVotingNetwork
+az sbz network show --resource-group <resourceGroupName> --name SbzVotingNetwork
 ```
 The command should now return, with information like the screen shot below when running the command in [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 From the output, copy the IP address .
