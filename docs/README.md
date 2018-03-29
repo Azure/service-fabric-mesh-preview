@@ -9,9 +9,9 @@ The documentation is spread out in two folders
 
 **If you are new to the preview**, then start with the following documents.
 
-To learn more about the platform,and the scope of the current private preview refer to the [Service Fabric SeaBreeze overview](./docs/conceptual-docs/seabreeze-overview.md) document.
+To learn more about the platform,and the scope of the current private preview refer to the [Service Fabric SeaBreeze overview](./conceptual-docs/seabreeze-overview.md) document.
 
-To get started with using the platform, see our [quickstart](./docs/conceptual-docs/application-deployment-quickstart.md).
+To get started with using the platform, see our [quickstart](./conceptual-docs/application-deployment-quickstart.md).
 
 
 We look forward to hearing your feedback about SeaBreeze. Please use this repo's [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) to inform us of any bugs (code or documentation) you come across, or improvements you would like to request. 

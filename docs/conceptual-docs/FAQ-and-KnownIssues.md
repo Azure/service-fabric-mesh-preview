@@ -67,4 +67,7 @@ from azure.cli.core.util import get_file_json, shell_safe_json_parse, sdk_no_wai
 ImportError: cannot import name 'sdk_no_wait'.
 
 
+**When I scale out, I see that all my containers are affected, including my running ones**
+This is a bug, and we expect to fix this with the next runtime refresh, in a week or so.
+
 

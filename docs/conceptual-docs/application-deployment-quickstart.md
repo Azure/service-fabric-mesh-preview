@@ -61,10 +61,10 @@ In order to deploy and manage an application, we will be using Azure CLI (minimu
 	az group create --name <resourceGroupName> --location eastus 
 	```
 
-3. Create your application using the following command:
+3. Create your application using the following deployment command: 
 
 	```cli
-	az sbz app create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json
+	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json
 
 	```
 In a few seconds, your command should return with "provisioningState": "Succeeded" . Given below is the output from the command when using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). 
@@ -75,8 +75,10 @@ In a few seconds, your command should return with "provisioningState": "Succeede
 ## Check application deployment status
 At this point, your application has been deployed. You can check to see its status by using the `app show` command. This command is useful, if you wanted to followup on a application deployment.
 
+The application name for our quickstart application is SbzVoting, so let us fetch its details. 
+
 ```cli
-az sbz app show --resource-group <resourceGroupName> --name <applicationName>
+az sbz app show --resource-group <resourceGroupName> --name SbzVoting
 ```
 
 ## Go to the application
