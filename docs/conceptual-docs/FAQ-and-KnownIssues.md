@@ -14,7 +14,7 @@ ms.author: chackdan
 ms.editor: chackdan
 ---
 
-# Frequently asked questions and Known Issues.
+# Frequently Asked Questions and Known Issues.
 
 ### Quota and Cost
 
@@ -30,19 +30,35 @@ Yes, you are allocated restricted quota for use in the preview.
 -  The largest container you can deploy is limited to 2 cores, 8 GB RAM.
 -  you can allocate partial cores to your containers. 
 
-
 **Can I leave my application running overnight ?**
 
-yes, you can, however we expect you to delete the resources you deploy and not leave it running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
+Yes, you can, however we expect you to delete the resources you deploy and not leave it running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
+
 ### Constraints on the base Images
 Windows : tbd
 Linux : tbd
 
 ### Features Gaps and Known Issues
 
+**After deploying my application, the network resource associated with it does not seem to an IP address**
+
+There is a known issue today with the IP address coming up after a delay. Check the status of the network resource in a few minutes to see the associated IP address.
+
+**My application is failing to access the right network/volume resource**
+
+In your application model, you need to use the full resource id for networks and volumes to be able to access the associated resource. Here is what this looks like in the quickstart sample we provide:
+
+```json
+"networkRefs": [
+    {
+    "name":  "[resourceId('Microsoft.ServiceFabric/networks', 'SbzVotingNetwork')]" 
+    }
+]
+```
+
 **I do not see the current application model supporting a way to encrypt my secrets**
 
-yes,this is a gap in public preview 2. We are working on a secret store service to help with this.
+This is a gap in public preview 2. We are working on a secret store service to help with this.
 
 **I get this error when using the CLI module _ImportError: cannot import name 'sdk_no_wait'**
 
@@ -66,6 +82,11 @@ File "C:\Users\annayak.azure\cliextensions\azure-cli-sbz\azext_sbz\custom.py", l
 from azure.cli.core.util import get_file_json, shell_safe_json_parse, sdk_no_wait
 ImportError: cannot import name 'sdk_no_wait'.
 
+**I get a mismatch distribution name error when installing the CLI extension package**
+
+![warning message in cloud shell](./media/faq-and-knownissues/cli-package-warning.png)
+
+This does not mean that the extension did not install. You should still be able to use the CLI commands without a problem.
 
 **When I scale out, I see that all my containers are affected, including my running ones**
 This is a bug, and we expect to fix this with the next runtime refresh, in a week or so.
