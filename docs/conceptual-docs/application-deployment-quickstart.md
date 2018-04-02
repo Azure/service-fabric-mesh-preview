@@ -1,8 +1,8 @@
 ---
-title: Container group set quick start guide
-description: Quick start guide on deploying Container Group Set.
+title: SeaBreeze quick start guide
+description: Quick start guide on deploying application to SeaBreeze.
 services: Azure SeaBreeze
-author: chackdan;
+author: chackdan;vipulm
 manager: timlt
 
 ms.service: SeaBreeze
@@ -10,8 +10,8 @@ ms.topic: overview
 ms.assetid:
 ms.topic: article
 ms.date: 03/26/2018
-ms.author: chackdan
-ms.editor: chackdan
+ms.author: chackdan; vipul
+ms.editor: chackdan; vipulm
 ---
 
 # SeaBreeze Application
@@ -30,24 +30,11 @@ To read more about applications and SeaBreeze, head over to the [SeaBreeze Overv
 **Note:** In preview 2, you are restricted to a quota of 6 cores. 
 
 
-
 ## Set up the SeaBreeze CLI
-In order to deploy and manage an application, we will be using Azure CLI (minimum required version is 2.0.30). If you don't currently have Azure CLI set up or need to update it, see [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest). You can run this quickstart on [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 
-1. Open a [CLI prompt](https://docs.microsoft.com/en-us/cli/azure/overview?view=azure-cli-latest) or Bash shell using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
-2. Remove any previous install of the SeaBreeze CLI module.
+In order to deploy and manage an application, we will be using SeaBreeze CLI. Setup SeaBreeze CLI by following these [instructions](./cli-setup.md). 
 
-	```cli
-	az extension remove --name azure-cli-sbz 
-	```
-
-3. Install the SeaBreeze CLI module. For the preview, we are providing a .whl file with the CLI module, at public preview we would ship it as a part of the Azure CLI.
-
-	```cli
-	az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.4.0-py2.py3-none-any.whl
-	```
-
-## Create the application Resource
+## Create the resources
 
 1. Login to Azure and set your subscription to the one that has been white-listed for the preview.
 
@@ -64,7 +51,7 @@ In order to deploy and manage an application, we will be using Azure CLI (minimu
 3. Create your application using the following deployment command: 
 
 	```cli
-	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json
+	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.linux.json
 
 	```
 In a few seconds, your command should return with "provisioningState": "Succeeded" . Given below is the output from the command when using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). 
@@ -102,9 +89,9 @@ You can now add voting options to the application and vote on it, or delete the 
 
 ## Quick review of the quick start application details
 
-For a detailed review of this quick start application and its source code, go to the [Samples includes in the Repo](https://github.com/Azure/seabreeze-preview-pr/tree/master/samples) folder. 
+For a detailed review of this quick start application and its source code, go to the [quick start sample](..\..\samples\src\quickstart) folder. 
 
-Let us quickly review the [Application-quickstart.Json](https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json)
+Let us quickly review the [deployment JSON](https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.linux.json)
 
 This application has two Services : VotingWeb  and VotingData . They are marked by the red boxes in the picture below.
 
@@ -123,14 +110,14 @@ You can use the "app list" command to get a list of applications you have deploy
 az sbz app list -o table
 ```
 
-## Deleting the application
+## Delete the resources
 
-There are other operations like retrieving container logs etc,that you can do on the application. scroll down for those commands. when you are ready to delete the application run the following command. 
+There are other operations like retrieving container logs etc,that you can do on the application. scroll down for those commands. when you are ready to delete the application and related resources, delete the resource group containing them.
 
 ```cli
-az sbz app delete --resource-group <resourceGroupName> 
+az group delete --resource-group <resourceGroupName> 
 ```
-In order to conserve the limited resources allocated to the preview program, it is encouraged that you do not leave your application running overnight, unless you have a specific need to do so.
+In order to conserve the limited resources allocated to the preview program, it is encouraged that you do not leave your resources running overnight, unless you have a specific need to do so.
 
 ## See the application logs
 
@@ -141,10 +128,8 @@ For each codepackage (container) in your service instance, you can check its sta
 1. Check the logs for each container instance in a CGS. In this example, we are going to fetch the logs from the container VotingWeb.Code, which is in the first replica of the service VotingWeb
 	
 ```cli
-az sbz container logs --resource-group <myResourceGroup> --application-name SbzVoting --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
+az sbz codepackage logs --resource-group <myResourceGroup> --application-name SbzVoting --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
 ```
-
-
 
 
 <!-- Images -->

@@ -1,0 +1,26 @@
+## Service definition ##
+application:
+  schemaVersion: 0.0.1
+  name: NodeJsApp
+  services:
+    - name: MyService
+      description: Seabreeze frontend service.
+      osType: linux
+      codePackages:
+        - name: NodeService.Code
+          image: mfussell/sfbackend:v1
+          endpoints:
+            - name: Endpoint1
+              port: 8905
+          environmentVariables:
+            - name: BackendServiceName
+              value: Container.Application/BackEndService
+            - name: IsContainer
+              value: true
+            - name: HttpGatewayPort
+              value: 19080
+          resources:
+            requests:
+              cpu: 0.2
+              memoryInGB: 0.2
+      replicaCount: 1
