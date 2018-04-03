@@ -1,6 +1,6 @@
 ---
 title: Frequently asked Questions and Known Issues
-description: Quick start guide on deploying Container Group Set.
+description: FAQ on common issues.
 services: Azure SeaBreeze
 author: chackdan;
 manager: timlt
@@ -9,18 +9,18 @@ ms.service: SeaBreeze
 ms.topic: overview
 ms.assetid:
 ms.topic: article
-ms.date: 03/22/2018
+ms.date: 04/02/2018
 ms.author: chackdan
 ms.editor: chackdan
 ---
 
 # Frequently asked questions and Known Issues.
 
-### Quota and Cost
+## Quota and Cost
 
 **What is the cost of participating in the preview ?**
 
- There is no charges for deploying applications or containers to Seabreeze Preview. However we expect you to delete the resources you deploy and not leave it running, unless you are actively testing it.
+ There is no charges for deploying applications or containers to Seabreeze preview. However we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it.
 
 **Is there a quota limit of the # of Cores and RAM ?**
 
@@ -28,25 +28,29 @@ Yes, you are allocated restricted quota for use in the preview.
 
 -  You are allocated a total of 6 Cores and 24 GB RAM.
 -  The largest container you can deploy is limited to 2 cores, 8 GB RAM.
--  you can allocate partial cores to your containers. 
-
+-  You can allocate partial cores to your containers. 
 
 **Can I leave my application running overnight ?**
 
-yes, you can, however we expect you to delete the resources you deploy and not leave it running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
-### Constraints on the base Images
-Windows : tbd
-Linux : tbd
+Yes, you can, however we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
 
-### Features Gaps and Known Issues
+## Required container base images
+The following container bases images can be used when deploying services
+
+- Windows : TBD
+- Linux : TBD
+
+## Features Gaps and Known Issues
 
 **I do not see the current application model supporting a way to encrypt my secrets**
 
-yes,this is a gap in public preview 2. We are working on a secret store service to help with this.
+Yes, this is a gap in Private Preview 2. We are working on a secret store service to help with this and expect to have this in Preview 3. 
 
 **I get this error when using the CLI module _ImportError: cannot import name 'sdk_no_wait'**
 
-If you are using older CLI version than 2.0.30, you may get this error - cannot import name 'sdk_no_wait'
+If you are using older CLI version than 2.0.30, you may get this error -
+
+cannot import name 'sdk_no_wait'
 Traceback (most recent call last):
 File "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\knack\cli.py", line 193, in invoke cmd_result = self.invocation.execute(args)
 File "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\azure\cli\core\commands_init_.py", line 241, in execute self.commands_loader.load_arguments(command)
@@ -68,6 +72,7 @@ ImportError: cannot import name 'sdk_no_wait'.
 
 
 **When I scale out, I see that all my containers are affected, including my running ones**
-This is a bug, and we expect to fix this with the next runtime refresh, in a week or so.
+
+This is a bug, and we expect to fix this with the next runtime refresh.
 
 
