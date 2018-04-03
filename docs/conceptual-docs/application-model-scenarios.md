@@ -1,68 +1,71 @@
 ---
-title: Application model scenarios and use cases
-description: Some of the scenarios and use cases that you can leverage application model for
+title: SeaBreeze Application Model
+description: Overview and scenarios for the SeaBreeze Application Model
 services: Azure SeaBreeze
 author: chackdan;vipulm;bharathn
-manager: timlt
+manager: vipulm
 
 ms.service: SeaBreeze
 ms.topic: overview
 ms.assetid:
 ms.topic: article
 ms.date: 03/26/2018
-ms.author: chackdan
-ms.editor: chackdan
+ms.author: chackdan;vipulm;bharathn
+ms.editor: chackdan;vipulm;bharathn
 ---
+# SeaBreeze Application Model
 
-# SeaBreeze Application Model scenarios 
+## Overview
+Service Fabric Application Model v2 is a simple, unified way of running applications on SeaBreeze and on Service Fabric clusters. The model is optimized for server-less multi-tenant execution environment (aka. SeaBreeze), however supported natively in Service Fabric platform. The applications written using this model will be able to run in SeaBreeze as well as on one box development, standalone, and SFRP clusters.
 
-Service Fabric Applications is a simple, unified way of running applications on Service Fabric. Users simply write an application in any language or platform, describe how it should run in a simple YAML or JSON definition, and run it on any of the three product SKUS of Service Fabric (Seabreeze, on-premise cluster or Azure SF cluster).
+In summary, Service Fabric Application Model v2 is:
+- suitable for server-less, multi-tenant environment
+- a simplification of the current Service Fabric application model
+- a natural model for expressing any micro-services based applications (not just the ones that use Service Fabric's reliable service and reliable actor programming model)
 
-A Service Fabric application can be made up of different resource types such as:
+## Model
 
-- 	Applications and services
-- 	Secrets 
-- 	Networks
-- 	Volumes
+Service Fabric Application Model v2 is resource-based. 
 
-A resource describes how something should run. For example, a service resource describes the name of a container image, how many copies to run, environment variables, etc. A volume resource describes the volume provider, account information, etc. 
+At present, the following top-level resources are supported. 
 
-This document will walk you through some of the scenarios and use cases that you can leverage when setting up your applications and deploying them to SeaBreeze. Although the application model will 
-support YAML and a local one-box experience, this document for now will be focused on providing you sample JSON that you can use to deploy your application to SeaBreeze (onAzure). 
+- Application
+- Service
+- Network
+- Volume
 
-**Note:** In preview 2, your deployment scenarios are restricted to a quota allocated to you, refer to the [FAQ document](./docs/conceptual-docs/FAQ-and-KnownIssues.md) on Quota details.
+The future releases will add support for following additional top-level resources.
+- Secret
+- Service Mesh Router
 
+### Application
 
-### An application with a micro-service composed of multiple code packages that can be scaled from 1 to N instances
- 
+An application is a collection of constituent services that perform a certain function or functions. The lifecycle of each application instance can be managed independently. For example, one application can be upgraded independently from other application. 
 
-In this scenario the application has following characteristics 
+### Service
 
+A service performs a complete and standalone function. It can start and run independently of other services. 
 
-- A service whose code packages are packaged as container images.
-- Containers can communicate with each other using localhost
-- One of the containers listens on an external end point on a specific port.(Create a load balanced TCP port and forward traffic to an endpoint of the microservice)
-- Container images are located in a secure repository that needs credentials
+Service is composed of one or more code packages and configuration for those code packages.
 
-The Sample JSON is available at [sbz_rp.json](./application-model-scenario-examples/1.3/sbz_rp.json)
+A code package is a container image with the version tag and resources required for that container. 
 
-####  An application with two micro-services, once exposed publically. Services communicate to each other using DNS. Also uses Azure files are a volume driver to store state.
+Service is also a unit of deployment and activation. All container code packages of a service are part of the pod and share same namespace. They can communicate with each other using localhost. 
 
-In this scenario the application has following characteristics 
+Service can scale out by increasing its `replicaCount`. Scaling out would increase the number of running container instances for each code package.
 
+Services can attach themselves to one or more network resources. All containers in that service will be able to communicate with any other services or external endpoints that are part of that network.
 
-- Has two services, Frontend and Backend communicating via DNS
-- Two service whose code packages are packaged as container images.
-- Containers in each service can communicate with each other using localhost
-- Container images are in a secure registry and so need credentials
-- Uses the Azure File Share as a volume to store state.
+### Network
 
-The Sample JSON is available at [sbz_rp.json](./application-model-scenario-examples/2.1/sbz_rp.json)
+Use network resource to create private network and configure public connectivity for services within the application.
 
+More than one service from different applications can be part of the same network.
 
+### Volume
 
-<!-- Images -->
-[SeaBreeze-01]: ./media/overview/SeaBreeze.PNG
-[Milestones]: ./media/overview/Milestones.PNG
+Use volume resource to define properties for a volume that needs to be mounted inside the container of a service.
 
+## Scenarios
 
+Following is the list of common scenarios supported by Service Fabric Application Model v2. 
