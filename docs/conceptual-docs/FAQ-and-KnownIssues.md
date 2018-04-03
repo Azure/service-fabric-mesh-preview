@@ -18,27 +18,27 @@ ms.editor: chackdan
 
 ## Quota and Cost
 
-**What is the cost of participating in the preview ?**
+**What is the cost of participating in the preview?**
 
- There is no charges for deploying applications or containers to Seabreeze preview. However we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it.
+ There are no charges for deploying applications or containers to Seabreeze preview. However we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it.
 
-**Is there a quota limit of the # of Cores and RAM ?**
+**Is there a quota limit of the # of Cores and RAM?**
 
 Yes, you are allocated restricted quota for use in the preview.
 
--  You are allocated a total of 6 Cores and 24 GB RAM.
--  The largest container you can deploy is limited to 2 cores, 8 GB RAM.
+-  You are allocated a total of 6 Cores and 24-GB RAM.
+-  The largest container you can deploy is limited to 2 cores, 8-GB RAM.
 -  You can allocate partial cores to your containers. 
 
-**Can I leave my application running overnight ?**
+**Can I leave my application running overnight?**
 
 Yes, you can, however we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
 
 ## Required container base images
 The following container bases images can be used when deploying services
 
-- Windows : TBD
-- Linux : TBD
+- Windows: TBD
+- Linux: TBD
 
 ## Features Gaps and Known Issues
 
