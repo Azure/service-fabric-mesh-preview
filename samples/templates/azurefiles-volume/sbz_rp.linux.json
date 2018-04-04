@@ -1,19 +1,46 @@
 {
   "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus",
+      "metadata": {
+        "description": "Location of the resources."
+      }
+    },
+    "azurefile-shareName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the Azure Files file share that provides the volume for the container."
+      }
+    },
+    "azurefile-accountName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the Azure storage account that contains the file share."
+      }
+    },
+    "azurefile-accountKey": {
+      "type": "string",
+      "metadata": {
+        "description": "Access key for the Azure storage account that contains the file share."
+      }
+    }
+  },
   "resources": [
     {
       "apiVersion": "2018-03-01-privatepreview",
       "name": "mysharel",
       "type": "Microsoft.ServiceFabric/volumes",
-      "location": "",
+      "location": "[parameters('location')]",
       "properties": {
         "description": "File share backed by Azure Files storage.",
         "provider": "SFAzureFile",
         "azureFileParameters": {
-          "shareName": "",
-          "accountName": "",
-          "accountKey": ""
+          "shareName": "[parameters('azurefile-shareName')]",
+          "accountName": "[parameters('azurefile-accountName')]",
+          "accountKey": "[parameters('azurefile-accountKey')]"
         }
       }
     },
@@ -21,7 +48,7 @@
       "apiVersion": "2018-03-01-privatepreview",
       "name": "myappl",
       "type": "Microsoft.ServiceFabric/applications",
-      "location": "",
+      "location": "[parameters('location')]",
       "dependsOn": [
         "Microsoft.ServiceFabric/volumes/mysharel"
       ],
@@ -34,7 +61,7 @@
               "codePackages": [
                 {
                   "name": "volumetest",
-                  "image": "",
+                  "image": "seabreeze/volumetest:linux-v1",
                   "volumeRefs": [
                     {
                       "name": "[resourceId('Microsoft.ServiceFabric/volumes', 'mysharel')]",

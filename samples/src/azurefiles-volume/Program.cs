@@ -14,6 +14,7 @@ namespace AzureFilesVolumeTestApp
     {
         private const string DataFileName = "data.txt";
         private const string DataFolderName = "Data";
+        private const int PauseBetweenUpdatesMillisec = 30000;
 
         static void Main(string[] args)
         {
@@ -21,15 +22,13 @@ namespace AzureFilesVolumeTestApp
             var volumeTestFolderFullPath = Path.GetDirectoryName(codeFolderFullPath);
             var dataFileFullPath = Path.Combine(volumeTestFolderFullPath, DataFolderName, DataFileName);
 
-            var sequenceNumber = 0;
-            if (File.Exists(dataFileFullPath))
+            var sequenceNumber = File.Exists(dataFileFullPath) ? Int32.Parse(File.ReadAllText(dataFileFullPath)) : 0;
+            for(;;)
             {
-                sequenceNumber = Int32.Parse(File.ReadAllText(dataFileFullPath));
                 sequenceNumber++;
+                File.WriteAllText(dataFileFullPath, sequenceNumber.ToString());
+                Thread.Sleep(PauseBetweenUpdatesMillisec);
             }
-            File.WriteAllText(dataFileFullPath, sequenceNumber.ToString());
-
-            Thread.Sleep(Timeout.Infinite);
         }
     }
 }
