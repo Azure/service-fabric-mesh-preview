@@ -6,7 +6,9 @@ The service has two code packages that are part of the same namespace and can co
 
 ## Example JSON
 
-[https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.json](https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.json)
+Linux: [https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.json](https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.json)
+
+Windows: [https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp-windows.json](https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp-windows.json)
 
 ## Deployment Steps
 
@@ -44,7 +46,9 @@ In a minute or so, your command should return with `"provisioningState": "Succee
 
 Once the application status is returned as `"provisioningState": "Succeeded"`, get the public IP address for the service endpoint, and open it on a browser.
 
-The network resource name for this example is `helloWorldNetwork`, fetch information about it using the following command.
+The network resource name for this example is `helloWorldNetwork`, fetch information about it using the following command. 
+
+The network resource name for Windows example is `helloWorldNetworkWindows`.
 
 ```cli
 az sbz network show --resource-group <resourceGroupName> --name helloWorldNetwork

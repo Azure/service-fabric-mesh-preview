@@ -13,7 +13,7 @@
   "resources": [
     {
       "apiVersion": "2018-03-01-privatepreview",
-      "name": "helloWorldNetwork",
+      "name": "helloWorldNetworkWindows",
       "type": "Microsoft.ServiceFabric/networks",
       "location": "[parameters('location')]",
       "dependsOn": [],
@@ -24,7 +24,7 @@
           "layer4": [
             {
               "publicPort": "80",
-              "applicationName": "helloWorldApp",
+              "applicationName": "helloWorldAppWindows",
               "serviceName": "helloWorldService",
               "endpointName": "helloWorldListener"
             }
@@ -34,11 +34,11 @@
     },
     {
       "apiVersion": "2018-03-01-privatepreview",
-      "name": "helloWorldApp",
+      "name": "helloWorldAppWindows",
       "type": "Microsoft.ServiceFabric/applications",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "Microsoft.ServiceFabric/networks/helloWorldNetwork"
+        "Microsoft.ServiceFabric/networks/helloWorldNetworkWindows"
       ],
       "properties": {
         "description": "SeaBreeze HelloWorld Application!",
@@ -49,11 +49,11 @@
             "name": "helloWorldService",
             "properties": {
               "description": "SeaBreeze Hello World Service.",
-              "osType": "linux",
+              "osType": "windows",
               "codePackages": [
                 {
                   "name": "helloWorldCode",
-                  "image": "seabreeze/sbz-helloworld:1.0-alpine",
+                  "image": "seabreeze/sbz-helloworld:1.0-windowsservercore-1709",
                   "endpoints": [
                     {
                       "name": "helloWorldListener",
@@ -66,22 +66,12 @@
                       "memoryInGB": "1"
                     }
                   }
-                },
-                {
-                  "name": "helloWorldSideCar",
-                  "image": "seabreeze/sbz-helloworld-sidecar:1.0-alpine",
-                  "resources": {
-                    "requests": {
-                      "cpu": "1",
-                      "memoryInGB": "1"
-                    }
-                  }
                 }
               ],
               "replicaCount": "1",
               "networkRefs": [
                 {
-                  "name": "[resourceId('Microsoft.ServiceFabric/networks', 'helloWorldNetwork')]"
+                  "name": "[resourceId('Microsoft.ServiceFabric/networks', 'helloWorldNetworkWindows')]"
                 }
               ]
             }
