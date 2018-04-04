@@ -1,0 +1,59 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "mysharew",
+      "type": "Microsoft.ServiceFabric/volumes",
+      "location": "",
+      "properties": {
+        "description": "File share backed by Azure Files storage.",
+        "provider": "SFAzureFile",
+        "azureFileParameters": {
+          "shareName": "",
+          "accountName": "",
+          "accountKey": ""
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "myappw",
+      "type": "Microsoft.ServiceFabric/applications",
+      "location": "",
+      "dependsOn": [
+        "Microsoft.ServiceFabric/volumes/mysharew"
+      ],
+      "properties": {
+        "services": [
+          {
+            "name": "myservice",
+            "properties": {
+              "osType": "Windows",
+              "codePackages": [
+                {
+                  "name": "volumetest",
+                  "image": "",
+                  "volumeRefs": [
+                    {
+                      "name": "[resourceId('Microsoft.ServiceFabric/volumes', 'mysharew')]",
+                      "destinationPath": "c:\\VolumeTest\\Data"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "1",
+                      "memoryInGB": "1.5"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

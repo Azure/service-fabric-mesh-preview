@@ -10,8 +10,12 @@ The application can be built by running the _build.Windows.cmd_ script on Window
 ### Step 2: Create the Azure Files file share
 Follow the instructions in the [Azure Files documentation](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share) to create a file share for the application to use.
 
-### Step 3: Update the application resource description
-Update _VolumeTestApp.Windows.json_ or _VolumeTestApp.Linux.json_ (depending on the OS - Windows or Linux) with the following information:
+### Step 3: Update the resource description
+Update _AppWithVolume.Windows.json_ or _AppWithVolume.Linux.json_ (depending on the OS - Windows or Linux) with the following information:
+
+- **Location:** update the _location_ fields for **both** the volume and the application to indicate where they should be created. e.g. EastUS
+
+        "location": "",
 
 - **Container image information:** update the following fields
 
@@ -19,14 +23,14 @@ Update _VolumeTestApp.Windows.json_ or _VolumeTestApp.Linux.json_ (depending on 
 
 - **Azure Files file share information:** update the following fields
 
-        "azureFile": {
+        "azureFileParameters": {
           "shareName": "",
-          "storageAccountName": "",
-          "storageAccountKey": ""
+          "accountName": "",
+          "accountKey": ""
         }
 
-### Step 4: Deploy the Container Group Set (CGS) that contains the application
-Follow the instructions on the [CGS quickstart page](./../../docs/conceptual-docs/container-group-set-quickstart.md) to deploy the CGS. Use _VolumeTestApp.Windows.json_ for deploying the Windows container and _VolumeTestApp.Linux.json_ for Linux.
+### Step 4: Deploy the application
+Follow the instructions on the [quickstart page](./../../docs/conceptual-docs/application-deployment-quickstart.md) to deploy the application. Use _AppWithVolume.Windows.json_ for deploying the Windows container and _AppWithVolume.Linux.json_ for Linux.
 
 ### Step 5: Verify that the application is able to use the volume
 The presence of the file _data.txt_ in the file share created in Step 1 above indicates that the application was able to use the volume.
