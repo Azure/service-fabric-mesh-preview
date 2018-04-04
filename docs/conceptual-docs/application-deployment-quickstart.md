@@ -34,7 +34,7 @@ To read more about applications and SeaBreeze, head over to the [SeaBreeze Overv
 
 In order to deploy and manage an application, we will be using SeaBreeze CLI. Setup SeaBreeze CLI by following these [instructions](./cli-setup.md). 
 
-## Create the application Resource
+## Create the resources
 
 1. Login to Azure and set your subscription to the one that has been white-listed for the preview.
 
@@ -51,7 +51,7 @@ In order to deploy and manage an application, we will be using SeaBreeze CLI. Se
 3. Create your application using the following deployment command: 
 
 	```cli
-	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json
+	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.json
 
 	```
 In a few seconds, your command should return with "provisioningState": "Succeeded" . Given below is the output from the command when using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). 
@@ -91,7 +91,7 @@ You can now add voting options to the application and vote on it, or delete the 
 
 For a detailed review of this quick start application and its source code, go to the [Samples includes in the Repo](https://github.com/Azure/seabreeze-preview-pr/tree/master/samples) folder. 
 
-Let us quickly review the [Application-quickstart.Json](https://seabreezequickstart.blob.core.windows.net/quickstart/application-quickstart.json)
+Let us quickly review the [deployment JSON](https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.json)
 
 This application has two Services : VotingWeb  and VotingData . They are marked by the red boxes in the picture below.
 
@@ -110,14 +110,14 @@ You can use the "app list" command to get a list of applications you have deploy
 az sbz app list -o table
 ```
 
-## Deleting the application
+## Delete the resources
 
-There are other operations like retrieving container logs etc,that you can do on the application. scroll down for those commands. when you are ready to delete the application run the following command. 
+There are other operations like retrieving container logs etc,that you can do on the application. scroll down for those commands. when you are ready to delete the application and related resources, delete the resource group containing them.
 
 ```cli
-az sbz app delete --resource-group <resourceGroupName> 
+az group delete --resource-group <resourceGroupName> 
 ```
-In order to conserve the limited resources allocated to the preview program, it is encouraged that you do not leave your application running overnight, unless you have a specific need to do so.
+In order to conserve the limited resources allocated to the preview program, it is encouraged that you do not leave your resources running overnight, unless you have a specific need to do so.
 
 ## See the application logs
 

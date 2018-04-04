@@ -1,6 +1,8 @@
 # Example: Hello World SeaBreeze
 
-This example shows how to deploy an application with one microservice and communicate with it using a public load balanced endpoint.
+This example shows how to deploy an application with one service and communicate with it using a public load balanced endpoint. 
+
+The service has two code packages that are part of the same namespace and can communicate with each other using `localhost`.
 
 ## Example JSON
 
@@ -38,7 +40,7 @@ Create the application and related resources using the following command.
 
 In a minute or so, your command should return with `"provisioningState": "Succeeded"`. Once it does, get the public IP address by querying for the network resources created in this deployment.
 
-### Deploy the template
+### Obtain public IP address and connect to it
 
 Once the application status is returned as `"provisioningState": "Succeeded"`, get the public IP address for the service endpoint, and open it on a browser.
 
@@ -49,3 +51,13 @@ az sbz network show --resource-group <resourceGroupName> --name helloWorldNetwor
 ```
 
 Get the `publicIpAddress` property and connect to it using a browser. It should display a web page with a welcome message.
+
+## Delete the resources
+
+To conserve the limited resources assigned for the preview program, delete the resources frequently. To delete resources related to this example, delete the resource group in which they were deployed.
+
+```cli
+az group delete --resource-group <resourceGroupName> 
+```
+
+
