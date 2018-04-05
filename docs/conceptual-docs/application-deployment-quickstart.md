@@ -14,20 +14,19 @@ ms.author: chackdan; vipul
 ms.editor: chackdan; vipulm
 ---
 
-# SeaBreeze Application
+# Deploy a quickstart application
 
 In this introduction to Sea Breeze we will walk you through;
-•	Deploying a sample quickstart application called “SbzVoting” which is a web voting application
-•	Check its status as it is deploying and once it is deployed
-•	Try out the application
-•	Review the applications JSON file to see its layout
-•	See logs from the containers deployed in your application
-•	Delete the application to free up resources.
+
+ * Deploying a sample quickstart application called “SbzVoting” which is a web voting application. The application consists of two services, a web front-end and a storage back-end.
+* Check its status once it is deployed
+* Try out the application
+* Review the application JSON file to see its layout
+*	View the container logs for the services deployed in your application
+*	Delete the application to free up resources.
  
 
-To read more about applications and SeaBreeze, head over to the [SeaBreeze Overview](./seabreeze-overview.md)
-
-**Note:** In preview 2, you are restricted to a quota of 6 cores. 
+> In preview 2, you are restricted to a quota of 6 cores. 
 
 
 ## Set up the SeaBreeze CLI
