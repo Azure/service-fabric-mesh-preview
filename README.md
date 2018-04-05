@@ -66,7 +66,7 @@ Here is how you can get started:
 
 2. Read about the [Application Model](./docs/conceptual-docs/appmodel-overview.md) and learn about how to achieve particular scenarios and deploy examples on SeaBreeze. 
 
-3. Browse through SeaBreeze [documentation](./docs/README.md).
+3. Browse through SeaBreeze [documentation](./docs).
 
 ## Frequently asked questions and known Issues
 [Frequently asked questions and known issues](./docs/conceptual-docs/FAQ-and-KnownIssues.md) with this private preview.

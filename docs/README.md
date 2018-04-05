@@ -2,11 +2,11 @@
 
 SeaBreeze documentation is organized in the following two broad categories.
 
-  **1. Conceptual docs**
+  [**1. Conceptual docs**](./conceptual-docs)
 
   The conceptual documentation provides an overview of the SeaBreeze project and the scope of the preview program. If you are new to the platform, conceptual documentation is a great place to start. It includes quick starts and samples for you to get started with using the platform. 
 
-  **2. Reference docs**
+  [**2. Reference docs**](./reference-docs)
 
   The reference documentation provides detailed documentation for the REST APIs and the CLI.
 
