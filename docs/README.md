@@ -1,24 +1,15 @@
-# Document Folder contents
+# Documents 
 
-The documentation is spread out in two folders
+SeaBreeze documentation is organized in the following two broad categories.
 
+  [**1. Conceptual docs**](./conceptual-docs)
 
+  The conceptual documentation provides an overview of the SeaBreeze project and the scope of the preview program. If you are new to the platform, conceptual documentation is a great place to start. It includes quick starts and samples for you to get started with using the platform. 
 
-1. Conceptual documetation - this has overview, preview scope, quickstarts, samples etc.
-2. Reference Documentation - this has API documentation. 
+  [**2. Reference docs**](./reference-docs)
 
-**If you are new to the preview**, then start with the following documents.
+  The reference documentation provides detailed documentation for the REST APIs and the CLI.
 
-To learn more about the platform,and the scope of the current private preview refer to the [Service Fabric SeaBreeze overview](./conceptual-docs/seabreeze-overview.md) document.
+---
 
-To get started with using the platform, see our [quickstart](./conceptual-docs/application-deployment-quickstart.md).
-
-
-We look forward to hearing your feedback about SeaBreeze. Please use this repo's [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) to inform us of any bugs (code or documentation) you come across, or improvements you would like to request. 
-
-
-
-
-
-
-
+SeaBreeze team is looking forward to your feedback. [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) is the place to go to for filing any bugs (code or documentation) you come across, or improvements you would like to request.

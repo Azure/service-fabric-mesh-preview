@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Service Fabric \"SeaBreeze\" Voting Sample";
+}
+
+<div ng-controller="VotingAppController" ng-init="refresh()">
+    <div class="container">
+        <div class="row top-buffer" style="background-color: #e8e8e8; padding: 10px">
+            <div class="col-12">
+                <h2 class="text-center" style="color: #DD5900">
+                    <img src="~/images/favicon.png" style="margin-bottom: 8px" />
+                    Service Fabric "SeaBreeze"
+                    Voting Sample
+                </h2>
+            </div>
+        </div>
+
+        <div class="row" style="background-color: #e8e8e8; padding: 10px">
+            <div class="col-8 offset-4">
+                <form class="form-inline" ng-submit="add(item)">
+                    <div class="form-group">
+                        <input id="txtAdd" type="text" class="form-control w-100" placeholder="Add voting option" ng-model="item">
+                    </div>
+                    <div class="form-group p-1">
+                        <button id="btnAdd" type="button" class="btn btn-outline-dark btn-block" ng-click="add(item)">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row border">
+            <div class="col-12 bottom-buffer">
+                <div class="row top-buffer" ng-repeat="(key, value) in votes">
+                    <div class="col-4 offset-3">
+                        <button class="btn btn-outline-dark btn-block" ng-click="add(key)">
+                            {{key}} - {{value}}
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-dark btn-block" ng-click="remove(key)">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer border col-10">
+            <div class="row">
+                <div class="col-4 offset-1">
+                    <span id="statusText" />
+                </div>
+                <div class="col-5 offset-2">
+                    Get the code here:<br />
+                    <a href="https://github.com/Azure/seabreeze-preview-pr">https://github.com/Azure/seabreeze-preview-pr</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
