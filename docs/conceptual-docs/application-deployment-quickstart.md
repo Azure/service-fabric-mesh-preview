@@ -1,19 +1,3 @@
----
-title: SeaBreeze quick start guide
-description: Quick start guide on deploying application to SeaBreeze.
-services: Azure SeaBreeze
-author: chackdan;vipulm
-manager: timlt
-
-ms.service: SeaBreeze
-ms.topic: overview
-ms.assetid:
-ms.topic: article
-ms.date: 03/26/2018
-ms.author: chackdan; vipul
-ms.editor: chackdan; vipulm
----
-
 # Deploy a quickstart application
 
 In this introduction to Sea Breeze we will walk you through;

@@ -1,18 +1,3 @@
----
-title: SeaBreeze Application Model
-description: Overview and scenarios for the SeaBreeze Application Model
-services: Azure SeaBreeze
-author: chackdan;vipulm;bharathn
-manager: vipulm
-
-ms.service: SeaBreeze
-ms.topic: overview
-ms.assetid:
-ms.topic: article
-ms.date: 03/26/2018
-ms.author: chackdan;vipulm;bharathn
-ms.editor: chackdan;vipulm;bharathn;vturecek
----
 # Service Fabric Applications
 
 ## Overview

@@ -44,7 +44,7 @@ Create the application and related resources using the following command and pro
 
 
 	```cli
-	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/private-registry/sbz_rp.json
+	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/private-registry/sbz_rp.linux.json
   
 	```
 
