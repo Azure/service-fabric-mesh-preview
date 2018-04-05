@@ -1,19 +1,3 @@
----
-title: Frequently asked Questions and Known Issues
-description: FAQ on common issues.
-services: Azure SeaBreeze
-author: chackdan;
-manager: timlt
-
-ms.service: SeaBreeze
-ms.topic: overview
-ms.assetid:
-ms.topic: article
-ms.date: 04/02/2018
-ms.author: chackdan
-ms.editor: chackdan
----
-
 # Frequently asked questions and Known Issues.
 
 ## Quota and Cost

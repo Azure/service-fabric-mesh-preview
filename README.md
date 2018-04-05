@@ -1,20 +1,3 @@
----
-title: Azure Service Fabric SeaBreeze overview and scope of the current preview.
-description: Understand is SeaBreeze and what you can do with the current preview
-services: Azure SeaBreeze
-author: chackdan
-manager: timlt
-
-ms.service: SeaBreeze
-ms.topic: Overview
-ms.assetid:
-ms.topic: article
-ms.date: 04/2/2018
-ms.author: chackdan
-ms.editor: chackdan
-
-
----
 # Service Fabric "SeaBreeze"
 
 SeaBreeze is fully managed service where developers to build and deploy mission critical applications without managing any infrastructure such as VMs, storage, or networking. SeaBreeze is a serverless environment for applications built from microservices. 

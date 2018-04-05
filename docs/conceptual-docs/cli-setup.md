@@ -1,19 +1,3 @@
----
-title: SeaBreeze CLI setup
-description: Guide on setting up the SeaBreeze CLI
-services: Azure SeaBreeze
-author: linggeng;chackdan
-manager: vipulm
-
-ms.service: SeaBreeze
-ms.topic: overview
-ms.assetid:
-ms.topic: article
-ms.date: 03/26/2018
-ms.author: linggeng;chackdan
-ms.editor: linggeng;chackdan
----
-
 # SeaBreeze CLI Setup
 
 SeaBreeze CLI requires Azure CLI version 2.0.30 and above. If you don't currently have Azure CLI set up or need to update it, see [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
