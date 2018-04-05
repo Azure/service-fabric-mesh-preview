@@ -1,16 +1,16 @@
-sbz
+### sbz
 
    Summary:
       (PREVIEW) Manage Azure SeaBreeze Resources.
 
    Description:
-sbz app
+### sbz app
 
    Summary:
       Manage SeaBreeze applications.
 
    Description:
-sbz app delete
+### sbz app delete
 
    Summary:
       Delete a SeaBreeze application.
@@ -96,7 +96,7 @@ sbz app delete
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz app list
+### sbz app list
 
    Summary:
       List SeaBreeze applications.
@@ -164,7 +164,7 @@ sbz app list
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz app show
+### sbz app show
 
    Summary:
       Get the details of a SeaBreeze application.
@@ -241,13 +241,13 @@ sbz app show
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz codepackage
+### sbz codepackage
 
    Summary:
       Manage SeaBreeze service replica code packages.
 
    Description:
-sbz codepackage logs
+### sbz codepackage logs
 
    Summary:
       Examine the logs for a codepackage.
@@ -361,13 +361,13 @@ sbz codepackage logs
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz deployment
+### sbz deployment
 
    Summary:
       Manage SeaBreeze deployments.
 
    Description:
-sbz deployment create
+### sbz deployment create
 
    Summary:
       Create a SeaBreeze application.
@@ -497,13 +497,13 @@ sbz deployment create
       az sbz deployment create --resource-group mygroup --template-
       file ./appTemplate.json
 
-sbz network
+### sbz network
 
    Summary:
       Manage networks.
 
    Description:
-sbz network delete
+### sbz network delete
 
    Summary:
       Delete a network.
@@ -589,7 +589,7 @@ sbz network delete
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz network list
+### sbz network list
 
    Summary:
       List networks.
@@ -657,7 +657,7 @@ sbz network list
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz network show
+### sbz network show
 
    Summary:
       Get the details of a network.
@@ -734,13 +734,13 @@ sbz network show
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz service
+### sbz service
 
    Summary:
       Manage SeaBreeze services.
 
    Description:
-sbz service list
+### sbz service list
 
    Summary:
       Gets services of a given application.
@@ -821,7 +821,7 @@ sbz service list
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz service show
+### sbz service show
 
    Summary:
       Get the details of a service.
@@ -907,13 +907,13 @@ sbz service show
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz servicereplica
+### sbz servicereplica
 
    Summary:
       Manage SeaBreeze service replicas.
 
    Description:
-sbz servicereplica list
+### sbz servicereplica list
 
    Summary:
       List the details of service replicas.
@@ -999,7 +999,7 @@ sbz servicereplica list
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz servicereplica show
+### sbz servicereplica show
 
    Summary:
       Gets a specific replica of a given service.
@@ -1098,13 +1098,13 @@ sbz servicereplica show
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz volume
+### sbz volume
 
    Summary:
       Manage volumes.
 
    Description:
-sbz volume create
+### sbz volume create
 
    Summary:
       Create a volume.
@@ -1222,7 +1222,7 @@ sbz volume create
       --resource-group mygroup --template-file
       ./volumeDescription.json
 
-sbz volume delete
+### sbz volume delete
 
    Summary:
       Delete a volume.
@@ -1308,7 +1308,7 @@ sbz volume delete
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz volume list
+### sbz volume list
 
    Summary:
       List volumes.
@@ -1376,7 +1376,7 @@ sbz volume list
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-sbz volume show
+### sbz volume show
 
    Summary:
       Get the details of a volume.

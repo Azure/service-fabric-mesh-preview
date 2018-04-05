@@ -1,1 +1,1 @@
-[**CLI command references**](./index.txt)
+[**CLI command references**](./index.md)
