@@ -9,9 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceFabricSBZVotingData"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sbz", "Sbz", "{301E7124-23C6-4C32-862C-E310B0AC4116}"
 	ProjectSection(SolutionItems) = preProject
-		Sbz\DeleteApplication.ps1 = Sbz\DeleteApplication.ps1
-		Sbz\DeployApplication.ps1 = Sbz\DeployApplication.ps1
+		Sbz\BuildApplication.ps1 = Sbz\BuildApplication.ps1
+		Sbz\DeleteApplicationAzure.ps1 = Sbz\DeleteApplicationAzure.ps1
+		Sbz\DeleteApplicationLocal.ps1 = Sbz\DeleteApplicationLocal.ps1
+		Sbz\DeployApplicationAzure.ps1 = Sbz\DeployApplicationAzure.ps1
+		Sbz\DeployApplicationLocal.ps1 = Sbz\DeployApplicationLocal.ps1
 		Sbz\SbzVoting.json = Sbz\SbzVoting.json
+		Sbz\SbzVotingARM.json = Sbz\SbzVotingARM.json
 		Sbz\VotingApp.yaml = Sbz\VotingApp.yaml
 		Sbz\VotingData.yaml = Sbz\VotingData.yaml
 		Sbz\VotingWeb.yaml = Sbz\VotingWeb.yaml
