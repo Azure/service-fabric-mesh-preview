@@ -1,1 +1,1 @@
-Coming soon!
+[**CLI command references**](./index.txt)
