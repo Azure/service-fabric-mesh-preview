@@ -22,19 +22,19 @@ In order to deploy and manage an application, we will be using SeaBreeze CLI. Se
 1. Login to Azure and set your subscription to the one that has been white-listed for the preview.
 
 ```cli
-	az login
-	az account set --subscription "<subscriptionName>"
+az login
+az account set --subscription "<subscriptionName>"
 ```
 2. Create a resource group (RG) to deploy the application to. Alternatively, you can use an existing RG and skip this step. The preview is available only in eastus.
 
 ```cli
-	az group create --name <resourceGroupName> --location eastus 
+az group create --name <resourceGroupName> --location eastus 
 ```
 
 3. Create your application using the following deployment command: 
 
 ```cli
-	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.linux.json
+az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.linux.json
 
 ```
 In a few seconds, your command should return with "provisioningState": "Succeeded" . Given below is the output from the command when using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). 

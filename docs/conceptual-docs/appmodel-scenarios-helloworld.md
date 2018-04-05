@@ -20,15 +20,15 @@ SeaBreeze CLI is used to deploy and manage the resources in SeaBreeze. Set it up
 Log in to Azure and set your subscription to the one that has been white-listed for the preview.
 
 ```cli
-	az login
-	az account set --subscription "<subscriptionName>"
+az login
+az account set --subscription "<subscriptionName>"
 ```
 
 ### Create resource group
 Create a resource group (RG) to deploy this example or you can use an existing resource group and skip this step. The preview is available only in `eastus` location.
 
 ```cli
-	az group create --name <resourceGroupName> --location eastus 
+az group create --name <resourceGroupName> --location eastus 
 ```
 
 ### Deploy the template
@@ -36,7 +36,7 @@ Create a resource group (RG) to deploy this example or you can use an existing r
 Create the application and related resources using the following command.
 
 ```cli
-	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
+az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
   
 ```
 In a minute or so, your command should return with `"provisioningState": "Succeeded"`. Once it does, get the public IP address by querying for the network resources created in this deployment.
