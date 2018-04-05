@@ -10,4 +10,6 @@ SeaBreeze documentation is organized in the following two broad categories.
 
   The reference documentation provides detailed documentation for the REST APIs and the CLI.
 
+---
+
 SeaBreeze team is looking forward to your feedback. [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) is the place to go to for filing any bugs (code or documentation) you come across, or improvements you would like to request.
