@@ -72,7 +72,7 @@ Following is the list of examples that shows how to achieve a particular scenari
 
 |Example Name|Scenario Description|
 |------------|--------------------|
-| [Hello World SeaBreeze](./appmodel-scenarios-helloworld) | Learn about how to deploy a single container microservices application and connect to the service endpoint. |
+| [Hello World SeaBreeze](./appmodel-scenarios-helloworld.md) | Learn about how to deploy a single container microservices application and connect to the service endpoint. |
 | [Private  Registry](./appmodel-scenarios-private-registry.md) | Learn about how to use container images from a private registry. |
 | [Azure File Volume](./appmodel-scenarios-azurefiles-volume.md) | Learn about how to store data on Azure Files. |
 | [Complete Quickstart](./application-deployment-quickstart.md) | Learn about how to create an application with a frontend and backend service that uses DNS-based resolution. |
