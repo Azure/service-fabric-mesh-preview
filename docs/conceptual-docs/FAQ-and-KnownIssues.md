@@ -34,6 +34,7 @@ Yes, this is a gap in Private Preview 2. We are working on a secret store servic
 
 If you are using older CLI version than 2.0.30, you may get this error -
 
+```
 cannot import name 'sdk_no_wait'
 Traceback (most recent call last):
 File "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\knack\cli.py", line 193, in invoke cmd_result = self.invocation.execute(args)
@@ -53,7 +54,7 @@ File "", line 205, in _call_with_frames_removed
 File "C:\Users\annayak.azure\cliextensions\azure-cli-sbz\azext_sbz\custom.py", line 18, in 
 from azure.cli.core.util import get_file_json, shell_safe_json_parse, sdk_no_wait
 ImportError: cannot import name 'sdk_no_wait'.
-
+```
 
 **When I scale out, I see that all my containers are affected, including my running ones**
 

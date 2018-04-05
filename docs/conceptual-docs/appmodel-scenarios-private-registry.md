@@ -13,28 +13,28 @@ SeaBreeze CLI is used to deploy and manage the resources in SeaBreeze. Set it up
 
 ### Log in to Azure
 
-  Log in to Azure and set your subscription to the one that has been white-listed for the preview.
+Log in to Azure and set your subscription to the one that has been white-listed for the preview.
 
-	```cli
+```cli
 	az login
 	az account set --subscription "<subscriptionName>"
-	```
+```
 ### Create a container registry and push image to it
 Create Azure Container Registry by following [this](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli) guide. Perform the steps up to ["List container images"](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli#list-container-images) step. At this time, `aci-helloworld:v1` should be present in this private container registry.
 
 ### Retrieve credentials for the registry
 In order to deploy a container instance from the registry that was created, credentials must be provided during the deployment. The production scenarios should use a [service principal for container registry access](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-service-principal), but to keep this quickstart brief, enable the admin user on your registry with the following command:
 
-	```cli
+```cli
 	az acr update --name <acrName> --admin-enabled true
-	```
+```
 Once admin access is enabled, get the registry server name, user name, and password using the following commands.
 
-	```cli
+```cli
 	az acr list --resource-group <resourceGroupName> --query "[].{acrLoginServer:loginServer}" --output table
 	az acr credential show --name <acrName> --query username
 	az acr credential show --name <acrName> --query "passwords[0].value"
-	```
+```
 
 ### Deploy the template
 
@@ -43,10 +43,10 @@ Create the application and related resources using the following command and pro
 > The password parameter in the template is of `string` type for ease of use. It will be displayed on the screen in clear-text and in the deployment status.
 
 
-	```cli
+```cli
 	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/private-registry/sbz_rp.linux.json
   
-	```
+```
 
 In a minute or so, your command should return with `"provisioningState": "Succeeded"`. Once it does, get the public IP address by querying for the network resources created in this deployment.
 
