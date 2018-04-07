@@ -1,0 +1,28 @@
+{
+    "parameters": {
+      "subscriptionId": "00000000-0000-0000-0000-000000000000",
+      "resourceGroupName": "sbz_demo",
+      "api-version": "2018-03-01-privatepreview",
+      "volumeName": "sbzDemoVolume"
+    },
+    "responses": {
+      "200": {
+        "body": {
+          "type": "Microsoft.ServiceFabric/volumes",
+          "location": "eastus",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/sbz_demo/providers/Microsoft.ServiceFabric/volumes/sbzDemoVolume",
+          "name": "sbzDemoVolume",
+          "tags": {},
+          "properties": {
+            "provisioningState": "Succeeded",
+            "description": "File share backed by Azure Files storage.",
+            "provider": "SFAzureFile",
+            "azureFileParameters": {
+              "shareName": "sharel",
+              "accountName": "sbzdemoaccount"
+            }
+          }
+        }
+      }
+    }
+  }

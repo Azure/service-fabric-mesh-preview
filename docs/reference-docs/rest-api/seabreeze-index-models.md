@@ -1,77 +1,5 @@
+# Type Models
 
-
-# SeaBreeze Resource Provider API Reference
-
-Service Fabric SeaBreeze is the Service Fabric's serverless offering to enable developers to deploy containerized microservices applications without managing infrastructure.
-
-Following is a list of SeaBreeze Resource Provider REST APIs to deploy and manage containerized microservices applications. 
-
-
-----
-## [Applications APIs](seabreeze-index-applications.md)
-
-| Name | Description |
-| --- | --- |
-| [Create](seabreeze-api-application_create.md) | Creates or updates an application resource.<br/> |
-| [Get](seabreeze-api-application_get.md) | Gets the application resource.<br/> |
-| [Delete](seabreeze-api-application_delete.md) | Deletes the application resource.<br/> |
-| [List By Resource Group](seabreeze-api-application_listbyresourcegroup.md) | Gets all the application resources in a given resource group.<br/> |
-| [List By Subscription](seabreeze-api-application_listbysubscription.md) | Gets all the application resources in a given subscription.<br/> |
-
-----
-## [Services APIs](seabreeze-index-services.md)
-
-| Name | Description |
-| --- | --- |
-| [List By Application Name](seabreeze-api-service_listbyapplicationname.md) | Gets services of a given application.<br/> |
-| [Get](seabreeze-api-service_get.md) | Gets the properties of the service.<br/> |
-
-----
-## [Replicas APIs](seabreeze-index-replicas.md)
-
-| Name | Description |
-| --- | --- |
-| [List By Service Name](seabreeze-api-replica_listbyservicename.md) | Gets replicas of a given service.<br/> |
-| [Get](seabreeze-api-replica_get.md) | Gets a specific replica of a given service.<br/> |
-
-----
-## [ContainerLogs APIs](seabreeze-index-containerlogs.md)
-
-| Name | Description |
-| --- | --- |
-| [Get Container Log](seabreeze-api-codepackage_getcontainerlog.md) | Gets the logs for the container.<br/> |
-
-----
-## [Operations APIs](seabreeze-index-operations.md)
-
-| Name | Description |
-| --- | --- |
-| [List](seabreeze-api-operations_list.md) | Lists all of the available operations.<br/> |
-
-----
-## [Networks APIs](seabreeze-index-networks.md)
-
-| Name | Description |
-| --- | --- |
-| [Create](seabreeze-api-network_create.md) | Creates or updates a network resource.<br/> |
-| [Get](seabreeze-api-network_get.md) | Gets the network resource.<br/> |
-| [Delete](seabreeze-api-network_delete.md) | Deletes the network resource.<br/> |
-| [List By Resource Group](seabreeze-api-network_listbyresourcegroup.md) | Gets all the network resources in a given resource group.<br/> |
-| [List By Subscription](seabreeze-api-network_listbysubscription.md) | Gets all the network resources in a given subscription.<br/> |
-
-----
-## [Volumes APIs](seabreeze-index-volumes.md)
-
-| Name | Description |
-| --- | --- |
-| [Create](seabreeze-api-volume_create.md) | Creates or updates a volume resource.<br/> |
-| [Get](seabreeze-api-volume_get.md) | Gets the volume resource.<br/> |
-| [Delete](seabreeze-api-volume_delete.md) | Deletes the volume resource.<br/> |
-| [List By Resource Group](seabreeze-api-volume_listbyresourcegroup.md) | Gets all the volume resources in a given resource group.<br/> |
-| [List By Subscription](seabreeze-api-volume_listbysubscription.md) | Gets all the volume resources in a given subscription.<br/> |
-
-----
-## [Models](seabreeze-index-models.md)
 
 | Name | Description |
 | --- | --- |
@@ -122,4 +50,3 @@ Following is a list of SeaBreeze Resource Provider REST APIs to deploy and manag
 | [VolumeResourceDescription](seabreeze-model-volumeresourcedescription.md) | This type describes a volume resource.<br/> |
 | [VolumeResourceDescriptionList](seabreeze-model-volumeresourcedescriptionlist.md) | A pageable list of volume resources.<br/> |
 | [VolumeResourceProperties](seabreeze-model-volumeresourceproperties.md) | Describes properties of a volume resource.<br/> |
-
