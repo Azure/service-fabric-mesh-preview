@@ -1,18 +1,3 @@
----
-title: Azure Service fabric SeaBreeze Monitoring and Diagnostics
-description: Monitoring and diagnostics overview for SeaBreeze
-services: Azure SeaBreeze
-author: dkkapur
-manager: timlt
-
-ms.service: SeaBreeze
-ms.topic: overview
-ms.assetid:
-ms.topic: article
-ms.date: 01/25/2018
-ms.author: dekapur
----
-
 # Monitoring and Diagnostics SeaBreeze 
 
 **THIS IS AN OLD DOC, DEEP is working on a new one**

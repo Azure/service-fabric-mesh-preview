@@ -1,27 +1,6 @@
-# Document Folder contents
+# Conceptual Documentation
 
-The documentation is spread out in two folders
-
-
-
-1. Conceptual documetation - this has overview, preview scope, quickstarts, samples etc.
-2. Reference Documentation - this has API documentation. 
-
-**If you are new to the preview**, then start with the following documents.
-
-To learn more about the platform,and the scope of the current private preview refer to the [Service Fabric SeaBreeze overview](./seabreeze-overview.md) document.
-
-To get started with using the platform, see our [quickstart](./application-deployment-quickstart.md).
-
-
-To review the Frequently asked question and known issues, see our [FAQ and Known issues](./FAQ-and-KnownIssues.md) document.
-
-
-We look forward to hearing your feedback about SeaBreeze. Please use this repo's [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) to inform us of any bugs (code or documentation) you come across, or improvements you would like to request. 
-
-
-
-
-
-
-
+* [Service Fabric SeaBreeze overview](../../README.md) - Learn more about the platform, and the scope of the current private preview.
+* [Deploy a quickstart sample](./application-deployment-quickstart.md) - Use quickstart sample to deploy a working application and learn about the basic concepts and constructs. 
+* [Learn about SeaBreeze Application Model](./appmodel-overview.md) - Learn about SeaBreeaze application model and deploy working samples. 
+* [Known Issues and FAQ](./FAQ-and-KnownIssues.md) - Review frequently asked questions and known issues before. Log code or documentation bugs or improvements you would like to request at [Issues](https://github.com/Azure/seabreeze-preview-pr/issues).

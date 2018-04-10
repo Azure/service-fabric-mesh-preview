@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: Frequently asked Questions and Known Issues
 description: Quick start guide on deploying Container Group Set.
@@ -15,21 +16,27 @@ ms.editor: chackdan
 ---
 
 # Frequently Asked Questions and Known Issues.
+=======
+# Frequently asked questions and Known Issues.
+>>>>>>> 7057c30a1391943ca2f5a8b1446ff01715e127ea
 
-### Quota and Cost
+## Quota and Cost
 
-**What is the cost of participating in the preview ?**
+**What is the cost of participating in the preview?**
 
- There is no charges for deploying applications or containers to Seabreeze Preview. However we expect you to delete the resources you deploy and not leave it running, unless you are actively testing it.
+ There are no charges for deploying applications or containers to Seabreeze preview. However we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it.
 
-**Is there a quota limit of the # of Cores and RAM ?**
+**Is there a quota limit of the # of Cores and RAM?**
 
 Yes, you are allocated restricted quota for use in the preview.
 
--  You are allocated a total of 6 Cores and 24 GB RAM.
--  The largest container you can deploy is limited to 2 cores, 8 GB RAM.
--  you can allocate partial cores to your containers. 
+-  You are allocated a total of 6 Cores and 24-GB RAM.
+-  The largest container you can deploy is limited to 2 cores, 8-GB RAM.
+-  You can allocate partial cores to your containers. 
 
+**Can I leave my application running overnight?**
+
+<<<<<<< HEAD
 **Can I leave my application running overnight ?**
 
 Yes, you can, however we expect you to delete the resources you deploy and not leave it running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
@@ -37,8 +44,17 @@ Yes, you can, however we expect you to delete the resources you deploy and not l
 ### Constraints on the base Images
 Windows : tbd
 Linux : tbd
+=======
+Yes, you can, however we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
 
-### Features Gaps and Known Issues
+## Required container base images
+The following container bases images can be used when deploying services
+
+- Windows: TBD
+- Linux: TBD
+>>>>>>> 7057c30a1391943ca2f5a8b1446ff01715e127ea
+
+## Features Gaps and Known Issues
 
 **After deploying my application, the network resource associated with it does not seem to an IP address**
 
@@ -58,11 +74,18 @@ In your application model, you need to use the full resource id for networks and
 
 **I do not see the current application model supporting a way to encrypt my secrets**
 
+<<<<<<< HEAD
 This is a gap in public preview 2. We are working on a secret store service to help with this.
+=======
+Yes, this is a gap in Private Preview 2. We are working on a secret store service to help with this and expect to have this in Preview 3. 
+>>>>>>> 7057c30a1391943ca2f5a8b1446ff01715e127ea
 
 **I get this error when using the CLI module _ImportError: cannot import name 'sdk_no_wait'**
 
-If you are using older CLI version than 2.0.30, you may get this error - cannot import name 'sdk_no_wait'
+If you are using older CLI version than 2.0.30, you may get this error -
+
+```
+cannot import name 'sdk_no_wait'
 Traceback (most recent call last):
 File "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\knack\cli.py", line 193, in invoke cmd_result = self.invocation.execute(args)
 File "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\azure\cli\core\commands_init_.py", line 241, in execute self.commands_loader.load_arguments(command)
@@ -81,14 +104,19 @@ File "", line 205, in _call_with_frames_removed
 File "C:\Users\annayak.azure\cliextensions\azure-cli-sbz\azext_sbz\custom.py", line 18, in 
 from azure.cli.core.util import get_file_json, shell_safe_json_parse, sdk_no_wait
 ImportError: cannot import name 'sdk_no_wait'.
+<<<<<<< HEAD
 
 **I get a mismatch distribution name error when installing the CLI extension package**
 
 ![warning message in cloud shell](./media/faq-and-knownissues/cli-package-warning.png)
 
 This does not mean that the extension did not install. You should still be able to use the CLI commands without a problem.
+=======
+```
+>>>>>>> 7057c30a1391943ca2f5a8b1446ff01715e127ea
 
 **When I scale out, I see that all my containers are affected, including my running ones**
-This is a bug, and we expect to fix this with the next runtime refresh, in a week or so.
+
+This is a bug, and we expect to fix this with the next runtime refresh.
 
 

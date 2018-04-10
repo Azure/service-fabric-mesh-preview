@@ -1,0 +1,5 @@
+## Application definition ##
+application:
+  schemaVersion: 0.0.1
+  name: SbzVoting
+  description: Voting SeaBreeze!
