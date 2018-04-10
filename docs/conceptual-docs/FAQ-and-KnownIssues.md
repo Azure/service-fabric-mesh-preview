@@ -1,3 +1,19 @@
+---
+title: Frequently asked Questions and Known Issues
+description: Quick start guide on deploying Container Group Set.
+services: Azure SeaBreeze
+author: chackdan;
+manager: timlt
+
+ms.service: SeaBreeze
+ms.topic: overview
+ms.assetid:
+ms.topic: article
+ms.date: 03/22/2018
+ms.author: chackdan
+ms.editor: chackdan
+---
+
 # Frequently asked questions and Known Issues.
 
 ## Quota and Cost
@@ -26,6 +42,22 @@ The following container bases images can be used when deploying services
 
 ## Features Gaps and Known Issues
 
+**After deploying my application, the network resource associated with it does not seem to an IP address**
+
+There is a known issue today with the IP address coming up after a delay. Check the status of the network resource in a few minutes to see the associated IP address.
+
+**My application is failing to access the right network/volume resource**
+
+In your application model, you need to use the full resource id for networks and volumes to be able to access the associated resource. Here is what this looks like in the quickstart sample we provide:
+
+```json
+"networkRefs": [
+    {
+    "name":  "[resourceId('Microsoft.ServiceFabric/networks', 'SbzVotingNetwork')]" 
+    }
+]
+```
+
 **I do not see the current application model supporting a way to encrypt my secrets**
 
 Yes, this is a gap in Private Preview 2. We are working on a secret store service to help with this and expect to have this in Preview 3. 
@@ -34,6 +66,7 @@ Yes, this is a gap in Private Preview 2. We are working on a secret store servic
 
 If you are using older CLI version than 2.0.30, you may get this error -
 
+```
 cannot import name 'sdk_no_wait'
 Traceback (most recent call last):
 File "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\knack\cli.py", line 193, in invoke cmd_result = self.invocation.execute(args)
@@ -53,7 +86,13 @@ File "", line 205, in _call_with_frames_removed
 File "C:\Users\annayak.azure\cliextensions\azure-cli-sbz\azext_sbz\custom.py", line 18, in 
 from azure.cli.core.util import get_file_json, shell_safe_json_parse, sdk_no_wait
 ImportError: cannot import name 'sdk_no_wait'.
+```
 
+**I get a mismatch distribution name error when installing the CLI extension package**
+
+![warning message in cloud shell](./media/faq-and-knownissues/cli-package-warning.png)
+
+This does not mean that the extension did not install. You should still be able to use the CLI commands without a problem.
 
 **When I scale out, I see that all my containers are affected, including my running ones**
 

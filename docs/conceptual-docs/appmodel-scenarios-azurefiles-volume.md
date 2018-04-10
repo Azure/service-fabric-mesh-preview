@@ -20,24 +20,32 @@ SeaBreeze CLI is used to deploy and manage the resources in SeaBreeze. Set it up
 ### Log in to Azure
 Log in to Azure and set your subscription to the one that has been white-listed for the preview.
 
-	az login
-	az account set --subscription "<subscriptionName>"
+```cli
+az login
+az account set --subscription "<subscriptionName>"
+```
 
 ### Create resource group
 Create a resource group (RG) to deploy this example or you can use an existing resource group and skip this step. The preview is available only in `eastus` location.
 
-	az group create --name <resourceGroupName> --location eastus
+```cli
+az group create --name <resourceGroupName> --location eastus
+```
 
 ### Deploy the template
 Create the application and related resources using one of the following commands.
 
 For Linux:
 
-	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/azurefiles-volume/sbz_rp.linux.json
+```cli
+az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/azurefiles-volume/sbz_rp.linux.json
+```
 
 For Windows:
 
-	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/azurefiles-volume/sbz_rp.windows.json
+```cli
+az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/azurefiles-volume/sbz_rp.windows.json
+```
 
 Follow the prompts to enter the file share name, account name, and account key for the Azure File share that provides the volume. In a minute or so, your command should return with `"provisioningState": "Succeeded"`.
 

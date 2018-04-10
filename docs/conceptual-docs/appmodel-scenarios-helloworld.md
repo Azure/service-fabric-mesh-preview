@@ -17,28 +17,28 @@ SeaBreeze CLI is used to deploy and manage the resources in SeaBreeze. Set it up
 
 ### Log in to Azure
 
-  Log in to Azure and set your subscription to the one that has been white-listed for the preview.
+Log in to Azure and set your subscription to the one that has been white-listed for the preview.
 
-	```cli
-	az login
-	az account set --subscription "<subscriptionName>"
-	```
+```cli
+az login
+az account set --subscription "<subscriptionName>"
+```
 
 ### Create resource group
 Create a resource group (RG) to deploy this example or you can use an existing resource group and skip this step. The preview is available only in `eastus` location.
 
-	```cli
-	az group create --name <resourceGroupName> --location eastus 
-	```
+```cli
+az group create --name <resourceGroupName> --location eastus 
+```
 
 ### Deploy the template
 
 Create the application and related resources using the following command.
 
-	```cli
-	az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
+```cli
+az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
   
-	```
+```
 In a minute or so, your command should return with `"provisioningState": "Succeeded"`. Once it does, get the public IP address by querying for the network resources created in this deployment.
 
 To deploy, Windows application use[https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.windows.json](https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.windows.json) template. Note for Windows, container images are large compared to Linux, so it may take more time than deploying Linux application.
