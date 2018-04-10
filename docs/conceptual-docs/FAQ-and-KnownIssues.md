@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: Frequently asked Questions and Known Issues
 description: Quick start guide on deploying Container Group Set.
@@ -15,10 +14,7 @@ ms.author: chackdan
 ms.editor: chackdan
 ---
 
-# Frequently Asked Questions and Known Issues.
-=======
 # Frequently asked questions and Known Issues.
->>>>>>> 7057c30a1391943ca2f5a8b1446ff01715e127ea
 
 ## Quota and Cost
 
@@ -36,15 +32,6 @@ Yes, you are allocated restricted quota for use in the preview.
 
 **Can I leave my application running overnight?**
 
-<<<<<<< HEAD
-**Can I leave my application running overnight ?**
-
-Yes, you can, however we expect you to delete the resources you deploy and not leave it running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
-
-### Constraints on the base Images
-Windows : tbd
-Linux : tbd
-=======
 Yes, you can, however we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
 
 ## Required container base images
@@ -52,7 +39,6 @@ The following container bases images can be used when deploying services
 
 - Windows: TBD
 - Linux: TBD
->>>>>>> 7057c30a1391943ca2f5a8b1446ff01715e127ea
 
 ## Features Gaps and Known Issues
 
@@ -74,11 +60,7 @@ In your application model, you need to use the full resource id for networks and
 
 **I do not see the current application model supporting a way to encrypt my secrets**
 
-<<<<<<< HEAD
-This is a gap in public preview 2. We are working on a secret store service to help with this.
-=======
 Yes, this is a gap in Private Preview 2. We are working on a secret store service to help with this and expect to have this in Preview 3. 
->>>>>>> 7057c30a1391943ca2f5a8b1446ff01715e127ea
 
 **I get this error when using the CLI module _ImportError: cannot import name 'sdk_no_wait'**
 
@@ -104,16 +86,13 @@ File "", line 205, in _call_with_frames_removed
 File "C:\Users\annayak.azure\cliextensions\azure-cli-sbz\azext_sbz\custom.py", line 18, in 
 from azure.cli.core.util import get_file_json, shell_safe_json_parse, sdk_no_wait
 ImportError: cannot import name 'sdk_no_wait'.
-<<<<<<< HEAD
+```
 
 **I get a mismatch distribution name error when installing the CLI extension package**
 
 ![warning message in cloud shell](./media/faq-and-knownissues/cli-package-warning.png)
 
 This does not mean that the extension did not install. You should still be able to use the CLI commands without a problem.
-=======
-```
->>>>>>> 7057c30a1391943ca2f5a8b1446ff01715e127ea
 
 **When I scale out, I see that all my containers are affected, including my running ones**
 
