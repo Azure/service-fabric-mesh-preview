@@ -15,6 +15,7 @@ Describes a container and its runtime properties.
 | [`resources`](#resources) | [ResourceRequirements](seabreeze-model-resourcerequirements.md) | Yes |
 | [`volumeRefs`](#volumerefs) | array of [ContainerVolume](seabreeze-model-containervolume.md) | No |
 | [`instanceView`](#instanceview) | [ContainerInstanceView](seabreeze-model-containerinstanceview.md) | No |
+| [`diagnostics`](#diagnostics) | [DiagnosticsRef](seabreeze-model-diagnosticsref.md) | No |
 
 ____
 ### `name`
@@ -85,3 +86,10 @@ __Type__: [ContainerInstanceView](seabreeze-model-containerinstanceview.md) <br/
 __Required__: No<br/>
 <br/>
 Runtime information of a container instance.
+
+____
+### `diagnostics`
+__Type__: [DiagnosticsRef](seabreeze-model-diagnosticsref.md) <br/>
+__Required__: No<br/>
+<br/>
+Reference to sinks in DiagnosticsDescription.

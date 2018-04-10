@@ -8,6 +8,7 @@ Describes the properties of a service replica.
 | [`osType`](#ostype) | string (enum) | Yes |
 | [`codePackages`](#codepackages) | array of [ContainerCodePackageProperties](seabreeze-model-containercodepackageproperties.md) | Yes |
 | [`networkRefs`](#networkrefs) | array of [NetworkRef](seabreeze-model-networkref.md) | No |
+| [`diagnostics`](#diagnostics) | [DiagnosticsRef](seabreeze-model-diagnosticsref.md) | No |
 
 ____
 ### `osType`
@@ -34,3 +35,10 @@ __Type__: array of [NetworkRef](seabreeze-model-networkref.md) <br/>
 __Required__: No<br/>
 <br/>
 The names of the private networks that this service needs to be part of.
+
+____
+### `diagnostics`
+__Type__: [DiagnosticsRef](seabreeze-model-diagnosticsref.md) <br/>
+__Required__: No<br/>
+<br/>
+Reference to sinks in DiagnosticsDescription.
