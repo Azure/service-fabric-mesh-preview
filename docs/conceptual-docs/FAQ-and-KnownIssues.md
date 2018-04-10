@@ -62,7 +62,6 @@ In your application model, you need to use the full resource id for networks and
 
 Yes, this is a gap in Private Preview 2. We are working on a secret store service to help with this and expect to have this in Preview 3. 
 
-
 **I get this error when using the CLI module _ImportError: cannot import name 'sdk_no_wait'**
 
 If you are using older CLI version than 2.0.30, you may get this error -
