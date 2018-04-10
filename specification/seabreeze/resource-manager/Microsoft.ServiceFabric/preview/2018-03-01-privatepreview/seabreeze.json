@@ -1319,10 +1319,15 @@
           "items": {
             "type": "string"
           }
+        },
+        "diagnostics": {
+          "$ref": "#/definitions/DiagnosticsDescription",
+          "description": "Describes the diagnostics definition and usage for an application resource."
         }
       },
       "x-sf-documentation": {
-        "healthState": {}
+        "healthState": {},
+        "diagnostics": {}
       }
     },
     "ServiceList": {
@@ -1708,6 +1713,10 @@
           "readOnly": true,
           "$ref": "#/definitions/ContainerInstanceView",
           "description": "Runtime information of a container instance."
+        },
+        "diagnostics": {
+          "$ref": "#/definitions/DiagnosticsRef",
+          "description": "Reference to sinks in DiagnosticsDescription."
         }
       },
       "required": [
@@ -1819,6 +1828,10 @@
           "items": {
             "$ref": "#/definitions/NetworkRef"
           }
+        },
+        "diagnostics": {
+          "$ref": "#/definitions/DiagnosticsRef",
+          "description": "Reference to sinks in DiagnosticsDescription."
         }
       },
       "required": [
@@ -1937,6 +1950,118 @@
           }
         ]
       }
+    },
+    "DiagnosticsDescription": {
+      "description": "Describes the diagnostics options available",
+      "type": "object",
+      "discriminator": "Kind",
+      "properties": {
+        "sinks": {
+          "description": "List of supported sinks that can be referenced.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DiagnosticsSinkProperties"
+          }
+        },
+        "enabled": {
+          "description": "Status of whether or not sinks are enabled.",
+          "type": "boolean"
+        },
+        "defaultSinkRefs": {
+          "description": "The sinks to be used if diagnostics is enabled. Sink choices can be overridden at the service and code package level."
+        }
+      }
+    },
+    "DiagnosticsRef": {
+      "description": "Reference to sinks in DiagnosticsDescription.",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "description": "Status of whether or not sinks are enabled.",
+          "type": "boolean"
+        },
+        "sinkRefs": {
+          "description": "List of sinks to be used if enabled. References the list of sinks in DiagnosticsDescription.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "DiagnosticsSinkProperties": {
+      "description": "Properties of a DiagnosticsSink.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the sink. This value is referenced by DiagnosticsReferenceDescription",
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/DiagnosticsSinkKind",
+          "description": "The kind of DiagnosticsSink."
+        },
+        "description": {
+          "description": "A description of the sink.",
+          "type": "string"
+        }
+      }
+    },
+    "DiagnosticsSinkKind": {
+      "type": "string",
+      "description": "The kind of DiagnosticsSink.",
+      "enum": [
+        "Invalid",
+        "AzureInternalMonitoringPipeline"
+      ],
+      "x-ms-enum": {
+        "name": "DiagnosticsSinkKind",
+        "modelAsString": true,
+        "values": [
+          {
+            "value": "Invalid",
+            "description": "Indicates an invalid sink kind. All Service Fabric enumerations have the invalid type."
+          },
+          {
+            "value": "AzureInternalMonitoringPipeline",
+            "description": "Diagnostics settings for Geneva."
+          }
+        ]
+      }
+    },
+    "AzureInternalMonitoringPipelineSinkDescription": {
+      "description": "Diagnostics settings for Geneva.",
+      "x-ms-discriminator-value": "AzureInternalMonitoringPipline",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DiagnosticsSinkProperties"
+        },
+        {
+          "type": "object",
+          "description": "AzureInternalMonitoringPipelineSinkDescription",
+          "properties": {
+            "accountName": {
+              "description": "Azure Internal monitoring pipeline account.",
+              "type": "string"
+            },
+            "namespace": {
+              "description": "Azure Internal monitoring pipeline account namespace.",
+              "type": "string"
+            },
+            "maConfigUrl": {
+              "description": "Azure Internal monitoring agent configuration.",
+              "type": "string"
+            },
+            "fluentdConfigUrl": {
+              "description": "Azure Internal monitoring agent fluentd configuration."
+            },
+            "autoKeyConfigUrl": {
+              "description": "Azure Internal monitoring pipeline autokey associated with the certificate.",
+              "type": "string"
+            }
+          }
+        }
+      ]
     }
   },
   "parameters": {
