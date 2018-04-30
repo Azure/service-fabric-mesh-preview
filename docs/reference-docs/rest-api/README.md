@@ -81,12 +81,17 @@ Following is a list of SeaBreeze Resource Provider REST APIs to deploy and manag
 | [ApplicationResourceProperties](seabreeze-model-applicationresourceproperties.md) | This type describes properties of an application resource.<br/> |
 | [ApplicationResourceStatus enum](seabreeze-model-applicationresourcestatus.md) | Possible values include: 'Invalid', 'Ready', 'Upgrading', 'Creating', 'Deleting', 'Failed'<br/> |
 | [AvailableOperationDisplay](seabreeze-model-availableoperationdisplay.md) | An operation available at the listed Azure resource provider.<br/> |
+| [AzureInternalMonitoringPipelineSinkDescription](seabreeze-model-azureinternalmonitoringpipelinesinkdescription.md) | Diagnostics settings for Geneva.<br/> |
 | [ContainerCodePackageProperties](seabreeze-model-containercodepackageproperties.md) | Describes a container and its runtime properties.<br/> |
 | [ContainerEvent](seabreeze-model-containerevent.md) | A container event.<br/> |
 | [ContainerInstanceView](seabreeze-model-containerinstanceview.md) | Runtime information of a container instance.<br/> |
 | [ContainerLogs](seabreeze-model-containerlogs.md) | The logs of the container.<br/> |
 | [ContainerState](seabreeze-model-containerstate.md) | The container state.<br/> |
 | [ContainerVolume](seabreeze-model-containervolume.md) | Describes how a volume is attached to a container.<br/> |
+| [DiagnosticsDescription](seabreeze-model-diagnosticsdescription.md) | Describes the diagnostics options available<br/> |
+| [DiagnosticsRef](seabreeze-model-diagnosticsref.md) | Reference to sinks in DiagnosticsDescription.<br/> |
+| [DiagnosticsSinkKind enum](seabreeze-model-diagnosticssinkkind.md) | The kind of DiagnosticsSink.<br/> |
+| [DiagnosticsSinkProperties](seabreeze-model-diagnosticssinkproperties.md) | Properties of a DiagnosticsSink.<br/> |
 | [EndpointProperties](seabreeze-model-endpointproperties.md) | Describes a container endpoint.<br/> |
 | [EnvironmentVariable](seabreeze-model-environmentvariable.md) | Describes an environment variable for the container.<br/> |
 | [ErrorModel](seabreeze-model-errormodel.md) | The error details.<br/> |

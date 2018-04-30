@@ -8,6 +8,7 @@ This type describes properties of a service resource.
 | [`osType`](#ostype) | string (enum) | Yes |
 | [`codePackages`](#codepackages) | array of [ContainerCodePackageProperties](seabreeze-model-containercodepackageproperties.md) | Yes |
 | [`networkRefs`](#networkrefs) | array of [NetworkRef](seabreeze-model-networkref.md) | No |
+| [`diagnostics`](#diagnostics) | [DiagnosticsRef](seabreeze-model-diagnosticsref.md) | No |
 | [`description`](#description) | string | No |
 | [`replicaCount`](#replicacount) | integer | No |
 | [`healthState`](#healthstate) | string (enum) | No |
@@ -38,6 +39,13 @@ __Type__: array of [NetworkRef](seabreeze-model-networkref.md) <br/>
 __Required__: No<br/>
 <br/>
 The names of the private networks that this service needs to be part of.
+
+____
+### `diagnostics`
+__Type__: [DiagnosticsRef](seabreeze-model-diagnosticsref.md) <br/>
+__Required__: No<br/>
+<br/>
+Reference to sinks in DiagnosticsDescription.
 
 ____
 ### `description`

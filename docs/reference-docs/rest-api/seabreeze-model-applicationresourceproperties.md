@@ -12,6 +12,7 @@ This type describes properties of an application resource.
 | [`healthState`](#healthstate) | string (enum) | No |
 | [`status`](#status) | string (enum) | No |
 | [`serviceNames`](#servicenames) | array of string | No |
+| [`diagnostics`](#diagnostics) | [DiagnosticsDescription](seabreeze-model-diagnosticsdescription.md) | No |
 
 ____
 ### `provisioningState`
@@ -76,3 +77,10 @@ __Type__: array of string <br/>
 __Required__: No<br/>
 <br/>
 Names of the services in the application.
+
+____
+### `diagnostics`
+__Type__: [DiagnosticsDescription](seabreeze-model-diagnosticsdescription.md) <br/>
+__Required__: No<br/>
+<br/>
+Describes the diagnostics definition and usage for an application resource.
