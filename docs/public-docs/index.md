@@ -1,3 +1,7 @@
+
+# Note
+The articles in this folder are a preview of the content that will release with the public preview.  The existing private preview documentation is available [here](../conceptual-docs/README.md).
+
 # Service Fabric Mesh
 Azure Service Fabric Mesh is a fully managed service which enables developers to build and deploy mission critical applications without managing any infrastructure.  Use Service Fabric Mesh to build and run secure, distributed microservices applications that scale on demand. Learn how to use Service Fabric Mesh with our quickstarts and tutorials.
 
