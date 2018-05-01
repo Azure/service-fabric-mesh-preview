@@ -26,7 +26,7 @@ An application resource is a collection of constituent services that perform a c
 
 ### Service
 
-A service resource describes the containers and their configuration that you want to run. Each container and the resources   that you describe in the service resource is called a *code package*. Your service can container multiple code packages. This set of code packages is a unit of deployment and activation, meaning that all code packages in the service will always be run together as a pod. All containers in the service share a namespace and can communicate with each other over localhost. 
+A service resource describes the containers and their configuration that you want to run. Each container and the resources   that you describe in the service resource is called a *code package*. Your service can contain multiple code packages. This set of code packages is a unit of deployment and activation, meaning that all code packages in the service will always be run together as a pod. All containers in the service share a namespace and can communicate with each other over localhost. 
 
 Service can scale out by increasing its `replicaCount`. Scaling out would increase the number of running container instances for each code package.
 
