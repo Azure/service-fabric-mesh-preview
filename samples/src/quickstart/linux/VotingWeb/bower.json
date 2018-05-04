@@ -1,0 +1,19 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "v4.0.0",
+    "jquery": "3.3.1",
+    "jquery-validation": "1.17.0",
+    "jquery-validation-unobtrusive": "3.2.6",
+    "angular": "v1.6.9",
+    "angular-bootstrap": "2.5.0"
+  },
+  "resolutions": {
+    "angular": "v1.6.9",
+    "jquery": "3.3.1",
+    "jquery-validation": "1.17.0",
+    "angular-bootstrap": "2.5.0",
+    "bootstrap": "v4.0.0"
+  }
+}
