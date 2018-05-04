@@ -1,0 +1,26 @@
+﻿## Service definition ##
+application:
+  schemaVersion: 0.0.1
+  name: VotingApp
+  services:
+    - name: VotingData
+      description: VotingData backend service
+      osType: Windows
+      codePackages:
+        - name: VotingData
+          image: votingdata:dev
+          endpoints:
+            - name: VotingDataListener
+              port: 8288
+          environmentVariables:
+            - name: ASPNETCORE_URLS
+              value: http://+:8288
+#            - name: ApplicationInsights:InstrumentationKey
+#              value: "<Place AppInsights key here, or reference it via a secret>"
+          resources:
+            requests:
+              cpu: 0.5
+              memoryInGB: 1
+      replicaCount: 1
+      networkRefs:
+        - name: VotingAppNetwork
