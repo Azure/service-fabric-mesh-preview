@@ -1,0 +1,135 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "defaultValue": "westus",
+      "type": "String",
+      "metadata": {
+        "description": "Location of the resources."
+      }
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "VotingAppNetwork",
+      "type": "Microsoft.ServiceFabric/networks",
+      "location": "[parameters('location')]",
+      "dependsOn": [],
+      "properties": {
+        "schemaVersion": "0.0.1",
+        "description": "VotingAppNetwork description.",
+        "addressPrefix": "10.0.0.4/22",
+        "ingressConfig": {
+          "layer4": [
+            {
+              "name": "VotingWebIngress",
+              "publicPort": "8080",
+              "applicationName": "VotingApp",
+              "serviceName": "VotingWeb",
+              "endpointName": "VotingWebListener"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "VotingApp",
+      "type": "Microsoft.ServiceFabric/applications",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "Microsoft.ServiceFabric/networks/VotingAppNetwork"
+      ],
+      "properties": {
+        "schemaVersion": "0.0.1",
+        "description": "Mesh Voting App",
+        "services": [
+          {
+            "name": "VotingData",
+            "properties": {
+              "description": "VotingData backend service",
+              "osType": "Windows",
+              "codePackages": [
+                {
+                  "name": "VotingData",
+                  "image": "seabreeze/votingdata:1.0",
+                  "endpoints": [
+                    {
+                      "name": "VotingDataListener",
+                      "port": 8288
+                    }
+                  ],
+                  "environmentVariables": [
+                    {
+                      "name": "ASPNETCORE_URLS",
+                      "value": "http://+:8288"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": 0.5,
+                      "memoryInGB": 1.0
+                    }
+                  }
+                }
+              ],
+              "replicaCount": 1,
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabric/networks', 'VotingAppNetwork')]"
+                }
+              ]
+            }
+          },
+          {
+            "name": "VotingWeb",
+            "properties": {
+              "description": "VotingWeb front-end service",
+              "osType": "Windows",
+              "codePackages": [
+                {
+                  "name": "VotingWeb",
+                  "image": "seabreeze/votingweb:1.0",
+                  "endpoints": [
+                    {
+                      "name": "VotingWebListener",
+                      "port": 8080
+                    }
+                  ],
+                  "environmentVariables": [
+                    {
+                      "name": "ASPNETCORE_URLS",
+                      "value": "http://+:8080"
+                    },
+                    {
+                      "name": "Voting_BackendHostName",
+                      "value": "votingdata"
+                    },
+                    {
+                      "name": "Voting_BackendHostPort",
+                      "value": "8288"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": 0.5,
+                      "memoryInGB": 1.0
+                    }
+                  }
+                }
+              ],
+              "replicaCount": 1,
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabric/networks', 'VotingAppNetwork')]"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
