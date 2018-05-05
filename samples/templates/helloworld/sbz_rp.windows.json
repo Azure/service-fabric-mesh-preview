@@ -41,19 +41,19 @@
         "Microsoft.ServiceFabric/networks/helloWorldNetworkWindows"
       ],
       "properties": {
-        "description": "SeaBreeze HelloWorld Application!",
+        "description": "Service Fabric Mesh HelloWorld Application!",
         "services": [
           {
             "type": "Microsoft.ServiceFabric/services",
             "location": "[parameters('location')]",
             "name": "helloWorldService",
             "properties": {
-              "description": "SeaBreeze Hello World Service.",
+              "description": "Service Fabric Mesh Hello World Service.",
               "osType": "windows",
               "codePackages": [
                 {
                   "name": "helloWorldCode",
-                  "image": "seabreeze/sbz-helloworld:1.1-windowsservercore-1709",
+                  "image": "seabreeze/azure-mesh-helloworld:1.0-windowsservercore-1709",
                   "endpoints": [
                     {
                       "name": "helloWorldListener",

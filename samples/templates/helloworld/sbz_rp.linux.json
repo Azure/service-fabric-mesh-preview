@@ -4,7 +4,7 @@
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "eastus",
+      "defaultValue": "westus",
       "metadata": {
         "description": "Location of the resources."
       }
@@ -41,19 +41,19 @@
         "Microsoft.ServiceFabric/networks/helloWorldNetwork"
       ],
       "properties": {
-        "description": "SeaBreeze HelloWorld Application!",
+        "description": "Service Fabric Mesh HelloWorld Application!",
         "services": [
           {
             "type": "Microsoft.ServiceFabric/services",
             "location": "[parameters('location')]",
             "name": "helloWorldService",
             "properties": {
-              "description": "SeaBreeze Hello World Service.",
+              "description": "Service Fabric Mesh Hello World Service.",
               "osType": "linux",
               "codePackages": [
                 {
                   "name": "helloWorldCode",
-                  "image": "seabreeze/sbz-helloworld:1.1-alpine",
+                  "image": "seabreeze/azure-mesh-helloworld:1.0-alpine",
                   "endpoints": [
                     {
                       "name": "helloWorldListener",
@@ -69,7 +69,7 @@
                 },
                 {
                   "name": "helloWorldSideCar",
-                  "image": "seabreeze/sbz-helloworld-sidecar:1.0-alpine",
+                  "image": "seabreeze/azure-mesh-helloworld-sidecar:1.0-alpine",
                   "resources": {
                     "requests": {
                       "cpu": "1",
