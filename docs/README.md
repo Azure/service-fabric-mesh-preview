@@ -8,7 +8,7 @@ SeaBreeze documentation is organized in the following two broad categories.
   
   [**2. Public docs**](./public-docs/index.md)
   
-  An early peek of the documentation that will release with the public preview.
+  An early peek at the documentation that will release with the public preview.
 
   [**3. Reference docs**](./reference-docs)
 
