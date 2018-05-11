@@ -51,8 +51,8 @@ The version of the API. This parameter is required and its value must be `2018-0
 
 | HTTP Status Code | Description | Response Schema |
 | --- | --- | --- |
-| 200 (OK) | OK<br/> | [VolumeResourceDescription](seabreeze-model-volumeresourcedescription.md) |
-| All other status codes | Error<br/> | [ErrorModel](seabreeze-model-errormodel.md) |
+| 200 (OK) | OK<br/> | [VolumeResourceDescription](mesh-model-volumeresourcedescription.md) |
+| All other status codes | Error<br/> | [ErrorModel](mesh-model-errormodel.md) |
 
 ## Examples
 
