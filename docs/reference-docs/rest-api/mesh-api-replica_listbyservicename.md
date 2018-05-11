@@ -58,7 +58,7 @@ The version of the API. This parameter is required and its value must be `2018-0
 
 | HTTP Status Code | Description | Response Schema |
 | --- | --- | --- |
-| 200 (OK) | OK<br/> | [ServiceReplicaList](seabreeze-model-servicereplicalist.md) |
+| 200 (OK) | OK<br/> | [ServiceReplicaList](mesh-model-servicereplicalist.md) |
 
 
 ## Examples
