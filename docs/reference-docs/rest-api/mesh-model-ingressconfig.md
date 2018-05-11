@@ -6,7 +6,7 @@ Describes public connectivity configuration for the network.
 | Name | Type | Required |
 | --- | --- | --- |
 | [`qosLevel`](#qoslevel) | string (enum) | No |
-| [`layer4`](#layer4) | array of [Layer4IngressConfig](seabreeze-model-layer4ingressconfig.md) | No |
+| [`layer4`](#layer4) | array of [Layer4IngressConfig](mesh-model-layer4ingressconfig.md) | No |
 | [`publicIPAddress`](#publicipaddress) | string | No |
 
 ____
@@ -21,7 +21,7 @@ The QoS tier for ingress.
 
 ____
 ### `layer4`
-__Type__: array of [Layer4IngressConfig](seabreeze-model-layer4ingressconfig.md) <br/>
+__Type__: array of [Layer4IngressConfig](mesh-model-layer4ingressconfig.md) <br/>
 __Required__: No<br/>
 <br/>
 Configuration for layer4 public connectivity for this network.
