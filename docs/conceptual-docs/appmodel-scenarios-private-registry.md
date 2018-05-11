@@ -1,4 +1,4 @@
-# Example: Hello World SeaBreeze
+# Example: Hello World Mesh
 
 This example shows how to deploy an application that uses private container image registry. 
 
@@ -8,8 +8,8 @@ This example shows how to deploy an application that uses private container imag
 
 ## Deployment Steps
 
-### Setup SeaBreeze CLI
-SeaBreeze CLI is used to deploy and manage the resources in SeaBreeze. Set it up by following these [instructions](./cli-setup.md). 
+### Setup Mesh CLI
+Mesh CLI is used to deploy and manage the resources in Mesh. Set it up by following these [instructions](./cli-setup.md). 
 
 ### Log in to Azure
 
