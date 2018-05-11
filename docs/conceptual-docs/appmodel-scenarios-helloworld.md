@@ -1,4 +1,4 @@
-# Example: Hello World SeaBreeze
+# Example: Hello World Mesh
 
 This example shows how to deploy an application with one service and communicate with it using a public load balanced endpoint. 
 
@@ -12,8 +12,8 @@ Windows: [https://seabreezequickstart.blob.core.windows.net/templates/helloworld
 
 ## Deployment Steps
 
-### Setup SeaBreeze CLI
-SeaBreeze CLI is used to deploy and manage the resources in SeaBreeze. Set it up by following these [instructions](./cli-setup.md). 
+### Setup Mesh CLI
+SeaBreeze CLI is used to deploy and manage the resources in Mesh. Set it up by following these [instructions](./cli-setup.md). 
 
 ### Log in to Azure
 
