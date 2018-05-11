@@ -7,7 +7,7 @@ This type describes properties of a volume resource.
 | --- | --- | --- |
 | [`description`](#description) | string | No |
 | [`provider`](#provider) | string | Yes |
-| [`azureFileParameters`](#azurefileparameters) | [VolumeProviderParametersAzureFile](seabreeze-model-volumeproviderparametersazurefile.md) | No |
+| [`azureFileParameters`](#azurefileparameters) | [VolumeProviderParametersAzureFile](mesh-model-volumeproviderparametersazurefile.md) | No |
 
 ____
 ### `description`
@@ -26,7 +26,7 @@ Provider of the volume.
 
 ____
 ### `azureFileParameters`
-__Type__: [VolumeProviderParametersAzureFile](seabreeze-model-volumeproviderparametersazurefile.md) <br/>
+__Type__: [VolumeProviderParametersAzureFile](mesh-model-volumeproviderparametersazurefile.md) <br/>
 __Required__: No<br/>
 <br/>
 This type describes a volume provided by an Azure Files file share.
