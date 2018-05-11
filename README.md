@@ -2,7 +2,7 @@
 
 Mesh is fully managed service where developers to build and deploy mission critical applications without managing any infrastructure such as VMs, storage, or networking. Mesh is a serverless environment for applications built from microservices. 
 
-![Seabreeze-01][Mesh-01]
+![Seabreeze-01][Seabreeze-01]
 
 Applications hosted on Mesh can be scaled on demand without  developers worrying about the infrastructure needed to run their applications. The Mesh service not only takes care of the physical infrastructure, but also detects and handles infrastructure failures, manages service discovery, data-partitioning, no-downtime upgrades, and other features that developers need from an application platform to building highly available and scalable applications. Developers win because they do not have to manage infrastructure, have a simple getting started experience, and can write  applications that automatically scale. Operations and IT managers win because they are billed only for resources they’re using on a per second basis and have simpler deployments. 
 
