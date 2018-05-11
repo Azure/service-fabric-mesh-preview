@@ -26,5 +26,5 @@ The version of the API. This parameter is required and its value must be `2018-0
 
 | HTTP Status Code | Description | Response Schema |
 | --- | --- | --- |
-| 200 (OK) | OK. The request has succeeded.<br/> | [OperationListResult](seabreeze-model-operationlistresult.md) |
-| All other status codes | Error response describing why the operation failed.<br/> | [ErrorModel](seabreeze-model-errormodel.md) |
+| 200 (OK) | OK. The request has succeeded.<br/> | [OperationListResult](mesh-model-operationlistresult.md) |
+| All other status codes | Error response describing why the operation failed.<br/> | [ErrorModel](mesh-model-errormodel.md) |
