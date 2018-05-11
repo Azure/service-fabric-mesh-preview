@@ -8,7 +8,7 @@ This type describes a service resource.
 | [`id`](#id) | string | No |
 | [`name`](#name) | string | No |
 | [`type`](#type) | string | No |
-| [`properties`](#properties) | [ServiceResourceProperties](seabreeze-model-serviceresourceproperties.md) | Yes |
+| [`properties`](#properties) | [ServiceResourceProperties](mesh-model-serviceresourceproperties.md) | Yes |
 
 ____
 ### `id`
@@ -33,7 +33,7 @@ The type of the resource. Ex- Microsoft.Compute/virtualMachines or Microsoft.Sto
 
 ____
 ### `properties`
-__Type__: [ServiceResourceProperties](seabreeze-model-serviceresourceproperties.md) <br/>
+__Type__: [ServiceResourceProperties](mesh-model-serviceresourceproperties.md) <br/>
 __Required__: Yes<br/>
 <br/>
 This type describes properties of a service resource.
