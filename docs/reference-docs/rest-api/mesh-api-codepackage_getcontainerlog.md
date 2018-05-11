@@ -82,8 +82,8 @@ Only show this number of log lines. If not provided, the last 100 lines are show
 
 | HTTP Status Code | Description | Response Schema |
 | --- | --- | --- |
-| 200 (OK) | Successful response<br/> | [ContainerLogs](seabreeze-model-containerlogs.md) |
-| All other status codes | Error<br/> | [ErrorModel](seabreeze-model-errormodel.md) |
+| 200 (OK) | Successful response<br/> | [ContainerLogs](mesh-model-containerlogs.md) |
+| All other status codes | Error<br/> | [ErrorModel](mesh-model-errormodel.md) |
 
 ## Examples
 
