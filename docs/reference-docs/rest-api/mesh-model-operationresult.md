@@ -6,7 +6,7 @@ List of operations available at the listed Azure resource provider.
 | Name | Type | Required |
 | --- | --- | --- |
 | [`name`](#name) | string | No |
-| [`display`](#display) | [AvailableOperationDisplay](seabreeze-model-availableoperationdisplay.md) | No |
+| [`display`](#display) | [AvailableOperationDisplay](mesh-model-availableoperationdisplay.md) | No |
 | [`origin`](#origin) | string | No |
 | [`nextLink`](#nextlink) | string | No |
 
@@ -19,7 +19,7 @@ The name of the operation.
 
 ____
 ### `display`
-__Type__: [AvailableOperationDisplay](seabreeze-model-availableoperationdisplay.md) <br/>
+__Type__: [AvailableOperationDisplay](mesh-model-availableoperationdisplay.md) <br/>
 __Required__: No<br/>
 <br/>
 The object that represents the operation.
