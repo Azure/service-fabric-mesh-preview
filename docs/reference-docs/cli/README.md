@@ -1,19 +1,19 @@
 ### sbz
 
    Summary:
-      (PREVIEW) Manage Azure SeaBreeze Resources.
+      (PREVIEW) Manage Azure Mesh Resources.
 
    Description:
 ### sbz app
 
    Summary:
-      Manage SeaBreeze applications.
+      Manage Mesh applications.
 
    Description:
 ### sbz app delete
 
    Summary:
-      Delete a SeaBreeze application.
+      Delete a Mesh application.
 
    Description:
    --name -n
@@ -99,7 +99,7 @@
 ### sbz app list
 
    Summary:
-      List SeaBreeze applications.
+      List Mesh applications.
 
    Description:
    --resource-group -g
@@ -167,7 +167,7 @@
 ### sbz app show
 
    Summary:
-      Get the details of a SeaBreeze application.
+      Get the details of a Mesh application.
 
    Description:
    --name -n
@@ -244,7 +244,7 @@
 ### sbz codepackage
 
    Summary:
-      Manage SeaBreeze service replica code packages.
+      Manage Mesh service replica code packages.
 
    Description:
 ### sbz codepackage logs
