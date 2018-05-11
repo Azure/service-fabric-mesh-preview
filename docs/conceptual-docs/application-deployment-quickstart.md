@@ -1,6 +1,6 @@
 # Deploy a quickstart application
 
-In this introduction to Sea Breeze we will walk you through;
+In this introduction to Mesh we will walk you through;
 
  * Deploying a sample quickstart application called “SbzVoting” which is a web voting application. The application consists of two services, a web front-end and a storage back-end.
 * Check its status once it is deployed
@@ -13,9 +13,9 @@ In this introduction to Sea Breeze we will walk you through;
 > In preview 2, you are restricted to a quota of 6 cores. 
 
 
-## Set up the SeaBreeze CLI
+## Set up the Mesh CLI
 
-In order to deploy and manage an application, we will be using SeaBreeze CLI. Setup SeaBreeze CLI by following these [instructions](./cli-setup.md). 
+In order to deploy and manage an application, we will be using Mesh CLI. Setup Mesh CLI by following these [instructions](./cli-setup.md). 
 
 ## Create the resources
 
