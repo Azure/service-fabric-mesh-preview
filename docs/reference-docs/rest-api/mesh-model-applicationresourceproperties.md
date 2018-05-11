@@ -8,11 +8,11 @@ This type describes properties of an application resource.
 | [`provisioningState`](#provisioningstate) | string | No |
 | [`description`](#description) | string | No |
 | [`debugParams`](#debugparams) | string | No |
-| [`services`](#services) | array of [ServiceResourceDescription](seabreeze-model-serviceresourcedescription.md) | No |
+| [`services`](#services) | array of [ServiceResourceDescription](mesh-model-serviceresourcedescription.md) | No |
 | [`healthState`](#healthstate) | string (enum) | No |
 | [`status`](#status) | string (enum) | No |
 | [`serviceNames`](#servicenames) | array of string | No |
-| [`diagnostics`](#diagnostics) | [DiagnosticsDescription](seabreeze-model-diagnosticsdescription.md) | No |
+| [`diagnostics`](#diagnostics) | [DiagnosticsDescription](mesh-model-diagnosticsdescription.md) | No |
 
 ____
 ### `provisioningState`
@@ -37,7 +37,7 @@ Internal use.
 
 ____
 ### `services`
-__Type__: array of [ServiceResourceDescription](seabreeze-model-serviceresourcedescription.md) <br/>
+__Type__: array of [ServiceResourceDescription](mesh-model-serviceresourcedescription.md) <br/>
 __Required__: No<br/>
 <br/>
 describes the services in the application.
@@ -80,7 +80,7 @@ Names of the services in the application.
 
 ____
 ### `diagnostics`
-__Type__: [DiagnosticsDescription](seabreeze-model-diagnosticsdescription.md) <br/>
+__Type__: [DiagnosticsDescription](mesh-model-diagnosticsdescription.md) <br/>
 __Required__: No<br/>
 <br/>
 Describes the diagnostics definition and usage for an application resource.
