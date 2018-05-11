@@ -34,8 +34,8 @@ The version of the API. This parameter is required and its value must be `2018-0
 
 | HTTP Status Code | Description | Response Schema |
 | --- | --- | --- |
-| 200 (OK) | OK<br/> | [ApplicationResourceDescriptionList](seabreeze-model-applicationresourcedescriptionlist.md) |
-| All other status codes | Error<br/> | [ErrorModel](seabreeze-model-errormodel.md) |
+| 200 (OK) | OK<br/> | [ApplicationResourceDescriptionList](mesh-model-applicationresourcedescriptionlist.md) |
+| All other status codes | Error<br/> | [ErrorModel](mesh-model-errormodel.md) |
 
 ## Examples
 
@@ -89,7 +89,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
       "tags": {},
       "properties": {
         "provisioningState": "Succeeded",
-        "description": "Voting SeaBreeze!",
+        "description": "Voting Mesh!",
         "healthState": "Ok",
         "serviceNames": [
           "VotingWeb",
@@ -106,7 +106,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
       "tags": {},
       "properties": {
         "provisioningState": "Succeeded",
-        "description": "Voting SeaBreeze!",
+        "description": "Voting Mesh!",
         "healthState": "Ok",
         "serviceNames": [
           "VotingWeb",
@@ -123,7 +123,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
       "tags": {},
       "properties": {
         "provisioningState": "Succeeded",
-        "description": "SeaBreeze HelloWorld Application!",
+        "description": "Mesh HelloWorld Application!",
         "healthState": "Ok",
         "serviceNames": [
           "helloWorldService"
@@ -139,7 +139,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
       "tags": {},
       "properties": {
         "provisioningState": "Succeeded",
-        "description": "SeaBreeze HelloWorld Application!",
+        "description": "Mesh HelloWorld Application!",
         "healthState": "Ok",
         "serviceNames": [
           "helloWorldService"
@@ -155,7 +155,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
       "tags": {},
       "properties": {
         "provisioningState": "Updating",
-        "description": "SeaBreeze example application with container deployed from private image registry.",
+        "description": "Mesh example application with container deployed from private image registry.",
         "healthState": "Ok",
         "serviceNames": [
           "helloWorldService"
@@ -171,7 +171,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
       "tags": {},
       "properties": {
         "provisioningState": "Succeeded",
-        "description": "Voting SeaBreeze!",
+        "description": "Voting Mesh!",
         "healthState": "Ok",
         "serviceNames": [
           "VotingWeb",
@@ -188,7 +188,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
       "tags": {},
       "properties": {
         "provisioningState": "Updating",
-        "description": "SeaBreeze example application with container deployed from private image registry.",
+        "description": "Mesh example application with container deployed from private image registry.",
         "healthState": "Ok",
         "serviceNames": [
           "helloWorldService"
@@ -204,7 +204,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
       "tags": {},
       "properties": {
         "provisioningState": "Updating",
-        "description": "SeaBreeze example application with container deployed from private image registry.",
+        "description": "Mesh example application with container deployed from private image registry.",
         "healthState": "Ok",
         "serviceNames": [
           "helloWorldService"
