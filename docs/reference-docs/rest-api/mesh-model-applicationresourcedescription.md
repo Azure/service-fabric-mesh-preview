@@ -10,7 +10,7 @@ This type describes an application resource.
 | [`type`](#type) | string | No |
 | [`tags`](#tags) | map of string to string | No |
 | [`location`](#location) | string | Yes |
-| [`properties`](#properties) | [ApplicationResourceProperties](seabreeze-model-applicationresourceproperties.md) | Yes |
+| [`properties`](#properties) | [ApplicationResourceProperties](mesh-model-applicationresourceproperties.md) | Yes |
 
 ____
 ### `id`
@@ -49,7 +49,7 @@ The geo-location where the resource lives
 
 ____
 ### `properties`
-__Type__: [ApplicationResourceProperties](seabreeze-model-applicationresourceproperties.md) <br/>
+__Type__: [ApplicationResourceProperties](mesh-model-applicationresourceproperties.md) <br/>
 __Required__: Yes<br/>
 <br/>
 This type describes properties of an application resource.
