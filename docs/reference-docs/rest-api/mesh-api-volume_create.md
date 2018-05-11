@@ -17,7 +17,7 @@ Creates a volume resource with the specified name and description. If a volume w
 | [`resourceGroupName`](#resourcegroupname) | string | Yes | Path |
 | [`volumeName`](#volumename) | string | Yes | Path |
 | [`api-version`](#api-version) | string | Yes | Query |
-| [`volumeResourceDescription`](#volumeresourcedescription) | [VolumeResourceDescription](seabreeze-model-volumeresourcedescription.md) | Yes | Body |
+| [`volumeResourceDescription`](#volumeresourcedescription) | [VolumeResourceDescription](mesh-model-volumeresourcedescription.md) | Yes | Body |
 
 ____
 ### `subscriptionId`
@@ -50,7 +50,7 @@ The version of the API. This parameter is required and its value must be `2018-0
 
 ____
 ### `volumeResourceDescription`
-__Type__: [VolumeResourceDescription](seabreeze-model-volumeresourcedescription.md) <br/>
+__Type__: [VolumeResourceDescription](mesh-model-volumeresourcedescription.md) <br/>
 __Required__: Yes<br/>
 <br/>
 Description for creating a volume resource.
@@ -59,9 +59,9 @@ Description for creating a volume resource.
 
 | HTTP Status Code | Description | Response Schema |
 | --- | --- | --- |
-| 200 (OK) | Ok<br/> | [VolumeResourceDescription](seabreeze-model-volumeresourcedescription.md) |
-| 201 (Created) | Created<br/> | [VolumeResourceDescription](seabreeze-model-volumeresourcedescription.md) |
-| All other status codes | Error<br/> | [ErrorModel](seabreeze-model-errormodel.md) |
+| 200 (OK) | Ok<br/> | [VolumeResourceDescription](mesh-model-volumeresourcedescription.md) |
+| 201 (Created) | Created<br/> | [VolumeResourceDescription](mesh-model-volumeresourcedescription.md) |
+| All other status codes | Error<br/> | [ErrorModel](mesh-model-errormodel.md) |
 
 ## Examples
 
