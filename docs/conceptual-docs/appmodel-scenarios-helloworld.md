@@ -13,7 +13,7 @@ Windows: [https://seabreezequickstart.blob.core.windows.net/templates/helloworld
 ## Deployment Steps
 
 ### Setup Mesh CLI
-SeaBreeze CLI is used to deploy and manage the resources in Mesh. Set it up by following these [instructions](./cli-setup.md). 
+Mesh CLI is used to deploy and manage the resources in Mesh. Set it up by following these [instructions](./cli-setup.md). 
 
 ### Log in to Azure
 
