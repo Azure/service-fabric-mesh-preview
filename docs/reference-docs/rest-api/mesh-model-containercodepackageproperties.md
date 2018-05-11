@@ -7,15 +7,15 @@ Describes a container and its runtime properties.
 | --- | --- | --- |
 | [`name`](#name) | string | Yes |
 | [`image`](#image) | string | Yes |
-| [`imageRegistryCredential`](#imageregistrycredential) | [ImageRegistryCredential](seabreeze-model-imageregistrycredential.md) | No |
+| [`imageRegistryCredential`](#imageregistrycredential) | [ImageRegistryCredential](mesh-model-imageregistrycredential.md) | No |
 | [`entrypoint`](#entrypoint) | string | No |
 | [`commands`](#commands) | array of string | No |
-| [`environmentVariables`](#environmentvariables) | array of [EnvironmentVariable](seabreeze-model-environmentvariable.md) | No |
-| [`endpoints`](#endpoints) | array of [EndpointProperties](seabreeze-model-endpointproperties.md) | No |
-| [`resources`](#resources) | [ResourceRequirements](seabreeze-model-resourcerequirements.md) | Yes |
-| [`volumeRefs`](#volumerefs) | array of [ContainerVolume](seabreeze-model-containervolume.md) | No |
-| [`instanceView`](#instanceview) | [ContainerInstanceView](seabreeze-model-containerinstanceview.md) | No |
-| [`diagnostics`](#diagnostics) | [DiagnosticsRef](seabreeze-model-diagnosticsref.md) | No |
+| [`environmentVariables`](#environmentvariables) | array of [EnvironmentVariable](mesh-model-environmentvariable.md) | No |
+| [`endpoints`](#endpoints) | array of [EndpointProperties](mesh-model-endpointproperties.md) | No |
+| [`resources`](#resources) | [ResourceRequirements](mesh-model-resourcerequirements.md) | Yes |
+| [`volumeRefs`](#volumerefs) | array of [ContainerVolume](mesh-model-containervolume.md) | No |
+| [`instanceView`](#instanceview) | [ContainerInstanceView](mesh-model-containerinstanceview.md) | No |
+| [`diagnostics`](#diagnostics) | [DiagnosticsRef](mesh-model-diagnosticsref.md) | No |
 
 ____
 ### `name`
@@ -33,7 +33,7 @@ The Container image to use.
 
 ____
 ### `imageRegistryCredential`
-__Type__: [ImageRegistryCredential](seabreeze-model-imageregistrycredential.md) <br/>
+__Type__: [ImageRegistryCredential](mesh-model-imageregistrycredential.md) <br/>
 __Required__: No<br/>
 <br/>
 Image registry credential.
@@ -54,42 +54,42 @@ Command array to execute within the container in exec form.
 
 ____
 ### `environmentVariables`
-__Type__: array of [EnvironmentVariable](seabreeze-model-environmentvariable.md) <br/>
+__Type__: array of [EnvironmentVariable](mesh-model-environmentvariable.md) <br/>
 __Required__: No<br/>
 <br/>
 The environment variables to set in this container
 
 ____
 ### `endpoints`
-__Type__: array of [EndpointProperties](seabreeze-model-endpointproperties.md) <br/>
+__Type__: array of [EndpointProperties](mesh-model-endpointproperties.md) <br/>
 __Required__: No<br/>
 <br/>
 The endpoints exposed by this container.
 
 ____
 ### `resources`
-__Type__: [ResourceRequirements](seabreeze-model-resourcerequirements.md) <br/>
+__Type__: [ResourceRequirements](mesh-model-resourcerequirements.md) <br/>
 __Required__: Yes<br/>
 <br/>
 This type describes the resource requirements for a container or a service.
 
 ____
 ### `volumeRefs`
-__Type__: array of [ContainerVolume](seabreeze-model-containervolume.md) <br/>
+__Type__: array of [ContainerVolume](mesh-model-containervolume.md) <br/>
 __Required__: No<br/>
 <br/>
 The volumes to be attached to the container.
 
 ____
 ### `instanceView`
-__Type__: [ContainerInstanceView](seabreeze-model-containerinstanceview.md) <br/>
+__Type__: [ContainerInstanceView](mesh-model-containerinstanceview.md) <br/>
 __Required__: No<br/>
 <br/>
 Runtime information of a container instance.
 
 ____
 ### `diagnostics`
-__Type__: [DiagnosticsRef](seabreeze-model-diagnosticsref.md) <br/>
+__Type__: [DiagnosticsRef](mesh-model-diagnosticsref.md) <br/>
 __Required__: No<br/>
 <br/>
 Reference to sinks in DiagnosticsDescription.
