@@ -5,13 +5,13 @@ Describes the diagnostics options available
 ## Properties
 | Name | Type | Required |
 | --- | --- | --- |
-| [`sinks`](#sinks) | array of [DiagnosticsSinkProperties](seabreeze-model-diagnosticssinkproperties.md) | No |
+| [`sinks`](#sinks) | array of [DiagnosticsSinkProperties](mesh-model-diagnosticssinkproperties.md) | No |
 | [`enabled`](#enabled) | boolean | No |
 | [`defaultSinkRefs`](#defaultsinkrefs) | Object | No |
 
 ____
 ### `sinks`
-__Type__: array of [DiagnosticsSinkProperties](seabreeze-model-diagnosticssinkproperties.md) <br/>
+__Type__: array of [DiagnosticsSinkProperties](mesh-model-diagnosticssinkproperties.md) <br/>
 __Required__: No<br/>
 <br/>
 List of supported sinks that can be referenced.
