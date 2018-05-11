@@ -15,7 +15,7 @@ Windows: [https://seabreezequickstart.blob.core.windows.net/templates/azurefiles
 Follow the instructions in the [Azure Files documentation](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share) to create a file share for the application to use.
 
 ### Setup Mesh CLI
-SeaBreeze CLI is used to deploy and manage the resources in SeaBreeze. Set it up by following these [instructions](./cli-setup.md).
+Mesh CLI is used to deploy and manage the resources in Mesh. Set it up by following these [instructions](./cli-setup.md).
 
 ### Log in to Azure
 Log in to Azure and set your subscription to the one that has been white-listed for the preview.
