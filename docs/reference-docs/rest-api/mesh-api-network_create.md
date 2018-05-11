@@ -19,7 +19,7 @@ Use network resources to create private network and configure public connectivit
 | [`resourceGroupName`](#resourcegroupname) | string | Yes | Path |
 | [`networkName`](#networkname) | string | Yes | Path |
 | [`api-version`](#api-version) | string | Yes | Query |
-| [`networkResourceDescription`](#networkresourcedescription) | [NetworkResourceDescription](seabreeze-model-networkresourcedescription.md) | Yes | Body |
+| [`networkResourceDescription`](#networkresourcedescription) | [NetworkResourceDescription](mesh-model-networkresourcedescription.md) | Yes | Body |
 
 ____
 ### `subscriptionId`
@@ -52,7 +52,7 @@ The version of the API. This parameter is required and its value must be `2018-0
 
 ____
 ### `networkResourceDescription`
-__Type__: [NetworkResourceDescription](seabreeze-model-networkresourcedescription.md) <br/>
+__Type__: [NetworkResourceDescription](mesh-model-networkresourcedescription.md) <br/>
 __Required__: Yes<br/>
 <br/>
 Description for creating a network resource.
@@ -61,9 +61,9 @@ Description for creating a network resource.
 
 | HTTP Status Code | Description | Response Schema |
 | --- | --- | --- |
-| 200 (OK) | Ok<br/> | [NetworkResourceDescription](seabreeze-model-networkresourcedescription.md) |
-| 201 (Created) | Created<br/> | [NetworkResourceDescription](seabreeze-model-networkresourcedescription.md) |
-| All other status codes | Error<br/> | [ErrorModel](seabreeze-model-errormodel.md) |
+| 200 (OK) | Ok<br/> | [NetworkResourceDescription](mesh-model-networkresourcedescription.md) |
+| 201 (Created) | Created<br/> | [NetworkResourceDescription](mesh-model-networkresourcedescription.md) |
+| All other status codes | Error<br/> | [ErrorModel](mesh-model-errormodel.md) |
 
 ## Examples
 
