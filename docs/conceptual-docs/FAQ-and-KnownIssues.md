@@ -1,11 +1,11 @@
 ---
 title: Frequently asked Questions and Known Issues
 description: Quick start guide on deploying Container Group Set.
-services: Azure SeaBreeze
+services: Azure Mesh
 author: chackdan;
 manager: timlt
 
-ms.service: SeaBreeze
+ms.service: Mesh
 ms.topic: overview
 ms.assetid:
 ms.topic: article
@@ -20,7 +20,7 @@ ms.editor: chackdan
 
 **What is the cost of participating in the preview?**
 
- There are no charges for deploying applications or containers to Seabreeze preview. However we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it.
+ There are no charges for deploying applications or containers to Mesh preview. However we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it.
 
 **Is there a quota limit of the # of Cores and RAM?**
 
