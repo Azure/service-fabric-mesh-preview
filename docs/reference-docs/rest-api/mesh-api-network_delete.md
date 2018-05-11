@@ -52,7 +52,7 @@ The version of the API. This parameter is required and its value must be `2018-0
 | --- | --- | --- |
 | 200 (OK) | OK<br/> |  |
 | 204 (NoContent) | No Content - the specified network was not found.<br/> |  |
-| All other status codes | Error<br/> | [ErrorModel](seabreeze-model-errormodel.md) |
+| All other status codes | Error<br/> | [ErrorModel](mesh-model-errormodel.md) |
 
 ## Examples
 
