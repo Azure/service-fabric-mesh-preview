@@ -1,5 +1,5 @@
 # Container Volume Sample
-This sample illustrates the use of volumes in SeaBreeze containers.
+This sample illustrates the use of volumes in Mesh containers.
 
 The container requests a volume, that is backed by a specific [Azure Files](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) file share, to be mounted to a specific location within the container. The application that runs inside the container writes a text file to this location.
 
@@ -14,7 +14,7 @@ Windows: [https://seabreezequickstart.blob.core.windows.net/templates/azurefiles
 ### Create the Azure Files file share
 Follow the instructions in the [Azure Files documentation](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share) to create a file share for the application to use.
 
-### Setup SeaBreeze CLI
+### Setup Mesh CLI
 SeaBreeze CLI is used to deploy and manage the resources in SeaBreeze. Set it up by following these [instructions](./cli-setup.md).
 
 ### Log in to Azure
