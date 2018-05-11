@@ -7,7 +7,7 @@ Describes a network.
 | --- | --- | --- |
 | [`description`](#description) | string | No |
 | [`addressPrefix`](#addressprefix) | string | Yes |
-| [`ingressConfig`](#ingressconfig) | [IngressConfig](seabreeze-model-ingressconfig.md) | No |
+| [`ingressConfig`](#ingressconfig) | [IngressConfig](mesh-model-ingressconfig.md) | No |
 
 ____
 ### `description`
@@ -25,7 +25,7 @@ the address prefix for this network.
 
 ____
 ### `ingressConfig`
-__Type__: [IngressConfig](seabreeze-model-ingressconfig.md) <br/>
+__Type__: [IngressConfig](mesh-model-ingressconfig.md) <br/>
 __Required__: No<br/>
 <br/>
 Configuration for public connectivity for this network.
