@@ -50,7 +50,7 @@ The version of the API. This parameter is required and its value must be `2018-0
 
 | HTTP Status Code | Description | Response Schema |
 | --- | --- | --- |
-| 200 (OK) | OK<br/> | [ServiceList](seabreeze-model-servicelist.md) |
+| 200 (OK) | OK<br/> | [ServiceList](mesh-model-servicelist.md) |
 
 
 ## Examples
@@ -106,7 +106,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
             "name": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/sbz_demo/providers/Microsoft.ServiceFabric/networks/helloWorldNetwork"
           }
         ],
-        "description": "SeaBreeze Hello World Service.",
+        "description": "Mesh Hello World Service.",
         "replicaCount": "1",
         "healthState": "Ok",
         "status": "Unknown"
