@@ -10,7 +10,7 @@ This type describes a volume resource.
 | [`type`](#type) | string | No |
 | [`tags`](#tags) | map of string to string | No |
 | [`location`](#location) | string | Yes |
-| [`properties`](#properties) | [VolumeResourceProperties](seabreeze-model-volumeresourceproperties.md) | Yes |
+| [`properties`](#properties) | [VolumeResourceProperties](mesh-model-volumeresourceproperties.md) | Yes |
 
 ____
 ### `id`
@@ -49,7 +49,7 @@ The geo-location where the resource lives
 
 ____
 ### `properties`
-__Type__: [VolumeResourceProperties](seabreeze-model-volumeresourceproperties.md) <br/>
+__Type__: [VolumeResourceProperties](mesh-model-volumeresourceproperties.md) <br/>
 __Required__: Yes<br/>
 <br/>
 Describes properties of a volume resource.
