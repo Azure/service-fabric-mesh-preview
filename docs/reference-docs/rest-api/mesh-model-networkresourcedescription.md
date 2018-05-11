@@ -10,7 +10,7 @@ This type describes a network resource.
 | [`type`](#type) | string | No |
 | [`tags`](#tags) | map of string to string | No |
 | [`location`](#location) | string | Yes |
-| [`properties`](#properties) | [NetworkResourceProperties](seabreeze-model-networkresourceproperties.md) | Yes |
+| [`properties`](#properties) | [NetworkResourceProperties](mesh-model-networkresourceproperties.md) | Yes |
 
 ____
 ### `id`
@@ -49,7 +49,7 @@ The geo-location where the resource lives
 
 ____
 ### `properties`
-__Type__: [NetworkResourceProperties](seabreeze-model-networkresourceproperties.md) <br/>
+__Type__: [NetworkResourceProperties](mesh-model-networkresourceproperties.md) <br/>
 __Required__: Yes<br/>
 <br/>
 Describes properties of a network resource.
