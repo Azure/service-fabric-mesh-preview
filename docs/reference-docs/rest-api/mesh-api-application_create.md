@@ -19,7 +19,7 @@ Use network resources to provide public connectivity to the services of an appli
 | [`resourceGroupName`](#resourcegroupname) | string | Yes | Path |
 | [`applicationName`](#applicationname) | string | Yes | Path |
 | [`api-version`](#api-version) | string | Yes | Query |
-| [`applicationResourceDescription`](#applicationresourcedescription) | [ApplicationResourceDescription](seabreeze-model-applicationresourcedescription.md) | Yes | Body |
+| [`applicationResourceDescription`](#applicationresourcedescription) | [ApplicationResourceDescription](mesh-model-applicationresourcedescription.md) | Yes | Body |
 
 ____
 ### `subscriptionId`
@@ -52,7 +52,7 @@ The version of the API. This parameter is required and its value must be `2018-0
 
 ____
 ### `applicationResourceDescription`
-__Type__: [ApplicationResourceDescription](seabreeze-model-applicationresourcedescription.md) <br/>
+__Type__: [ApplicationResourceDescription](mesh-model-applicationresourcedescription.md) <br/>
 __Required__: Yes<br/>
 <br/>
 Description for creating an application resource.
@@ -61,9 +61,9 @@ Description for creating an application resource.
 
 | HTTP Status Code | Description | Response Schema |
 | --- | --- | --- |
-| 200 (OK) | Ok<br/> | [ApplicationResourceDescription](seabreeze-model-applicationresourcedescription.md) |
-| 201 (Created) | Created<br/> | [ApplicationResourceDescription](seabreeze-model-applicationresourcedescription.md) |
-| All other status codes | Error<br/> | [ErrorModel](seabreeze-model-errormodel.md) |
+| 200 (OK) | Ok<br/> | [ApplicationResourceDescription](mesh-model-applicationresourcedescription.md) |
+| 201 (Created) | Created<br/> | [ApplicationResourceDescription](mesh-model-applicationresourcedescription.md) |
+| All other status codes | Error<br/> | [ErrorModel](mesh-model-errormodel.md) |
 
 ## Examples
 
@@ -78,7 +78,7 @@ PUT https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 ```json
 {
   "properties": {
-    "description": "SeaBreeze HelloWorld Application!",
+    "description": "Mesh HelloWorld Application!",
     "services": [
       {
         "properties": {
@@ -101,7 +101,7 @@ PUT https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
               }
             }
           ],
-          "description": "SeaBreeze Hello World Service.",
+          "description": "Mesh Hello World Service.",
           "replicaCount": "1"
         },
         "name": "helloWorldService"
@@ -124,7 +124,7 @@ PUT https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
   "tags": {},
   "properties": {
     "provisioningState": "Updating",
-    "description": "SeaBreeze HelloWorld Application!",
+    "description": "Mesh HelloWorld Application!",
     "healthState": "Ok",
     "serviceNames": [
       "helloWorldService"
