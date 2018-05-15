@@ -13,9 +13,14 @@ In this introduction to Mesh we will walk you through;
 > In preview 2, you are restricted to a quota of 6 cores. 
 
 
+<<<<<<< HEAD
 ## Set up the Mesh CLI
 
 In order to deploy and manage an application, we will be using Mesh CLI. Setup Mesh CLI by following these [instructions](./cli-setup.md). 
+=======
+## Setup Service Fabric Mesh CLI
+Service Fabric Mesh CLI is used to deploy and manage Service Fabric Mesh resources of this example. Install it by following these [instructions](./cli-setup.md). 
+>>>>>>> use Service Fabric Mesh name and add scaleout scenario
 
 ## Create the resources
 

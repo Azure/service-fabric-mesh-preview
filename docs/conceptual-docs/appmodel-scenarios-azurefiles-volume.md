@@ -14,8 +14,14 @@ Windows: [https://seabreezequickstart.blob.core.windows.net/templates/azurefiles
 ### Create the Azure Files file share
 Follow the instructions in the [Azure Files documentation](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share) to create a file share for the application to use.
 
+<<<<<<< HEAD
 ### Setup Mesh CLI
 Mesh CLI is used to deploy and manage the resources in Mesh. Set it up by following these [instructions](./cli-setup.md).
+=======
+### Setup Service Fabric Mesh CLI
+Service Fabric Mesh CLI is used to deploy and manage Service Fabric Mesh resources of this example. Install it by following these [instructions](./cli-setup.md). 
+
+>>>>>>> use Service Fabric Mesh name and add scaleout scenario
 
 ### Log in to Azure
 Log in to Azure and set your subscription to the one that has been white-listed for the preview.

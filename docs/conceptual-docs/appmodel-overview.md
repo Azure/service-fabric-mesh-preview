@@ -1,7 +1,11 @@
 # Service Fabric Applications
 
 ## Overview
+<<<<<<< HEAD
 Service Fabric Applications are the new, simple way to describe and deploy applications to everywhere Service Fabric runs, whether it's Mesh or your own clusters hosted in Azure, on prem, or on your laptop. 
+=======
+Service Fabric Applications are the new, simple way to describe and deploy applications to everywhere Service Fabric runs, whether it's Service Fabric Mesh or your own clusters hosted in Azure, on prem, or on your laptop. 
+>>>>>>> use Service Fabric Mesh name and add scaleout scenario
 
 Service Fabric Applications are a drastic departure from the ApplicationManifest and ServiceManifest Reliable Services XML model. With Service Fabric Applications, you no longer need to decide up front whether your service should be a Guest EXE, Guest Container, Enlighted Container, Reliable Service, etc. You simply write your application code like you normally would in any language or framework, describe how it should run in a simple YAML definition, and run it on Service Fabric. 
 
@@ -52,3 +56,4 @@ Following is the list of examples that shows how to achieve a particular scenari
 | [Private  Registry](./appmodel-scenarios-private-registry.md) | Learn about how to use container images from a private registry. |
 | [Azure File Volume](./appmodel-scenarios-azurefiles-volume.md) | Learn about how to store data on Azure Files. |
 | [Complete Quickstart](./application-deployment-quickstart.md) | Learn about how to create an application with a frontend and backend service that uses DNS-based resolution. |
+| [Visual Objects - Scaleout](./appmodel-scenarios-scaleout.md) | Learn about how to independently scale microservices within an application.  |
