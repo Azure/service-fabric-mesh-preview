@@ -8,14 +8,8 @@ This example shows how to deploy an application that uses private container imag
 
 ## Deployment Steps
 
-<<<<<<< HEAD
-### Setup Mesh CLI
-Mesh CLI is used to deploy and manage the resources in Mesh. Set it up by following these [instructions](./cli-setup.md). 
-=======
 ### Setup Service Fabric Mesh CLI
 Service Fabric Mesh CLI is used to deploy and manage Service Fabric Mesh resources of this example. Install it by following these [instructions](./cli-setup.md). 
-
->>>>>>> use Service Fabric Mesh name and add scaleout scenario
 
 ### Log in to Azure
 
