@@ -44,7 +44,7 @@ Create the application and related resources using the following command and pro
 
 
 ```cli
-az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/private-registry/sbz_rp.linux.json
+az mesh deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/private-registry/sbz_rp.linux.json
   
 ```
 
@@ -56,7 +56,7 @@ In a minute or so, your command should return with `"provisioningState": "Succee
 The network resource name for this example is `privateRegistryExampleNetwork`, fetch information about it using the following command.
 
 ```cli
-az sbz network show --resource-group <resourceGroupName> --name privateRegistryExampleNetwork
+az mesh network show --resource-group <resourceGroupName> --name privateRegistryExampleNetwork
 ```
 
 Get the `publicIpAddress` property and connect to it using a browser. It should display a web page with a welcome message.

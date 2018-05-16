@@ -23,22 +23,22 @@ To run the quick start do the following:
 1. az group create --name SbzVotingRG --location eastus
 
 ### Create an application
-1. az sbz app create --resource-group SbzVotingRG --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
+1. az mesh app create --resource-group SbzVotingRG --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
 
 ### Check Status
-1. az sbz app show --resource-group SbzVotingRG --name SbzVoting
+1. az mesh app show --resource-group SbzVotingRG --name SbzVoting
 
 ### Get the public IP for the application
-1. az sbz network show --resource-group SbzVotingRG --name SbzVotingNetwork | grep publicIP
+1. az mesh network show --resource-group SbzVotingRG --name SbzVotingNetwork | grep publicIP
 
 ### Get the list of all SeaBreeze applications in the subscription in a table format
-1. az sbz app list -o table
+1. az mesh app list -o table
 
 ### Delete the application
-1. az sbz app delete --resource-group SbzVotingRG --name SbzVoting
+1. az mesh app delete --resource-group SbzVotingRG --name SbzVoting
 
 ### Delete the network
-1. az sbz network delete --resource-group SbzVotingRG --name SbzVotingNetwork
+1. az mesh network delete --resource-group SbzVotingRG --name SbzVotingNetwork
 
 ### Delete the resource group
 1. az group delete --name SbzVotingRG --location eastus
