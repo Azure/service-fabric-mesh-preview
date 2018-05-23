@@ -1,16 +1,16 @@
-### sbz
+### mesh
 
    Summary:
       (PREVIEW) Manage Azure SeaBreeze Resources.
 
    Description:
-### sbz app
+### mesh app
 
    Summary:
       Manage SeaBreeze applications.
 
    Description:
-### sbz app delete
+### mesh app delete
 
    Summary:
       Delete a SeaBreeze application.
@@ -96,7 +96,7 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz app list
+### mesh app list
 
    Summary:
       List SeaBreeze applications.
@@ -164,7 +164,7 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz app show
+### mesh app show
 
    Summary:
       Get the details of a SeaBreeze application.
@@ -241,13 +241,13 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz codepackage
+### mesh codepackage
 
    Summary:
       Manage SeaBreeze service replica code packages.
 
    Description:
-### sbz codepackage logs
+### mesh codepackage logs
 
    Summary:
       Examine the logs for a codepackage.
@@ -361,13 +361,13 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz deployment
+### mesh deployment
 
    Summary:
       Manage SeaBreeze deployments.
 
    Description:
-### sbz deployment create
+### mesh deployment create
 
    Summary:
       Create a SeaBreeze application.
@@ -497,13 +497,13 @@
       az mesh deployment create --resource-group mygroup --template-
       file ./appTemplate.json
 
-### sbz network
+### mesh network
 
    Summary:
       Manage networks.
 
    Description:
-### sbz network delete
+### mesh network delete
 
    Summary:
       Delete a network.
@@ -589,7 +589,7 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz network list
+### mesh network list
 
    Summary:
       List networks.
@@ -657,7 +657,7 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz network show
+### mesh network show
 
    Summary:
       Get the details of a network.
@@ -734,13 +734,13 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz service
+### mesh service
 
    Summary:
       Manage SeaBreeze services.
 
    Description:
-### sbz service list
+### mesh service list
 
    Summary:
       Gets services of a given application.
@@ -821,7 +821,7 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz service show
+### mesh service show
 
    Summary:
       Get the details of a service.
@@ -907,13 +907,13 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz servicereplica
+### mesh servicereplica
 
    Summary:
       Manage SeaBreeze service replicas.
 
    Description:
-### sbz servicereplica list
+### mesh servicereplica list
 
    Summary:
       List the details of service replicas.
@@ -999,7 +999,7 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz servicereplica show
+### mesh servicereplica show
 
    Summary:
       Gets a specific replica of a given service.
@@ -1098,13 +1098,13 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz volume
+### mesh volume
 
    Summary:
       Manage volumes.
 
    Description:
-### sbz volume create
+### mesh volume create
 
    Summary:
       Create a volume.
@@ -1222,7 +1222,7 @@
       --resource-group mygroup --template-file
       ./volumeDescription.json
 
-### sbz volume delete
+### mesh volume delete
 
    Summary:
       Delete a volume.
@@ -1308,7 +1308,7 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz volume list
+### mesh volume list
 
    Summary:
       List volumes.
@@ -1376,7 +1376,7 @@
          Increase logging verbosity. Use --debug for full debug logs.
 
       Description:
-### sbz volume show
+### mesh volume show
 
    Summary:
       Get the details of a volume.
