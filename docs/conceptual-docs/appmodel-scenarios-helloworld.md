@@ -36,7 +36,7 @@ az group create --name <resourceGroupName> --location eastus
 Create the application and related resources using the following command.
 
 ```cli
-az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
+az mesh deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
   
 ```
 In a minute or so, your command should return with `"provisioningState": "Succeeded"`. Once it does, get the public IP address by querying for the network resources created in this deployment.
@@ -52,7 +52,7 @@ The network resource name for this example is `helloWorldNetwork`, fetch informa
 The network resource name for Windows example is `helloWorldNetworkWindows`.
 
 ```cli
-az sbz network show --resource-group <resourceGroupName> --name helloWorldNetwork
+az mesh network show --resource-group <resourceGroupName> --name helloWorldNetwork
 ```
 
 Get the `publicIpAddress` property and connect to it using a browser. It should display a web page with a welcome message.

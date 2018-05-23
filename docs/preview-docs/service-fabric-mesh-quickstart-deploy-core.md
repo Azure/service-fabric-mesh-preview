@@ -62,16 +62,16 @@ code dockerfile
 docker build -t meshapp-tutorial .
 docker run -p 8181:80 meshapp-tutorial
 
-az sbz deployment create --resource-group myResGroup --template-file C:\Users\adegeo\code\meshapp2\template.json --parameters `@template.params.json
+az mesh deployment create --resource-group myResGroup --template-file C:\Users\adegeo\code\meshapp2\template.json --parameters `@template.params.json
 
-az sbz network show --resource-group $rg --name helloWorldNetwork
+az mesh network show --resource-group $rg --name helloWorldNetwork
 
 ## Clean up resources
 
 When you are ready to delete the application run the following command, you'll be prompted to confirm deletion enter `y` to confirm the command.
 
 ```azurecli-interactive
-az sbz app delete -g $rg -n helloWorldApp
+az mesh app delete -g $rg -n helloWorldApp
 ```
 
 If you no longer need any of the resources you created in this quickstart, you can execute the [az group delete][az-group-delete] command to remove the resource group and all resources it contains. This command deletes the container deployed to service fabric mesh and all related resources.
