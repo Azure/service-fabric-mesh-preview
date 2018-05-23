@@ -16,5 +16,5 @@ az extension remove --name azure-cli-sbz
 3. Install the SeaBreeze CLI extension module. For the preview, SeaBreeze CLI is written as an extension to Azure CLI, however, at public preview it would ship as a part of the Azure CLI.
 
 ```cli
-az extension add --source https://seabreezepreview.blob.core.windows.net/cli/azure_cli_sbz-0.4.0-py2.py3-none-any.whl
+az extension add --source https://meshcli.blob.core.windows.net/cli/mesh-0.6.0-py2.py3-none-any.whl
 ```
