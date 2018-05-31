@@ -15,7 +15,7 @@ To run the quick start do the following:
 1. Open https://shell.azure.com and choose bash
 
 ### add the module and set subscription 
-1. az extension remove --name azure-cli-sbz
+1. az extension remove --name mesh
 1. az extension add --source https://meshcli.blob.core.windows.net/cli/mesh-0.6.0-py2.py3-none-any.whl
 1. az account set --subscription "{your subscript}"
 
