@@ -3,8 +3,8 @@ title: Overview of Azure Service Fabric Mesh
 description: An overview of Azure Service Fabric Mesh. With Service Fabric Mesh, you can deploy and scale your application without worrying about the infrastructure needs of your application.
 services: Azure Service Fabric Mesh
 keywords: 
-author: thraka
-ms.author: adegeo
+author: TylerMSFT
+ms.author: twhitney
 ms.date: 04/30/2018
 ms.topic: overview
 ms.service: service-fabric-mesh
@@ -16,13 +16,9 @@ manager: timlt
 
 Service Fabric Mesh is a server-less platform that runs on top of [Service Fabric][service-fabric-overview] and is hosted on Microsoft Azure. With Service Fabric Mesh, you can run and scale your microservices without worrying about the infrastructure powering it. Contrast this to pure [Service Fabric][service-fabric-overview] where you not only manage your services, but you also manage the cluster running your services. Service Fabric Mesh automatically allocates the infrastructure needed by your microservices, and also handles infrastructure failures, making sure your services are highly-available.
 
-![Diagram of Service Fabric Mesh for Azure](./media/service-fabric-mesh-overview/diagram.png)
-
 You worry about your code, Azure takes care of the hardware.
 
-|     |
-| --- |
-| Service Fabric Mesh is in currently in preview, and only supports the **East US** region. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA). |
+[!INCLUDE [preview note](./includes/include-preview-note.md)]
 
 ## Microservices
 
@@ -46,7 +42,7 @@ You can also take advantage of the Service Fabric runtime that Service Fabric Me
 
 It only takes a few steps to deploy a sample project with the Azure CLI. For more information, see [Deploy a container](service-fabric-mesh-quickstart-deploy-container.md). 
 
-If you're using Visual Studio, try the [Create an ASP.NET Core website](service-fabric-mesh-tutorial-deploy-dotnetcore.md) tutorial.
+If you're using Visual Studio, try the [Create an ASP.NET Core website](service-fabric-mesh-tutorial-create-dotnetcore.md) tutorial.
 
 
 
