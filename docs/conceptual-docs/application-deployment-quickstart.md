@@ -33,7 +33,7 @@ az group create --name <resourceGroupName> --location eastus
 3. Create your application using the following deployment command: 
 
 ```cli
-az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.linux.json
+az mesh deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.linux.json
 
 ```
 In a few seconds, your command should return with "provisioningState": "Succeeded" . Given below is the output from the command when using [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). 
@@ -47,7 +47,7 @@ At this point, your application has been deployed. You can check to see its stat
 The application name for our quickstart application is SbzVoting, so let us fetch its details. 
 
 ```cli
-az sbz app show --resource-group <resourceGroupName> --name SbzVoting
+az mesh app show --resource-group <resourceGroupName> --name SbzVoting
 ```
 
 ## Go to the application
@@ -57,7 +57,7 @@ Once the application status is returned as ""provisioningState": "Succeeded", we
 The network resource for our quickstart application is SbzVotingNetwork, so let us fetch its details.
 
 ```cli
-az sbz network show --resource-group <resourceGroupName> --name SbzVotingNetwork
+az mesh network show --resource-group <resourceGroupName> --name SbzVotingNetwork
 ```
 The command should now return, with information like the screen shot below when running the command in [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 From the output, copy the IP address .
@@ -89,7 +89,7 @@ Let us now review the VotingWeb service. Its code package is in a container call
 You can use the "app list" command to get a list of applications you have deployed to your subscription. 
 
 ```cli
-az sbz app list -o table
+az mesh app list -o table
 ```
 
 ## Delete the resources
@@ -110,7 +110,7 @@ For each codepackage (container) in your service instance, you can check its sta
 1. Check the logs for each container instance in a CGS. In this example, we are going to fetch the logs from the container VotingWeb.Code, which is in the first replica of the service VotingWeb
 	
 ```cli
-az sbz codepackage logs --resource-group <myResourceGroup> --application-name SbzVoting --service-name VotingWeb --replica-name 0 --name VotingWeb.Code
+az mesh codepackage logs --resource-group <myResourceGroup> --application-name SbzVoting --service-name VotingWeb --replica-name 0 --name VotingWeb.Code
 ```
 
 

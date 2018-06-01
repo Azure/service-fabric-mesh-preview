@@ -488,13 +488,13 @@
       Description:
    Create a deployment with a template file on the remote.
 
-      az sbz deployment create --resource-group mygroup --template-uri
+      az mesh deployment create --resource-group mygroup --template-uri
       https://seabreezequickstart.blob.core.windows.net/templates/qui
       ckstart/sbz_rp.linux.json
 
    Create a deployment with a template file on local disk.
 
-      az sbz deployment create --resource-group mygroup --template-
+      az mesh deployment create --resource-group mygroup --template-
       file ./appTemplate.json
 
 ### sbz network
@@ -1212,13 +1212,13 @@
       Description:
    Create a volume with a template file on a remote URL.
 
-      az sbz volume create --location westus --name myvolume
+      az mesh volume create --location westus --name myvolume
       --resource-group mygroup --template-uri https://mystorage.blob.
       core.windows.net/templates/volumeDescription.json
 
    Create a volume with a template file on local disk.
 
-      az sbz volume create --location westus --name myvolume
+      az mesh volume create --location westus --name myvolume
       --resource-group mygroup --template-file
       ./volumeDescription.json
 

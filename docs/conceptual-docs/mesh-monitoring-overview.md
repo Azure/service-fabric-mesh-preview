@@ -13,7 +13,7 @@ This article discusses the monitoring and diagnostics options for the latest pre
 You can view your docker logs from your deployed containers, on a per container basis. In the Mesh application model, each container is a code package in your application. To see the associated logs with a code package, use the following command:
 
 ```cli
-az sbz codepackage logs --resource-group <nameOfResourceGroup> --app-name <nameOfCGS> --service-name <nameOfService> --replica-name <nameOfReplica> --code-package-name <nameOfCodePackage>
+az mesh codepackage logs --resource-group <nameOfResourceGroup> --app-name <nameOfCGS> --service-name <nameOfService> --replica-name <nameOfReplica> --code-package-name <nameOfCodePackage>
 ```
 
 *Note: currently, replica names are incrementing numbers from 0.*
@@ -21,7 +21,7 @@ az sbz codepackage logs --resource-group <nameOfResourceGroup> --app-name <nameO
 Here is what this looks like for seeing the logs from the VotingWeb.Code container from the [quickstart](application-deployment-quickstart.md):
 
 ```cli
-az sbz codepackage logs --resource-group <RG> --app-name SbzVoting --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
+az mesh codepackage logs --resource-group <RG> --app-name SbzVoting --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
 ```
 
 ## Platform events
@@ -35,13 +35,13 @@ Here is a list of current events exposed in the platform, with a brief descripti
 Currently, events can be viewed at a servicereplica level. Here is the CLI command to view container events. 
 
 ```cli
-az sbz servicereplica show <nameOfResourceGroup> --app-name <nameOfCGS> --service-name <nameOfService> --replica-name <nameOfReplica>
+az mesh servicereplica show <nameOfResourceGroup> --app-name <nameOfCGS> --service-name <nameOfService> --replica-name <nameOfReplica>
 ```
 
 Here is what this looks like for seeing events for the VotingWeb service deployed in the [quickstart](application-deployment-quickstart.md):
 
 ```cli
-az sbz servicereplica show --resource-group <RG> --app-name SbzVoting --service-name VotingWeb --replica-name 0 
+az mesh servicereplica show --resource-group <RG> --app-name SbzVoting --service-name VotingWeb --replica-name 0 
 ```
 
 ## Metrics
