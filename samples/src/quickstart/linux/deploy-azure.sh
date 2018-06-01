@@ -6,4 +6,4 @@ location=$2
 #az account set --subscription {your subscriptionID}
 
 az group create --name $rgname --location $location
-az sbz deployment create --resource-group $rgname --template-file ./Deployment/quickstart-linux.json
+az mesh deployment create --resource-group $rgname --template-file ./Deployment/quickstart-linux.json

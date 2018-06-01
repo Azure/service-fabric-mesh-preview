@@ -45,7 +45,7 @@ az group create --name <resourceGroupName> --location eastus
 Create the application and related resources using the following command.
 
 ```cli
-az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.base.linux.json
+az mesh deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.base.linux.json
   
 ```
 In a minute or so, your command should return with `"provisioningState": "Succeeded"`. Once it does, get the public IP address by querying for the network resources created in this deployment.
@@ -61,7 +61,7 @@ The network resource name for this example is `visualObjectsNetwork`, fetch info
 The network resource name for Windows example is `visualObjectsNetworkWindows`.
 
 ```cli
-az sbz network show --resource-group <resourceGroupName> --name visualObjectsNetwork
+az mesh network show --resource-group <resourceGroupName> --name visualObjectsNetwork
 ```
 
 Get the `publicIpAddress` property and connect to it using a browser. It should display a web page with one triangle moving through the space.
@@ -71,7 +71,7 @@ Get the `publicIpAddress` property and connect to it using a browser. It should 
 Scale the `worker` service to three instances using the following command. 
 
 ```cli
-az sbz deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.linux.json
+az mesh deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.linux.json
   
 ```
 
