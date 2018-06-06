@@ -4,27 +4,23 @@ application:
   name: VotingApp
   services:
     - name: VotingWeb
-      description: VotingWeb front-end service
+      description: VotingWeb description.
       osType: Windows
       codePackages:
         - name: VotingWeb
           image: votingweb:dev
           endpoints:
             - name: VotingWebListener
-              port: 8080
+              port: 20005
           environmentVariables:
             - name: ASPNETCORE_URLS
-              value: http://+:8080
+              value: http://+:20005
 #            - name: ApplicationInsights:InstrumentationKey
 #              value: "<Place AppInsights key here, or reference it via a secret>"
-#            Use the below value for Win10 debugging
             - name: Voting_BackendHostName
-              value: votingdata.votingapp
-#            Use the below value for publishing to Azure Mesh
-#            - name: Voting_BackendHostName
-#              value: votingdata
+              value: votingdata
             - name: Voting_BackendHostPort
-              value: 8288
+              value: 20000
           resources:
             requests:
               cpu: 0.5

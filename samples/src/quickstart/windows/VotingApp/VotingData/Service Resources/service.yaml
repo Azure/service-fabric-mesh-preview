@@ -4,17 +4,17 @@ application:
   name: VotingApp
   services:
     - name: VotingData
-      description: VotingData backend service
+      description: VotingData description.
       osType: Windows
       codePackages:
         - name: VotingData
           image: votingdata:dev
           endpoints:
             - name: VotingDataListener
-              port: 8288
+              port: 20000
           environmentVariables:
             - name: ASPNETCORE_URLS
-              value: http://+:8288
+              value: http://+:20000
 #            - name: ApplicationInsights:InstrumentationKey
 #              value: "<Place AppInsights key here, or reference it via a secret>"
           resources:

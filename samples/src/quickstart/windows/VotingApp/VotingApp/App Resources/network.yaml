@@ -7,7 +7,7 @@ network:
   ingressConfig:
     layer4:
       - name: VotingWebIngress
-        publicPort: 8080
+        publicPort: 20005
         applicationName: VotingApp
         serviceName: VotingWeb
         endpointName: VotingWebListener
