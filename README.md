@@ -33,7 +33,7 @@ Here are some of the features you can expect to evaluate and provide feedback on
 
 This released is focused on getting feedback on Service Fabric Applications, the new, light-weight application model for Service Fabric. Service Fabric Applications are a drastic departure from the ApplicationManifest and ServiceManifest Reliable Services XML model. With Service Fabric Applications, you no longer need to decide up front whether your service should be a Guest EXE, Guest Container, Enlighted Container, Reliable Service, etc. You simply write your application code like you normally would in any language or framework, describe how it should run in a simple YAML definition, and run it on Service Fabric.
 
-Service Fabric Applications are designed around core tenants of server-less, multi-tenant execution environments like Mesh while bringing simplicity overall to applications that run on Service Fabric anywhere. Service Fabric Applications will be able to run in Mesh as well as on your local development environment, standalone clusters, and today's Azure clusters. Currently in private preview 2, this application model is only available in SeaBreeze.
+Service Fabric Applications are designed around core tenants of server-less, multi-tenant execution environments like Mesh while bringing simplicity overall to applications that run on Service Fabric anywhere. Service Fabric Applications will be able to run in Mesh as well as on your local development environment, standalone clusters, and today's Azure clusters. Currently in private preview 2, this application model is only available in Mesh.
 
 ## Preview Limitations
 As you are testing and providing feedback on this Mesh Private Preview please be mindful of the following limitations:
