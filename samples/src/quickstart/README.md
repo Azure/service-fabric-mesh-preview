@@ -35,13 +35,13 @@ To run the quick start do the following:
 1. az mesh app list -o table
 
 ### Delete the application
-1. az mesh app delete --resource-group SbzVotingRG --name SbzVoting
+1. az mesh app delete --resource-group SbzVotingRG --name helloWorldApp
 
 ### Delete the network
-1. az mesh network delete --resource-group SbzVotingRG --name SbzVotingNetwork
+1. az mesh network delete --resource-group SbzVotingRG --name helloWorldNetwork
 
 ### Delete the resource group
-1. az group delete --name SbzVotingRG --location eastus
+1. az group delete --name SbzVotingRG
 
 ## Use PowerShell
 There is currently no Mesh PowerShell modules available, the below is doing an ARM deployment based on the template.
