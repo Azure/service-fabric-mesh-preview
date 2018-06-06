@@ -1,4 +1,4 @@
-# Service Fabric "Mesb" Quickstart application
+# Service Fabric "Mesh" Quickstart application
 This folder contains an application, whcih you can use to quickly get a sense of the base capabilities of Service Fabric "Mesh".
 
 The application lets you add voting options and vote. It consists of two ASP.NET Core 2.0 services. One acts as the front-end and serves a SPA and exposes a web api for the SPA.
