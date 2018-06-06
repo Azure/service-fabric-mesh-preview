@@ -23,7 +23,7 @@ To run the quick start do the following:
 1. az group create --name SbzVotingRG --location eastus
 
 ### Create an application
-1. az mesh app create --resource-group SbzVotingRG --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
+1. az mesh deployment create --resource-group SbzVotingRG --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
 
 ### Check Status
 1. az mesh app show --resource-group SbzVotingRG --name SbzVoting
