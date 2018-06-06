@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "location": {
-      "defaultValue": "westus",
+      "defaultValue": "eastus",
       "type": "String",
       "metadata": {
         "description": "Location of the resources."
