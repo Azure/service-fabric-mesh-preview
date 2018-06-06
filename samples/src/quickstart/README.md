@@ -26,7 +26,7 @@ To run the quick start do the following:
 1. az mesh deployment create --resource-group SbzVotingRG --template-uri https://seabreezequickstart.blob.core.windows.net/templates/helloworld/sbz_rp.linux.json
 
 ### Check Status
-1. az mesh app show --resource-group SbzVotingRG --name SbzVoting
+1. az mesh app show --resource-group SbzVotingRG --name helloWorldApp
 
 ### Get the public IP for the application
 1. az mesh network show --resource-group SbzVotingRG --name SbzVotingNetwork | grep publicIP
