@@ -29,7 +29,7 @@ To run the quick start do the following:
 1. az mesh app show --resource-group SbzVotingRG --name helloWorldApp
 
 ### Get the public IP for the application
-1. az mesh network show --resource-group SbzVotingRG --name SbzVotingNetwork | grep publicIP
+1. az mesh network show --resource-group SbzVotingRG --name helloWorldNetwork | grep publicIpAddress
 
 ### Get the list of all SeaBreeze applications in the subscription in a table format
 1. az mesh app list -o table
