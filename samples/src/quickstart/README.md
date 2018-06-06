@@ -1,5 +1,5 @@
-# Service Fabric "SeaBreeze" Quickstart application
-This folder contains an application, whcih you can use to quickly get a sense of the base capabilities of Service Fabric "SeaBreeze".
+# Service Fabric "Mesh" Quickstart application
+This folder contains an application, whcih you can use to quickly get a sense of the base capabilities of Service Fabric "Mesh".
 
 The application lets you add voting options and vote. It consists of two ASP.NET Core 2.0 services. One acts as the front-end and serves a SPA and exposes a web api for the SPA.
 The other service acts as the backend data service, and exposes a WebAPI to crete, update and delete the individual votes. The backend service stores the voting in memory and it is not persisted.
@@ -44,7 +44,7 @@ To run the quick start do the following:
 1. az group delete --name SbzVotingRG --location eastus
 
 ## Use PowerShell
-There is currently no SeaBreeze PowerShell modules available, the below is doing an ARM deployment based on the template.
+There is currently no Mesh PowerShell modules available, the below is doing an ARM deployment based on the template.
 
 1. Open https://shell.azure.com and choose PowerShell or Login-AzureRmAccount if not using Azure Cloud Shell
 1. Set-AzureRmContext -SubscriptionId "Subscription-Id"
