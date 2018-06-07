@@ -36,7 +36,7 @@ Service Fabric resource applications will be able to run in Mesh as well as on y
 
 **Please note that the 6.3 preview cluster is a regular Service Fabric cluster and therefore also support manifest based applications and reliable services. Services and applications built using the 6.3 preview SDK are not supported to run in existing 6.2 clusters.**
 
-Instructions on how to get strated using Visual Studio with Azure Service Fabric Mesh are [here](.\docs\conceptual-docs\setup-developer-environment-sdk.md)
+Instructions on how to get strated using Visual Studio with Azure Service Fabric Mesh are [here](./docs/conceptual-docs/setup-developer-environment-sdk.md)
 
 ## Preview Limitations
 
