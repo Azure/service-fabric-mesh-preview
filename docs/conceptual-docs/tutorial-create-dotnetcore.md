@@ -3,14 +3,11 @@
 In this tutorial you will create a new Service Fabric Mesh application which is made up of an ASP.NET Core website, and run it in the local development cluster. After that, you will publish the project to Azure.
 
 In this tutorial you learn how to:
-> [!div class="checklist"]
-> * Create a new Service Fabric Mesh project.
-> * Debug the service locally.
-> * Publish the service to Azure.
+* Create a new Service Fabric Mesh project.
+* Debug the service locally.
+* Publish the service to Azure.
 
 If you don’t have an Azure subscription, [create a free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
-
-[!INCLUDE [preview note](./includes/include-preview-note.md)]
 
 ## Prerequisites
 
@@ -111,4 +108,4 @@ Alternatively, you can delete the resource group [from the portal](https://docs.
 
 ## Next steps
 
-Explore the [Voting app sample](../samples/src/votingapp/windows/VotingApp) to see an example of service-to-service communication.
+Explore the [Voting app sample](../../samples/src/votingapp/windows/VotingApp) to see an example of service-to-service communication.

@@ -4,7 +4,7 @@ Service Fabric Mesh documentation is organized in the following two broad catego
 
   [**1. Conceptual docs**](./conceptual-docs)
 
-  The conceptual documentation provides an overview of the Service Fabric Mesh project and the scope of the preview program. If you are new to the platform, conceptual documentation is a great place to start. It includes quick starts and samples for you to get started with using the platform. 
+  The conceptual documentation provides an overview of the Service Fabric Mesh project and the scope of the preview program. If you are new to the platform, conceptual documentation is a great place to start. It includes quick starts and samples for you to get started with using the platform.
   
   [**2. Reference docs**](./reference-docs)
 
