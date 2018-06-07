@@ -1,22 +1,8 @@
----
-title: Setup your development environment to build Service Fabric Mesh applications
-description: Details all of the prerequisites required to create a Service Fabric Application that can be deployed to Azure Service Fabric Mesh.
-services: Azure Service Fabric Mesh
-keywords: 
-author: TylerMSFT
-ms.author: twhitney
-ms.date: 06/5/2018
-ms.topic: get-started-article
-ms.service: service-fabric-mesh
-manager: timlt
-#Customer intent: As a developer, I need to prepare install the prerequisites to enable service fabric mesh development in visual studio.
----
-
 # Setup your development environment to build Service Fabric Mesh applications
 
-To build and run Azure Service Fabric applications on your Windows development machine, install the Service Fabric runtime, SDK, and tools.
+Azure Service Fabric applications built using the resource model, can be deployed to any Service Fabric cluster, as well as Azure Service Fabric Mesh.
 
-[!INCLUDE [preview note](./includes/include-preview-note.md)]
+To build and run Azure Service Fabric applications using the resource model, on your Windows development machine, install the Service Fabric runtime, SDK, and tools.
 
 **You will be installing a preview version of the Service Fabric runtime, version 6.3. This means that you should not do production development, nor attempt to deploy to a production Service Fabric cluster, unless you revert to a supported runtime.**
 
@@ -29,7 +15,7 @@ The following operating system versions are supported for development:
 
 ## Enable Hyper-V
 
-Hyper-V must be enabled for you to create Service Fabric applications. 
+Hyper-V must be enabled for you to create Service Fabric applications.
 
 ### Windows 10
 
@@ -55,8 +41,8 @@ Restart your computer. For more information about how to enable Hyper-V, see [In
 
 Visual Studio 2017 is required to deploy Service Fabric Applications. [Install version 15.6.0][download-visual-studio] or greater and enable the following workloads:
 
-- ASP.NET and web development
-- Azure Development
+* ASP.NET and web development
+* Azure Development
 
 ## Docker
 
@@ -84,9 +70,9 @@ Restart your computer.
 
 ## SDK and tools
 
-Install the Service Fabric runtime, SDK, and tools.
+Install the Service Fabric runtime, SDKs, and tools. The different packages will have to be installed in the order outlined below.
 
-1. Download the [Service Fabric Runtime][download-runtime]. Then run it with the **/AcceptEULA** flag from the command line, e.g. c:\users\<you>\downloads\MicrosoftServiceFabric.6.3.116.9494.exe /AcceptEULA
+1. Download the [Service Fabric Runtime][download-runtime]. Then run it with the **/AcceptEULA** flag from an elevated command line, e.g. c:\users\<you>\downloads\MicrosoftServiceFabric.6.3.116.9494.exe /AcceptEULA
 2. Install the [Service Fabric SDK][download-sdk].
 3. Install the [Service Fabric Mesh SDK][download-sdkmesh].
 4. Install the [Visual Studio Service Fabric Tools (preview)][download-tools].
@@ -107,7 +93,8 @@ You're now ready to create Service Fabric Mesh applications!
 
 ## Next steps
 
-Read through the [Create a .NET Core app to Service Fabric Mesh](service-fabric-mesh-tutorial-create-dotnetcore.md) tutorial.
+Read through the [Create a .NET Core app to Service Fabric Mesh](tutorial-create-dotnetcore.md) tutorial.
+Check the [FAQ and known issues document](FAQ-and-KnownIssues.md)
 
 [download-docker]: https://store.docker.com/editions/community/docker-ce-desktop-windows
 [download-docker-server]: https://docs.docker.com/install/windows/docker-ee/

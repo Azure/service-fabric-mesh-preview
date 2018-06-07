@@ -1,24 +1,3 @@
----
-title: Test and deploy a .NET Core app for Azure Service Fabric Mesh
-description: In this tutorial you create an ASP.NET Core website and deploy it to the local Service Fabric test cluster. After that, you will deploy to Azure.
-services: service-fabric-mesh
-documentationcenter: .net
-author: TylerMSFT
-manager: timlt
-editor: ''
-
-ms.assetid: 
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
-ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.date: 06/5/2018
-ms.author: twhitney
-ms.custom: mvc, devcenter
-#Customer intent: As a developer, I want to use visual studio to locally run a .net core application on Service Fabric Mesh so that I can see it run and then I will deploy it to Azure.
----
-
 # Tutorial: Create an ASP.NET Core website for Service Fabric Mesh
 
 In this tutorial you will create a new Service Fabric Mesh application which is made up of an ASP.NET Core website, and run it in the local development cluster. After that, you will publish the project to Azure.
@@ -128,8 +107,8 @@ az group delete --resource-group sfmeshTutorial1RG
 Remove-AzureRmResourceGroup -Name sfmeshTutorial1RG
 ```
 
-Alternatively, you can delete the resource group [from the portal](../azure-resource-manager/resource-group-portal.md#delete-resource-group-or-resources).
+Alternatively, you can delete the resource group [from the portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-portal#delete-resource-group-or-resources).
 
 ## Next steps
 
-Explore the [Voting app sample](https://github.com/MikkelHegn/service-fabric-mesh-preview-pr/tree/private-preview_3/samples/src/quickstart/windows/VotingApp) to see an example of service-to-service communication.
+Explore the [Voting app sample](../samples/src/votingapp/windows/VotingApp) to see an example of service-to-service communication.
