@@ -32,11 +32,7 @@ Here are some of the features you can expect to evaluate and provide feedback on
 
 This released is focused on an experience for developing .net core applications using Visual Studio on Windows. The preview update brings support for cerating resource applications in Visual Studio, run and debug them in a local Service Fabric cluster, and publish the applications to Azure Servic Fabric Mesh.
 
-<<<<<<< HEAD
 Service Fabric resource applications will be able to run in Mesh as well as on your local development environment, standalone clusters, and today's Azure clusters. Currently this private preview, this resource application model is available in Azure Service Fabric Mesh and in the 6.3 preview runtime for Windows clients (OneBox).
-=======
-Service Fabric Applications are designed around core tenants of server-less, multi-tenant execution environments like Mesh while bringing simplicity overall to applications that run on Service Fabric anywhere. Service Fabric Applications will be able to run in Mesh as well as on your local development environment, standalone clusters, and today's Azure clusters. Currently in private preview 2, this application model is only available in Mesh.
->>>>>>> 873c6bded42a7f8fb0827ea9d724007dba9cbc6e
 
 ## Preview Limitations
 
@@ -67,8 +63,7 @@ Here is how you can get started:
 We look forward to hearing your feedback about Mesh. Please use this repo's [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) to inform us of any bugs you come across, or improvements you would like to request.
 
 <!-- Images -->
-[Mesh-01]: ./media/Mesh.PNG
-[Milestones]: ./media/Milestones.PNG
+[Mesh-01]: /media/Mesh.PNG
 
 ## Contributing to this project
 
