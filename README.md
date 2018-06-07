@@ -67,7 +67,7 @@ Here is how you can get started:
 We look forward to hearing your feedback about Mesh. Please use this repo's [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) to inform us of any bugs you come across, or improvements you would like to request.
 
 <!-- Images -->
-[Mesh-01]: ./media/Mesh.PNG
+[Mesh-01]: ./media/Mesh.png
 
 ## Contributing to this project
 
