@@ -38,6 +38,8 @@ Use network resource to create private network and configure public connectivity
 
 More than one service from different applications can be part of the same network.
 
+**NOTE: The current preview only supports a one to one mapping between applications and networks**
+
 ### Volume
 
 Use volume resource to define properties for a volume that needs to be mounted inside the container of a service.
