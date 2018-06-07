@@ -30,13 +30,13 @@ Here are some of the features you can expect to evaluate and provide feedback on
 
 ## Private Preview 3 Capabilities
 
-This release is focused on an experience for developing .net core applications using Visual Studio on Windows. The preview update brings support for cerating resource applications in Visual Studio, run and debug them in a local Service Fabric cluster, and publish the applications to Azure Servic Fabric Mesh.
+This release is focused on an experience for developing .net core applications using Visual Studio on Windows. The preview update brings support for creating resource applications in Visual Studio, run and debug them in a local Service Fabric cluster, and publish the applications to Azure Service Fabric Mesh.
 
 Service Fabric resource applications will be able to run in Mesh as well as on your local development environment, standalone clusters, and today's Azure clusters. Currently as part of this private preview, this resource application model is available in Azure Service Fabric Mesh and in the 6.3 preview runtime for Windows clients (OneBox).
 
 **Please note that the 6.3 preview cluster is a regular Service Fabric cluster and therefore also support manifest based applications and reliable services. Services and applications built using the 6.3 preview SDK are not supported to run in existing 6.2 clusters.**
 
-Instructions on how to get strated using Visual Studio with Azure Service Fabric Mesh are [here](./docs/conceptual-docs/setup-developer-environment-sdk.md)
+Instructions on how to get started using Visual Studio with Azure Service Fabric Mesh are [here](./docs/conceptual-docs/setup-developer-environment-sdk.md)
 
 ## Preview Limitations
 
