@@ -1,4 +1,4 @@
-# Azure Service Fabric Mesh
+# Azure Service Fabric Mesh - Private Preview 3
 
 Azure Service Fabric Mesh is fully managed service where developers can build and deploy mission critical applications without managing any infrastructure such as VMs, storage, or networking. Mesh is a serverless environment for applications built from microservices.
 
@@ -32,7 +32,7 @@ Here are some of the features you can expect to evaluate and provide feedback on
 
 This release is focused on an experience for developing .net core applications using Visual Studio on Windows. The preview update brings support for creating resource applications in Visual Studio, run and debug them in a local Service Fabric cluster, and publish the applications to Azure Service Fabric Mesh.
 
-Service Fabric resource applications will be able to run in Mesh as well as on your local development environment, standalone clusters, and today's Azure clusters. Currently as part of this private preview, this resource application model is available in Azure Service Fabric Mesh and in the 6.3 preview runtime for Windows clients (OneBox).
+The applications based on Service Fabric resource model will be able to run in Mesh as well as on your local development environment, standalone clusters, and today's Azure clusters. Currently as part of this private preview, this resource application model is available in Azure Service Fabric Mesh and in the 6.3 preview runtime for Windows clients (OneBox).
 
 **Please note that the 6.3 preview cluster is a regular Service Fabric cluster and therefore also support manifest based applications and reliable services. Services and applications built using the 6.3 preview SDK are not supported to run in existing 6.2 clusters.**
 
