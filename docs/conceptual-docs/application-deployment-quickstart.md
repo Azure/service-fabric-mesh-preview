@@ -110,7 +110,7 @@ For each codepackage (container) in your service instance, you can check its sta
 1. Check the logs for each container instance in a CGS. In this example, we are going to fetch the logs from the container VotingWeb.Code, which is in the first replica of the service VotingWeb
 	
 ```cli
-az mesh codepackage logs --resource-group <myResourceGroup> --application-name SbzVoting --service-name VotingWeb --replica-name 0 --name VotingWeb.Code
+az mesh code-package logs --resource-group <myResourceGroup> --application-name SbzVoting --service-name VotingWeb --replica-name 0 --name VotingWeb.Code
 ```
 
 
