@@ -34,11 +34,14 @@ Yes, you are allocated restricted quota for use in the preview.
 
 Yes, you can, however we encourage you to delete the resources you deploy and not leave them running, unless you are actively testing it. This policy may change in the future and we may delete the resources, if they are being misused.
 
-## Required container base images
-The following container bases images can be used when deploying services
+## Supported container OS images
+The following container OS images can be used when deploying services.
 
-- Windows: TBD
-- Linux: TBD
+- Windows - windowsservercore and nanoserver
+    - Windows Server 2016
+    - Windows Server version 1709
+- Linux
+    - No known limitations
 
 ## Features Gaps and Known Issues
 
@@ -60,7 +63,13 @@ In your application model, you need to use the full resource id for networks and
 
 **I do not see the current application model supporting a way to encrypt my secrets**
 
-Yes, this is a gap in Private Preview 2. We are working on a secret store service to help with this and expect to have this in Preview 3. 
+Yes, this is a gap in the current Private Preview. We are working on a secret store service to help with this.
+
+**DNS does not work the same way in my Service Fabric devlopment cluster and in Mesh**
+
+There is a know issue, where you might have to reference services differently in your locl development cluster and in Azure Mesh. In your local development cluster use {serviceName}.{applicationName}. In Azure Mesh, use {servicename}. Azure Mesh does not currently support dns resolution across applications.
+
+For other known DNS issues with running a Service Fabric development cluster on Windows 10, see here: https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-how-to-debug-windows-containers.
 
 **I get this error when using the CLI module _ImportError: cannot import name 'sdk_no_wait'**
 
@@ -97,5 +106,3 @@ This does not mean that the extension did not install. You should still be able 
 **When I scale out, I see that all my containers are affected, including my running ones**
 
 This is a bug, and we expect to fix this with the next runtime refresh.
-
-

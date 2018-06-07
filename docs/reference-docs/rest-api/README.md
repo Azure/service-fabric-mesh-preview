@@ -1,5 +1,3 @@
-
-
 # Mesh Resource Provider API Reference
 
 Service Fabric Mesh is the Service Fabric's serverless offering to enable developers to deploy containerized microservices applications without managing infrastructure.
