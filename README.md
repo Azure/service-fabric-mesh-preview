@@ -12,7 +12,7 @@ With Mesh all services are deployed and managed in containers so that organizati
 
 ## Infrastructure
 
-Mesh consists of clusters of thousands of machines at geo-scale that can span not only Azure zones, but also regions for high availability and reliability. These clusters run applications packed efficiently based on resources required. The applications are orchestrated as load changes or failures occur.  You only care about the health and responsiveness of the containers associated with your applications.  You upload code specifying scale, HA requirements, resource limits and SeaBreeze takes care of reliably running your code and the microbilling for the resources requested.
+Mesh consists of clusters of thousands of machines at geo-scale that can span not only Azure zones, but also regions for high availability and reliability. These clusters run applications packed efficiently based on resources required. The applications are orchestrated as load changes or failures occur.  You only care about the health and responsiveness of the containers associated with your applications.  You upload code specifying scale, HA requirements, resource limits and Mesh takes care of reliably running your code and the microbilling for the resources requested.
 
 ## Roadmap
 
@@ -30,9 +30,9 @@ Here are some of the features you can expect to evaluate and provide feedback on
 
 ## Private Preview 3 Capabilities
 
-This release is focused on an experience for developing .net core applications using Visual Studio on Windows. The preview update brings support for creating resource applications in Visual Studio, run and debug them in a local Service Fabric cluster, and publish the applications to Azure Service Fabric Mesh.
+This release is focused on an experience for developing .net core applications using Visual Studio on Windows. The preview update brings support for creating resource applications in Visual Studio, running and debugging them in a local Service Fabric cluster, and publishing the applications to Azure Service Fabric Mesh.
 
-The applications based on Service Fabric resource model will be able to run in Mesh as well as on your local development environment, standalone clusters, and today's Azure clusters. Currently as part of this private preview, this resource application model is available in Azure Service Fabric Mesh and in the 6.3 preview runtime for Windows clients (OneBox).
+The applications based on Service Fabric resource model will be able to run in Mesh as well as on your local development environment, standalone clusters, and existing Azure clusters. Currently as part of this private preview, this resource application model is available in Azure Service Fabric Mesh and in the Service Fabric SDK 6.3 preview runtime for Windows clients (OneBox).
 
 **Please note that the 6.3 preview cluster is a regular Service Fabric cluster and therefore also support manifest based applications and reliable services. Services and applications built using the 6.3 preview SDK are not supported to run in existing 6.2 clusters.**
 
@@ -54,9 +54,9 @@ Here is how you can get started:
 
 - Deploy an application to Mesh using Azure CLI [quickstart guide](./docs/conceptual-docs/service-fabric-mesh-quickstart-deploy-container.md).
 
-- Create an asp.net core application using Visual STudio and deploy to Mesh []().
+- Create an asp.net core application using Visual Studio and deploy to Mesh []().
 
-- Read about the [Application Model](./docs/conceptual-docs/appmodel-overview.md) and learn about how to achieve particular scenarios and deploy examples on Mesh.
+- Read about the [Application Model](./docs/conceptual-docs/appmodel-overview.md) and learn how to achieve particular scenarios and deploy examples on Mesh.
 
 ## Frequently asked questions and known Issues
 
