@@ -97,14 +97,15 @@ For the best debugging performance when you create and run Service Fabric applic
 
 Docker **must** be running before you can build a cluster. Test that Docker is running by opening a terminal window and running `docker ps` to see if an error occurs. If the response does not indicate an error, Docker is running and you're ready to build a cluster.
 
-After you install the runtime, SDKs and Visual Studio tools, create a development cluster. Open a **new**, **elevated**, PowerShell window and run the following PowerShell commands:
+After you install the runtime, SDKs and Visual Studio tools, create a development cluster.
+
+1. Close your PowerShell window
+2. Open  new, elevated  PowerShell window. This step is necessary, just this once, for PowerShell to load the Service Fabric modules you just installed.
+3. Run the following PowerShell commands to create a development cluster:
 
 ```powershell
 . "C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1" -CreateOneNodeCluster -UseMachineName
 ```
-
-> [!NOTE]
-> If you see 'Unable to load DLL 'FabricCommon.dll', open a newPowerShell window so that the modules from the runtime installer will load, and try again.
 
 You're now ready to create Service Fabric Mesh applications!
 
