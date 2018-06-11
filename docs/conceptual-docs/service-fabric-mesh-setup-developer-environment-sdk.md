@@ -5,7 +5,7 @@ services: Azure Service Fabric Mesh
 keywords: 
 author: TylerMSFT
 ms.author: twhitney
-ms.date: 06/5/2018
+ms.date: 06/11/2018
 ms.topic: get-started-article
 ms.service: service-fabric-mesh
 manager: timlt
@@ -86,7 +86,7 @@ Restart your computer.
 
 Install the Service Fabric runtime, SDK, and tools.
 
-1. Download the [Service Fabric Runtime][download-runtime]. Then run it with the **/AcceptEULA** flag from the command line, e.g. c:\users\<you>\downloads\MicrosoftServiceFabric.6.3.116.9494.exe /AcceptEULA
+1. Download the [Service Fabric Runtime][download-runtime]. Then run it with the **/AcceptEULA** flag from the command line, e.g. c:\users\<your user account>\downloads\MicrosoftServiceFabric.6.3.116.9494.exe /AcceptEULA
 2. Install the [Service Fabric SDK][download-sdk].
 3. Install the [Service Fabric Mesh SDK][download-sdkmesh].
 4. Install the [Visual Studio Service Fabric Tools (preview)][download-tools].
@@ -102,6 +102,9 @@ After you install the runtime, SDKs and Visual Studio tools, create a developmen
 ```powershell
 . "C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1" -CreateOneNodeCluster -UseMachineName
 ```
+
+> [!NOTE]
+> If you see 'Unable to load DLL 'FabricCommon.dll', open a newPowerShell window so that the modules from the runtime installer will load, and try again.
 
 You're now ready to create Service Fabric Mesh applications!
 
