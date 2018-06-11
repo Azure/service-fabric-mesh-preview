@@ -15,6 +15,9 @@ namespace VotingWeb.Controllers
         private readonly ILogger _logger;
         private DateTime _timer;
 
+// Workaround DNS issues across Win10 and Mesh:
+// https://github.com/Azure/service-fabric-mesh-preview-pr/blob/master/docs/conceptual-docs/FAQ-and-KnownIssues.md#features-gaps-and-known-issues
+// DNS does not work the same way in my Service Fabric devlopment cluster and in Mesh
 #if DEBUG
         private static string backendDNSName = $"{Environment.GetEnvironmentVariable("Voting_BackendHostName")}.votingapp";
 #else
