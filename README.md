@@ -2,6 +2,8 @@
 
 Azure Service Fabric Mesh is fully managed service where developers can build and deploy mission critical applications without managing any infrastructure such as VMs, storage, or networking. Mesh is a serverless environment for applications built from microservices.
 
+Please spend a few minutes and give some feedback on the Azure Service Fabric Mesh preview here: [Preview survey](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR358VaENw7hEnp4naVX-v5FUMVpMNzlSMTU4MTJTSEU2RzBHOFZLTk5PUC4u)
+
 ![Mesh-01][Mesh-01]
 
 Applications hosted on Mesh can be scaled on demand without developers worrying about the infrastructure needed to run their applications. The Mesh service not only takes care of the physical infrastructure, but also detects and handles infrastructure failures, manages service discovery, data-partitioning, no-downtime upgrades, and other features that developers need from an application platform to building highly available and scalable applications. Developers win because they do not have to manage infrastructure, have a simple getting started experience, and can write  applications that automatically scale. Operations and IT managers win because they are billed only for resources they’re using on a per second basis and have simpler deployments.
