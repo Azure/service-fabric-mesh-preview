@@ -11,7 +11,7 @@ If you don’t have an Azure subscription, [create a free account](https://azure
 
 ## Prerequisites
 
-Before you get started, make sure that you've [set up your development environment](service-fabric-mesh-setup-developer-environment-sdk.md). This process includes installing the Service Fabric runtime, SDK, Docker, and Visual Studio 2017. 
+Before you get started, make sure that you've [set up your development environment](setup-developer-environment-sdk.md). This process includes installing the Service Fabric runtime, SDK, Docker, and Visual Studio 2017. 
 
 ## Create a Service Fabric Mesh project
 
