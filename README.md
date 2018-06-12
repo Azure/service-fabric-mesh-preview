@@ -2,11 +2,17 @@
 
 Azure Service Fabric Mesh is fully managed service where developers can build and deploy mission critical applications without managing any infrastructure such as VMs, storage, or networking. Mesh is a serverless environment for applications built from microservices.
 
-Please spend a few minutes and give some feedback on the Azure Service Fabric Mesh preview here: [Preview survey](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR358VaENw7hEnp4naVX-v5FUMVpMNzlSMTU4MTJTSEU2RzBHOFZLTk5PUC4u)
+## We need your feedback to get this right
 
-![Mesh-01][Mesh-01]
+![Feedback][Survey]
+
+Please spend a few minutes and give some feedback on the Azure Service Fabric Mesh preview: [Preview survey](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR358VaENw7hEnp4naVX-v5FUMVpMNzlSMTU4MTJTSEU2RzBHOFZLTk5PUC4u)
+
+## What is Azure Service Fabric Mesh
 
 Applications hosted on Mesh can be scaled on demand without developers worrying about the infrastructure needed to run their applications. The Mesh service not only takes care of the physical infrastructure, but also detects and handles infrastructure failures, manages service discovery, data-partitioning, no-downtime upgrades, and other features that developers need from an application platform to building highly available and scalable applications. Developers win because they do not have to manage infrastructure, have a simple getting started experience, and can write  applications that automatically scale. Operations and IT managers win because they are billed only for resources they’re using on a per second basis and have simpler deployments.
+
+![Mesh-01][Mesh-01]
 
 Mesh is an application platform for developing cloud-native applications built as microservices that are deployed in containers. Mesh is powered by [Azure Service Fabric]((http://docs.microsoft.com/azure/service-fabric/.md)). Today companies on a path to application modernization build applications consisting of stateless or stateful microservices. Mesh enables developers to build stateful services using either built-in low latency container volume drivers or reliable collections (dictionary, queue) that can be used with any programming mode, or framework.
 
@@ -69,6 +75,7 @@ Here is how you can get started:
 We look forward to hearing your feedback about Mesh. Please use this repo's [Issues](https://github.com/Azure/seabreeze-preview-pr/issues) to inform us of any bugs you come across, or improvements you would like to request.
 
 <!-- Images -->
+[Survey]: ./media/Survey.png
 [Mesh-01]: ./media/Mesh.png
 
 ## Contributing to this project
