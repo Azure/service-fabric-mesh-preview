@@ -1,0 +1,110 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus",
+      "metadata": {
+        "description": "Location of the resources."
+      }
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "visualObjectsNetwork",
+      "type": "Microsoft.ServiceFabric/networks",
+      "location": "[parameters('location')]",
+      "dependsOn": [],
+      "properties": {
+        "schemaVersion": "0.0.1",
+        "addressPrefix": "10.0.0.4/22",
+        "ingressConfig": {
+          "layer4": [
+            {
+              "publicPort": "80",
+              "applicationName": "visualObjectsApp",
+              "serviceName": "web",
+              "endpointName": "webListener"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "visualObjectsApp",
+      "type": "Microsoft.ServiceFabric/applications",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "Microsoft.ServiceFabric/networks/visualObjectsNetwork"
+      ],
+      "properties": {
+        "description": "Service Fabric Mesh Visual Objects Application!",
+        "services": [
+          {
+            "type": "Microsoft.ServiceFabric/services",
+            "location": "[parameters('location')]",
+            "name": "web",
+            "properties": {
+              "description": "Service Fabric Mesh Visual Objects Web Service.",
+              "osType": "linux",
+              "codePackages": [
+                {
+                  "name": "code",
+                  "image": "seabreeze/azure-mesh-visualobjects-web:1.0-stretch",
+                  "endpoints": [
+                    {
+                      "name": "webListener",
+                      "port": "80"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "1",
+                      "memoryInGB": "1"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabric/networks', 'visualObjectsNetwork')]"
+                }
+              ]
+            }
+          },
+          {
+            "type": "Microsoft.ServiceFabric/services",
+            "location": "[parameters('location')]",
+            "name": "worker",
+            "properties": {
+              "description": "Service Fabric Mesh Visual Objects Worker Service.",
+              "osType": "linux",
+              "codePackages": [
+                {
+                  "name": "code",
+                  "image": "seabreeze/azure-mesh-visualobjects-worker:1.0-stretch",
+                  "resources": {
+                    "requests": {
+                      "cpu": "1",
+                      "memoryInGB": "1"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabric/networks', 'visualObjectsNetwork')]"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
