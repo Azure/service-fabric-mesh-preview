@@ -53,7 +53,7 @@
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "seabreeze/azure-mesh-visualobjects-web:1.0-stretch",
+                  "image": "seabreeze/azure-mesh-visualobjects-web:1.1-nanoserver-1709",
                   "endpoints": [
                     {
                       "name": "webListener",
@@ -86,7 +86,7 @@
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "seabreeze/azure-mesh-visualobjects-worker:1.0-stretch",
+                  "image": "seabreeze/azure-mesh-visualobjects-worker:1.1-nanoserver-1709",
                   "resources": {
                     "requests": {
                       "cpu": "1",
@@ -95,7 +95,7 @@
                   }
                 }
               ],
-              "replicaCount": "1",
+              "replicaCount": "3",
               "networkRefs": [
                 {
                   "name": "[resourceId('Microsoft.ServiceFabric/networks', 'visualObjectsNetwork')]"
