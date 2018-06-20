@@ -1,8 +1,8 @@
-FROM microsoft/aspnetcore:2.0 AS base
+FROM microsoft/aspnetcore:2.0-nanoserver-sac2016 AS base
 WORKDIR /app
 EXPOSE 20005
 
-FROM microsoft/aspnetcore-build:2.0 AS build
+FROM microsoft/aspnetcore-build:2.0-nanoserver-sac2016 AS build
 WORKDIR /src
 COPY VotingWeb/VotingWeb.csproj VotingWeb/
 RUN dotnet restore VotingWeb/VotingWeb.csproj

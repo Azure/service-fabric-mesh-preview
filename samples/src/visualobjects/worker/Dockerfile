@@ -1,7 +1,7 @@
-FROM microsoft/dotnet:2.0-runtime AS base
+FROM microsoft/dotnet:2.1-runtime-nanoserver-sac2016 AS base
 WORKDIR /app
 
-FROM microsoft/dotnet:2.0-sdk AS build
+FROM microsoft/dotnet:2.1-sdk-nanoserver-sac2016 AS build
 WORKDIR /src
 COPY worker/worker.csproj worker/
 RUN dotnet restore worker/worker.csproj

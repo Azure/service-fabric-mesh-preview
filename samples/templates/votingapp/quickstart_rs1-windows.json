@@ -54,7 +54,7 @@
               "codePackages": [
                 {
                   "name": "VotingData",
-                  "image": "seabreeze/votingdata:1.0-1709",
+                  "image": "wangcai0124/repository:azure-mesh-votingdata-14393",
                   "endpoints": [
                     {
                       "name": "VotingDataListener",
@@ -91,7 +91,7 @@
               "codePackages": [
                 {
                   "name": "VotingWeb",
-                  "image": "seabreeze/votingfrontend:1.0-1709",
+                  "image": "wangcai0124/repository:azure-mesh-votingweb-14393",
                   "endpoints": [
                     {
                       "name": "VotingWebListener",

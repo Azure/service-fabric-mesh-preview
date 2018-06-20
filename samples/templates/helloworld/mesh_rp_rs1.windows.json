@@ -1,0 +1,83 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus",
+      "metadata": {
+        "description": "Location of the resources."
+      }
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "helloWorldNetworkWindows",
+      "type": "Microsoft.ServiceFabric/networks",
+      "location": "[parameters('location')]",
+      "dependsOn": [],
+      "properties": {
+        "schemaVersion": "0.0.1",
+        "addressPrefix": "10.0.0.4/22",
+        "ingressConfig": {
+          "layer4": [
+            {
+              "publicPort": "80",
+              "applicationName": "helloWorldAppWindows",
+              "serviceName": "helloWorldService",
+              "endpointName": "helloWorldListener"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-03-01-privatepreview",
+      "name": "helloWorldAppWindows",
+      "type": "Microsoft.ServiceFabric/applications",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "Microsoft.ServiceFabric/networks/helloWorldNetworkWindows"
+      ],
+      "properties": {
+        "description": "Service Fabric Mesh HelloWorld Application!",
+        "services": [
+          {
+            "type": "Microsoft.ServiceFabric/services",
+            "location": "[parameters('location')]",
+            "name": "helloWorldService",
+            "properties": {
+              "description": "Service Fabric Mesh Hello World Service.",
+              "osType": "windows",
+              "codePackages": [
+                {
+                  "name": "helloWorldCode",
+                  "image": "wangcai0124/repository:iis-site-ltsc2016",
+                  "endpoints": [
+                    {
+                      "name": "helloWorldListener",
+                      "port": "80"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "1",
+                      "memoryInGB": "1"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabric/networks', 'helloWorldNetworkWindows')]"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
