@@ -4,7 +4,7 @@
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "westus",
+      "defaultValue": "eastus",
       "metadata": {
         "description": "Location of the resources."
       }
@@ -53,7 +53,7 @@
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "seabreeze/azure-mesh-visualobjects-web:1.0-nanoserver-1709",
+                  "image": "seabreeze/azure-mesh-visualobjects-web:1.1-nanoserver-1709",
                   "endpoints": [
                     {
                       "name": "webListener",
@@ -86,7 +86,7 @@
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "seabreeze/azure-mesh-visualobjects-worker:1.0-rotate-nanoserver-1709",
+                  "image": "seabreeze/azure-mesh-visualobjects-worker:1.1-rotate-nanoserver-1709",
                   "resources": {
                     "requests": {
                       "cpu": "1",

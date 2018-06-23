@@ -2,13 +2,13 @@
   "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "location": {
-      "defaultValue": "eastus",
-      "type": "String",
-      "metadata": {
-        "description": "Location of the resources."
+      "location": {
+          "type": "string",
+          "defaultValue": "eastus",
+          "metadata": {
+              "description": "Location of the resources."
+          }
       }
-    }
   },
   "resources": [
     {
@@ -117,19 +117,8 @@
                       "memoryInGB": 1.0
                     }
                   }
-                }
-              ],
-              "replicaCount": 1,
-              "networkRefs": [
-                {
-                  "name": "[resourceId('Microsoft.ServiceFabric/networks', 'VotingAppNetwork')]"
-                }
               ]
-            }
           }
-        ],
-        "description": "VotingApp for Mesh"
       }
-    }
   ]
 }

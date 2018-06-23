@@ -71,7 +71,7 @@ You can now add voting options to the application and vote on it, or delete the 
 
 ## Quick review of the quick start application details
 
-For a detailed review of this quick start application and its source code, go to the [quick start sample](..\..\samples\src\quickstart) folder. 
+For a detailed review of this quick start application and its source code, go to the [quick start sample](../../samples/src/votingapp) folder. 
 
 Let us quickly review the [deployment JSON](https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.linux.json)
 
