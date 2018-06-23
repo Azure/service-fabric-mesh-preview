@@ -25,7 +25,7 @@
           "layer4": [
             {
               "name": "VotingWebIngress",
-              "publicPort": "8080",
+              "publicPort": "80",
               "applicationName": "VotingApp",
               "serviceName": "VotingWeb",
               "endpointName": "VotingWebListener"
@@ -53,7 +53,7 @@
               "codePackages": [
                 {
                   "name": "VotingData",
-                  "image": "seabreeze/votingdata:1.0-stretch",
+                  "image": "seabreeze/azure-mesh-quickstart-data:1.0-stretch",
                   "endpoints": [
                     {
                       "name": "VotingDataListener",
@@ -90,7 +90,7 @@
               "codePackages": [
                 {
                   "name": "VotingWeb",
-                  "image": "seabreeze/votingweb:1.0-stretch",
+                  "image": "seabreeze/azure-mesh-quickstart-web:1.0-stretch",
                   "endpoints": [
                     {
                       "name": "VotingWebListener",

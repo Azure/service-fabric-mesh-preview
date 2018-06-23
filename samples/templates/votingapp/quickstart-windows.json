@@ -10,7 +10,7 @@
       }
     }
   },
-  "resources": [
+  "resources": [ 
     {
       "apiVersion": "2018-03-01-privatepreview",
       "name": "VotingAppNetwork",
@@ -25,7 +25,7 @@
           "layer4": [
             {
               "name": "VotingWebIngress",
-              "publicPort": "8080",
+              "publicPort": "80",
               "applicationName": "VotingApp",
               "serviceName": "VotingWeb",
               "endpointName": "VotingWebListener"
@@ -54,7 +54,7 @@
               "codePackages": [
                 {
                   "name": "VotingData",
-                  "image": "seabreeze/votingdata:1.0-nanoserver-1709",
+                  "image": "seabreeze/azure-mesh-quickstart-data:1.0-nanoserver-1709",
                   "endpoints": [
                     {
                       "name": "VotingDataListener",
@@ -91,7 +91,7 @@
               "codePackages": [
                 {
                   "name": "VotingWeb",
-                  "image": "seabreeze/votingweb:1.0-nanoserver-1709",
+                  "image": "seabreeze/azure-mesh-quickstart-web:1.0-nanoserver-1709",
                   "endpoints": [
                     {
                       "name": "VotingWebListener",
