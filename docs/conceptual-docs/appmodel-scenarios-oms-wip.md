@@ -103,25 +103,6 @@ This should be here:
 We will want to set the environment variables to reflect the OMS workspace.
 ![json-03-environment-variables][json-03-environment-variables]
 
-### Setup Service Fabric Mesh CLI
-Service Fabric Mesh CLI is used to deploy and manage Service Fabric Mesh resources of this example. Install it by following these [instructions](./cli-setup.md). 
-
-### Log in to Azure
-
-Log in to Azure and set your subscription to the one that has been white-listed for the preview.
-
-```cli
-az login
-az account set --subscription "<subscriptionName>"
-```
-
-### Create resource group
-Create a resource group (RG) to deploy this example or you can use an existing resource group and skip this step. The preview is available only in `eastus` location.
-
-```cli
-az group create --name <resourceGroupName> --location eastus 
-```
-
 ## Deployment Steps
 
 ### Setup Service Fabric Mesh CLI
@@ -136,14 +117,14 @@ az login
 az account set --subscription "<subscriptionName>"
 ```
 
-### Create resource group
-Create a resource group (RG) to deploy this example or you can use an existing resource group and skip this step. The preview is available only in `eastus` location.
+### Create a Resource Group
+Create a resource group (RG) to deploy this example or you can use an existing resource group and skip this step. The preview is available only in `eastus` location for the Mesh App.  We will add the file share to the same region too.
 
 ```cli
 az group create --name <resourceGroupName> --location eastus 
 ```
 
-### Create A File Share (1 time)
+### Create a File Share (1 time)
 Create a file share in the resource group.  This will be a common share for the emitter and the log2oms sidecar.
 
 #### Create a Storage Account
@@ -155,14 +136,13 @@ az storage account create -n MyStorageAccount -g MyResourceGroup -l eastus --sku
 Alternatively, we can use the portal to create the storage account too:
 ![storage-account-creation][storage-account-creation]
 
-#### Retrive Key for Storage Account
+#### Retrieve Key for Storage Account
 ```cli
 az storage account keys list -g MyResourceGroup --account-name MyStorageAccount
 ```
 
 We can also verify storage account keys in the portal:
 ![storage-account-keys][storage-account-keys]
-
 
 #### Create a File Share
 ```cli
