@@ -2,14 +2,14 @@
 
 We will use the Log2OMS client found here: https://github.com/yangl900/log2oms.
 
-This will be a sidecar that will watch files on Azure Files, and will use 4 environment variables.
+We'll use an emitter container, and a sidecar container (log2oms).  Both containers will share a mount on Azure Files.  The log2oms container will use 4 environment variables.
 
 * `LOG2OMS_WORKSPACE_ID` This is the workspace ID of Log Analytics.
 * `LOG2OMS_WORKSPACE_SECRET` This is the secret of your workspace, you can find it from "Advanced Settings" in Azure portal.
 * `LOG2OMS_LOG_FILE` This is the log file to tail and upload. Right now only support 1 file, in nginx case, this will be `access.log`
 * `LOG2OMS_LOG_TYPE` This is the table you want logs upload to. Note that LogAnalytics will add a postfix `_CL` to this name. so if we have `nginx` here, in LogAnalytics the table will be `nginx_CL`.
 
-We will have a sample app that will emit a file, and the sidecar log2oms will push the file to Log Analytics.
+The emitter container will stand in as a sample app that will update a file on the shared Azure File mount.  The sidecar log2oms container will use the same shared Azure File mount, and will push the file to Log Analytics.
 
 ## TODOs
 
