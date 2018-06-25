@@ -4,6 +4,11 @@ We will use the Log2OMS client found here: https://github.com/yangl900/log2oms.
 
 This will be a sidecar that will watch files on Azure Files, and will use 4 environment variables.
 
+* `LOG2OMS_WORKSPACE_ID` This is the workspace ID of Log Analytics.
+* `LOG2OMS_WORKSPACE_SECRET` This is the secret of your workspace, you can find it from "Advanced Settings" in Azure portal.
+* `LOG2OMS_LOG_FILE` This is the log file to tail and upload. Right now only support 1 file, in nginx case, this will be `access.log`
+* `LOG2OMS_LOG_TYPE` This is the table you want logs upload to. Note that LogAnalytics will add a postfix `_CL` to this name. so if we have `nginx` here, in LogAnalytics the table will be `nginx_CL`.
+
 We will have a sample app that will emit a file, and the sidecar log2oms will push the file to Log Analytics.
 
 ## TODOs
@@ -17,10 +22,10 @@ We will have a sample app that will emit a file, and the sidecar log2oms will pu
 We are going to borrow some concepts for setting up the OMS workspace.  We will want to get through the step of setting up the workspace and obtaining the workspace and key. 
 
 Linux:
-`https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-collect-linux-computer`
+* https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-collect-linux-computer
 
 Windows:
-`https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-collect-windows-computer`
+* https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-collect-windows-computer
 
 # How to use it
 ## Sourced from Log2OMS
@@ -66,7 +71,7 @@ The `worker` service moves the triangle at a predefined interval in the space an
 
 ## Building locally
 This assumes that docker is in Linux containers mode, and that we have logged into ACR
-* `https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli`
+* https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli
 ### Build the Emitter Image 
 
 Make sure we're in the directory for the sample app to emit a log file:
