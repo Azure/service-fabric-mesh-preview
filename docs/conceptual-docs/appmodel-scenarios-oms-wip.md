@@ -75,13 +75,13 @@ This assumes that docker is in Linux containers mode, and that we have logged in
 * https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli
 ### Build the Emitter Image 
 
-Make sure we're in the directory for the sample app to emit a log file.  This should be under `.\samples\src\templates\monitoring\OMS-sidecar-test\Log-Emitter`.
+Make sure we're in the directory for the sample app to emit a log file.  This should be under `.\samples\templates\monitoring\OMS-sidecar-test\Log-Emitter`.
 
 `docker build -t <acr>.azurecr.io/log-emitter:alpine .`
 
 ### Build the Log2OMS image
 
-We can simply retag it as well.  This should be under `.\samples\src\templates\monitoring\OMS-sidecar-test\Log2OMS`.
+We can simply retag it as well.  This should be under `.\samples\templates\monitoring\OMS-sidecar-test\Log2OMS`.
 
 `docker build -t <acr>.azurecr.io/log2oms:alpine-test .`
 
