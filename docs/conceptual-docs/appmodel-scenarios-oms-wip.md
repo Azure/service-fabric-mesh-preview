@@ -16,6 +16,7 @@ The emitter container will stand in as a sample app that will update a file on t
 * Check into Linux OMS Agent (built on image or sidecar)
 * Check into Windows OMS Agent (built on image or sidecar)
 * Check if sidecar can handle multiple files?
+* Check if log2oms sidecar will work with Windows Containers on Azure Files
 
 # Set up OMS Portal
 
@@ -121,7 +122,7 @@ az account set --subscription "<subscriptionName>"
 Create a resource group (RG) to deploy this example or you can use an existing resource group and skip this step. The preview is available only in `eastus` location for the Mesh App.  We will add the file share to the same region too.
 
 ```cli
-az group create --name <resourceGroupName> --location eastus 
+az group create --name MyResourceGroup --location eastus 
 ```
 
 ### Create a File Share (1 time)
@@ -190,7 +191,7 @@ updates_CL | take 10
 To conserve the limited resources assigned for the preview program, delete the resources frequently. To delete resources related to this example, delete the resource group in which they were deployed.
 
 ```cli
-az group delete --resource-group <resourceGroupName> 
+az group delete --resource-group MyResourceGroup 
 ```
 
 <!-- Images -->
