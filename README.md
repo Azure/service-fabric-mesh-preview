@@ -60,7 +60,7 @@ Here is the [Service Fabric Mesh preview EULA](http://aka.ms/seabreezeprevieweul
 
 Here is how you can get started:
 
-- Deploy an application to Mesh using Azure CLI [quickstart guide](./docs/conceptual-docs/service-fabric-mesh-quickstart-deploy-container.md).
+- Deploy an application to Mesh using Azure CLI [quickstart guide](./docs/conceptual-docs/application-deployment-quickstart.md).
 
 - Create an asp.net core application using Visual Studio and deploy to Mesh []().
 
