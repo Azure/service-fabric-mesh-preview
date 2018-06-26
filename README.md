@@ -1,4 +1,4 @@
-# Azure Service Fabric Mesh - Private Preview 3
+# Azure Service Fabric Mesh - Private Preview 4
 
 Azure Service Fabric Mesh is fully managed service where developers can build and deploy mission critical applications without managing any infrastructure such as VMs, storage, or networking. Mesh is a serverless environment for applications built from microservices.
 
@@ -35,6 +35,11 @@ Here are some of the features you can expect to evaluate and provide feedback on
 - Visual Studio integration
 - Reliable Collections for statefulness
 - Cross-zone deployments for HA
+
+## Private Preview 4 changes
+- diagnostics improvements for failing applications - the application schema contains health details and status details
+- CLI version 0.7.0 - bug fixes and information on how to get more information on the failed / stuck deployments 
+  
 
 ## Private Preview 3 Capabilities
 
