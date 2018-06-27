@@ -1,0 +1,32 @@
+﻿## Service definition ##
+application:
+  schemaVersion: 0.0.1
+  name: ServiceFabricMeshApp
+  services:
+    - name: WebFrontEnd
+      description: WebFrontEnd description.
+      osType: Windows
+      codePackages:
+        - name: WebFrontEnd
+          image: webfrontend:dev
+          endpoints:
+            - name: WebFrontEndListener
+              port: 20001
+          environmentVariables:
+            - name: ASPNETCORE_URLS
+              value: http://+:20001
+            - name: AppName
+              value: ServiceFabricMeshApp
+            - name: ApiHostPort
+              value: 20006
+            - name: ServiceName
+              value: ToDoService
+#            - name: ApplicationInsights:InstrumentationKey
+#              value: "<Place AppInsights key here, or reference it via a secret>"
+          resources:
+            requests:
+              cpu: 0.5
+              memoryInGB: 1
+      replicaCount: 1
+      networkRefs:
+        - name: ServiceFabricMeshAppNetwork
