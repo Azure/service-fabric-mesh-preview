@@ -53,7 +53,7 @@
               "codePackages": [
                 {
                   "name": "helloWorldCode",
-                  "image": "seabreeze/azure-mesh-helloworld:1.0-alpine",
+                  "image": "seabreeze/azure-mesh-helloworld:1.1-alpine",
                   "endpoints": [
                     {
                       "name": "helloWorldListener",

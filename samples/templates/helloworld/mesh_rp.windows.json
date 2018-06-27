@@ -53,7 +53,7 @@
               "codePackages": [
                 {
                   "name": "helloWorldCode",
-                  "image": "seabreeze/azure-mesh-helloworld:1.0-windowsservercore-1709",
+                  "image": "seabreeze/azure-mesh-helloworld:1.1-windowsservercore-1709",
                   "endpoints": [
                     {
                       "name": "helloWorldListener",
