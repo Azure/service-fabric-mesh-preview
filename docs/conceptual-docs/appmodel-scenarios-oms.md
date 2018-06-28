@@ -11,13 +11,6 @@ We'll use an emitter container, and a sidecar container (log2oms).  Both contain
 
 The emitter container will stand in as a sample app that will update a file on the shared Azure File mount.  The sidecar log2oms container will use the same shared Azure File mount, and will push the file to Log Analytics.
 
-## TODOs
-
-* Check into Linux OMS Agent (built on image or sidecar)
-* Check into Windows OMS Agent (built on image or sidecar)
-* Check if sidecar can handle multiple files?
-* Check if log2oms sidecar will work with Windows Containers on Azure Files
-
 # Set up OMS Portal
 
 We are going to borrow some concepts for setting up the OMS workspace.  We will want to get through the step of setting up the workspace and obtaining the workspace and key. 
@@ -25,8 +18,6 @@ We are going to borrow some concepts for setting up the OMS workspace.  We will 
 Linux:
 * https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-collect-linux-computer
 
-Windows:
-* https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-collect-windows-computer
 
 # How to use it
 ## Sourced from Log2OMS
@@ -74,12 +65,6 @@ The `worker` service moves the triangle at a predefined interval in the space an
 
 We can try to make a linux only deployment.
 ![deployment-scenario-linux-only][deployment-scenario-linux-only]
-
-**TODO** We can try a windows only deployment.  We would need log2oms in windowsservercore-1709.
-![deployment-scenario-windows-only][deployment-scenario-windows-only]
-
-**TODO** We can try a linux and windows deployment, where the log emitter is in a windowsservercore-1709 container.
-![deployment-scenario-linux-windows][deployment-scenario-linux-windows]
 
 ***
 ## Building locally
@@ -212,10 +197,6 @@ Please be sure to check the path for the deployment file.  Please also check the
 az mesh deployment create --resource-group MyResourceGroup --template-file .\samples\templates\monitoring\OMS-sidecar-test\deployment-linux.json
 ```
 
-#### TODO - Windows Only
-
-#### TODO - Linux and Windows
-
 ### Verify deployment
 ```cli 
 az mesh code-package-log get -g MyResourceGroup --app-name omsApp --service-name omsService --replica-name 0 --code-package-name omsCode
@@ -255,8 +236,6 @@ az mesh app show --resource-group <resource group name> --name <application name
 [json-02]: ./media/appmodel-scenarios-oms/json-02.png
 [json-03-environment-variables]: ./media/appmodel-scenarios-oms/json-03-environment-variables.png
 [deployment-scenario-linux-only]: ./media/appmodel-scenarios-oms/deployment-scenario-linux-only.png
-[deployment-scenario-windows-only]: ./media/appmodel-scenarios-oms/deployment-scenario-windows-only.png
-[deployment-scenario-linux-windows]: ./media/appmodel-scenarios-oms/deployment-scenario-linux-windows.png
 [storage-account-creation]: ./media/appmodel-scenarios-oms/storage-account-creation.png
 [storage-account-keys]: ./media/appmodel-scenarios-oms/storage-account-keys.png
 [file-share-creation]: ./media/appmodel-scenarios-oms/file-share-creation.png
