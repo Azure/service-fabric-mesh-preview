@@ -100,7 +100,7 @@
                         "properties": {
                             "codePackages": [
                                 {
-                                    "image": "andyacrsf.azurecr.io/log-emitter:alpine",
+                                    "image": "myAcr.azurecr.io/log-emitter:alpine",
                                     "imageRegistryCredential": {
                                         "password": "[parameters('registry-password')]",
                                         "server": "[parameters('registry-server')]",
@@ -140,7 +140,7 @@
                         "properties": {
                             "codePackages": [
                                 {
-                                    "image": "andyacrsf.azurecr.io/log2oms:alpine-test",
+                                    "image": "myAcr.azurecr.io/log2oms:alpine-test",
                                     "imageRegistryCredential": {
                                         "password": "[parameters('registry-password')]",
                                         "server": "[parameters('registry-server')]",

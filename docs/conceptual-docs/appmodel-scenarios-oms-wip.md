@@ -95,13 +95,6 @@ Make sure we're in the directory for the sample app to emit a log file.  This sh
 
 `docker build -t <acr>.azurecr.io/log-emitter:alpine .`
 
-#### Emitter Image - Windows
-This will require that docker is in **Windows Containers** mode.
-
-Make sure we're in the directory for the sample app to emit a log file.  This should be under `.\samples\templates\monitoring\OMS-sidecar-test\Log-Emitter-Windows`.
-
-`docker build -t <acr>.azurecr.io/log-emitter:windowsservercore-1709 .`
-
 ### Build the Log2OMS image
 This will require that docker is in **Linux Containers** mode.
 
@@ -132,10 +125,6 @@ Add in the image location in ACR.
 This should be here:
 `.\samples\templates\monitoring\OMS-sidecar-test\deployment-linux.json`
 
-#### For Windows Emitter
-This should be here:
-`.\samples\templates\monitoring\OMS-sidecar-test\deployment-windows.json`
-
 ![json-01][json-01]
 ![json-02][json-02]
 
@@ -160,7 +149,7 @@ az account set --subscription "<subscriptionName>"
 Create a resource group (RG) to deploy this example or you can use an existing resource group and skip this step. The preview is available only in `eastus` location for the Mesh App.  We will add the file share to the same region too.
 
 ```cli
-az group create --name MyResourceGroup --location eastus 
+az group create --name MyResourceGroup -l eastus 
 ```
 
 ### Create a File Share **(1 time)**
@@ -198,9 +187,14 @@ This will prompt for `ACR credentials`:
 
 ![azure-container-registry-keys][azure-container-registry-keys]
 
-We can also pick up the `ACR credentials` using az cli:
+We can also pick up the `ACR credentials` using az cli for full credentials:
 ```cli
 az acr credential show -n myAcr
+```
+
+This will just retrieve the `password`:
+```cli
+az acr credential show -n myAcr --query passwords[0].value
 ```
 
 And also for `Storage Account` and `File Share` keys:
@@ -220,17 +214,10 @@ Please be sure to check the path for the deployment file.  Please also check the
 az mesh deployment create --resource-group MyResourceGroup --template-file .\samples\templates\monitoring\OMS-sidecar-test\deployment-linux.json
 ```
 
-### TODO - Windows Only
-Windows only needs log2oms in windowsservercore-1709
-#### For Windows Only
-```cli
-az mesh deployment create --resource-group MyResourceGroup --template-file .\samples\templates\monitoring\OMS-sidecar-test\deployment-windows.json
-```
+#### TODO - Windows Only
 
 #### For Linux and Windows
-```cli
-az mesh deployment create --resource-group MyResourceGroup --template-file .\samples\templates\monitoring\OMS-sidecar-test\deployment-linux-windows-two-apps.json
-```
+**TODO** 2 App deployment still WIP
 
 ### Verify deployment
 ```cli 
