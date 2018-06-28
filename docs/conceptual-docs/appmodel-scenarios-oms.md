@@ -110,8 +110,6 @@ We can simply retag it as well.  This should be under `.\samples\templates\monit
 ### Push Emitter Image
 `Docker push <acr>.azurecr.io/log-emitter:alpine`
 
-### Push Emitter Windows Image
-`Docker push <acr>.azurecr.io/log-emitter:windowsservercore-1709`
 ***
 ## Deployment
 
