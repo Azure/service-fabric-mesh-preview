@@ -4,7 +4,7 @@
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "westus",
+      "defaultValue": "eastus",
       "metadata": {
         "description": "Location of the resources."
       }
