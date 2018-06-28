@@ -1,4 +1,4 @@
-# Example: OMS Logging - WIP
+# Example: OMS Logging
 
 We will use the Log2OMS client found here: https://github.com/yangl900/log2oms.
 
@@ -216,8 +216,7 @@ az mesh deployment create --resource-group MyResourceGroup --template-file .\sam
 
 #### TODO - Windows Only
 
-#### For Linux and Windows
-**TODO** 2 App deployment still WIP
+#### TODO - Linux and Windows
 
 ### Verify deployment
 ```cli 
@@ -254,16 +253,16 @@ az mesh app show --resource-group <resource group name> --name <application name
 ```
 
 <!-- Images -->
-[json-01]: ./media/appmodel-scenarios-oms-wip/json-01.png
-[json-02]: ./media/appmodel-scenarios-oms-wip/json-02.png
-[json-03-environment-variables]: ./media/appmodel-scenarios-oms-wip/json-03-environment-variables.png
-[deployment-scenario-linux-only]: ./media/appmodel-scenarios-oms-wip/deployment-scenario-linux-only.png
-[deployment-scenario-windows-only]: ./media/appmodel-scenarios-oms-wip/deployment-scenario-windows-only.png
-[deployment-scenario-linux-windows]: ./media/appmodel-scenarios-oms-wip/deployment-scenario-linux-windows.png
-[storage-account-creation]: ./media/appmodel-scenarios-oms-wip/storage-account-creation.png
-[storage-account-keys]: ./media/appmodel-scenarios-oms-wip/storage-account-keys.png
-[file-share-creation]: ./media/appmodel-scenarios-oms-wip/file-share-creation.png
-[azure-container-registry-keys]: ./media/appmodel-scenarios-oms-wip/azure-container-registry-keys.png
-[deployment-parameters]: ./media/appmodel-scenarios-oms-wip/deployment-parameters.png
-[oms-mesh-verify-deployment]: ./media/appmodel-scenarios-oms-wip/oms-mesh-verify-deployment.png
-[oms-portal-verify-deployment]: ./media/appmodel-scenarios-oms-wip/oms-portal-verify-deployment.png
+[json-01]: ./media/appmodel-scenarios-oms/json-01.png
+[json-02]: ./media/appmodel-scenarios-oms/json-02.png
+[json-03-environment-variables]: ./media/appmodel-scenarios-oms/json-03-environment-variables.png
+[deployment-scenario-linux-only]: ./media/appmodel-scenarios-oms/deployment-scenario-linux-only.png
+[deployment-scenario-windows-only]: ./media/appmodel-scenarios-oms/deployment-scenario-windows-only.png
+[deployment-scenario-linux-windows]: ./media/appmodel-scenarios-oms/deployment-scenario-linux-windows.png
+[storage-account-creation]: ./media/appmodel-scenarios-oms/storage-account-creation.png
+[storage-account-keys]: ./media/appmodel-scenarios-oms/storage-account-keys.png
+[file-share-creation]: ./media/appmodel-scenarios-oms/file-share-creation.png
+[azure-container-registry-keys]: ./media/appmodel-scenarios-oms/azure-container-registry-keys.png
+[deployment-parameters]: ./media/appmodel-scenarios-oms/deployment-parameters.png
+[oms-mesh-verify-deployment]: ./media/appmodel-scenarios-oms/oms-mesh-verify-deployment.png
+[oms-portal-verify-deployment]: ./media/appmodel-scenarios-oms/oms-portal-verify-deployment.png
