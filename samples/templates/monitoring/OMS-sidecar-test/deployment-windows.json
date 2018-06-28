@@ -100,7 +100,7 @@
                         "properties": {
                             "codePackages": [
                                 {
-                                    "image": "andyacrsf.azurecr.io/log-emitter:alpine",
+                                    "image": "andyacrsf.azurecr.io/log-emitter:windowsservercore-1709",
                                     "imageRegistryCredential": {
                                         "password": "[parameters('registry-password')]",
                                         "server": "[parameters('registry-server')]",
@@ -127,7 +127,7 @@
                                     "name": "[resourceId('Microsoft.ServiceFabric/networks', 'omsNetwork')]"
                                 }
                             ],
-                            "osType": "linux",
+                            "osType": "windows",
                             "replicaCount": "1"
                            
                         },

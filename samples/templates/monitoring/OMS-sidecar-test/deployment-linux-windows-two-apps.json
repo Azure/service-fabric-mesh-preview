@@ -1,4 +1,4 @@
-{
+ {
     "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
@@ -57,7 +57,22 @@
                     "accountName": "[parameters('storageAccountName')]",
                     "shareName": "[parameters('fileShareName')]"
                 },
-                "description": "Azure Files based volume for udpates service.",
+                "description": "Azure Files based volume for updates service.",
+                "provider": "SFAzureFile"
+            },
+            "type": "Microsoft.ServiceFabric/volumes"
+        },
+        {
+            "apiVersion": "2018-03-01-privatepreview",
+            "location": "[parameters('location')]",
+            "name": "omsEmitterVolume",
+            "properties": {
+                "azureFileParameters": {
+                    "accountKey": "[parameters('storageAccountKey')]",
+                    "accountName": "[parameters('storageAccountName')]",
+                    "shareName": "[parameters('fileShareName')]"
+                },
+                "description": "Azure Files based volume for updates service.",
                 "provider": "SFAzureFile"
             },
             "type": "Microsoft.ServiceFabric/volumes"
@@ -85,12 +100,33 @@
         },
         {
             "apiVersion": "2018-03-01-privatepreview",
+            "dependsOn": [],
+            "location": "[parameters('location')]",
+            "name": "omsEmitterNetwork",
+            "properties": {
+                "addressPrefix": "10.0.0.4/22",
+                "ingressConfig": {
+                    "layer4": [
+                        {
+                            "applicationName": "omsAppEmitter",
+                            "endpointName": "omsAppEmitterListener",
+                            "publicPort": "80",
+                            "serviceName": "omsAppEmitter"
+                        }
+                    ]
+                },
+                "schemaVersion": "0.0.1"
+            },
+            "type": "Microsoft.ServiceFabric/networks"
+        },
+        {
+            "apiVersion": "2018-03-01-privatepreview",
             "dependsOn": [
-                "Microsoft.ServiceFabric/networks/omsNetwork",
-                "Microsoft.ServiceFabric/volumes/omsVolume"
+                "Microsoft.ServiceFabric/networks/omsEmitterNetwork",
+                "Microsoft.ServiceFabric/volumes/omsEmitterVolume"
             ],
             "location": "[parameters('location')]",
-            "name": "omsApp",
+            "name": "omsAppEmitter",
             "properties": {
                 "description": "SeaBreeze example application with container deployed from private image registry.",
                 "services": [
@@ -100,7 +136,7 @@
                         "properties": {
                             "codePackages": [
                                 {
-                                    "image": "andyacrsf.azurecr.io/log-emitter:alpine",
+                                    "image": "andyacrsf.azurecr.io/log-emitter:windowsservercore-1709",
                                     "imageRegistryCredential": {
                                         "password": "[parameters('registry-password')]",
                                         "server": "[parameters('registry-server')]",
@@ -116,7 +152,7 @@
                                     "volumeRefs": [
                                         {
                                             "destinationPath": "/var/logs",
-                                            "name": "[resourceId('Microsoft.ServiceFabric/volumes', 'omsVolume')]"
+                                            "name": "[resourceId('Microsoft.ServiceFabric/volumes', 'omsEmitterVolume')]"
                                         }
                                     ]
                                 }
@@ -124,16 +160,30 @@
                             "description": "Log Producer Forwarder",
                             "networkRefs": [
                                 {
-                                    "name": "[resourceId('Microsoft.ServiceFabric/networks', 'omsNetwork')]"
+                                    "name": "[resourceId('Microsoft.ServiceFabric/networks', 'omsEmitterNetwork')]"
                                 }
                             ],
-                            "osType": "linux",
+                            "osType": "windows",
                             "replicaCount": "1"
                            
                         },
                         "type": "Microsoft.ServiceFabric/services"
-                    },
-
+                    }
+                ]
+            },
+            "type": "Microsoft.ServiceFabric/applications"
+        },
+        {
+            "apiVersion": "2018-03-01-privatepreview",
+            "dependsOn": [
+                "Microsoft.ServiceFabric/networks/omsNetwork",
+                "Microsoft.ServiceFabric/volumes/omsVolume"
+            ],
+            "location": "[parameters('location')]",
+            "name": "omsApp",
+            "properties": {
+                "description": "SeaBreeze example application with container deployed from private image registry.",
+                "services": [
                     {
                         "location": "[parameters('location')]",
                         "name": "omsService",

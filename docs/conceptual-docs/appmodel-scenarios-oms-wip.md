@@ -69,17 +69,41 @@ This example shows how to independently scale microservices within an applicatio
 The `web` service is an ASP.NET Core application with a web page that shows triangles in the browser. The browser displays one triangle for each instance of the `worker` service. 
 
 The `worker` service moves the triangle at a predefined interval in the space and sends location of the triangle to `web` service. It uses DNS to resolve the address of the `web` service.
+***
+## Deployment Scenarios
 
+We can try to make a linux only deployment.
+![deployment-scenario-linux-only][deployment-scenario-linux-only]
+
+**TODO** We can try a windows only deployment.  We would need log2oms in windowsservercore-1709.
+![deployment-scenario-windows-only][deployment-scenario-windows-only]
+
+**TODO** We can try a linux and windows deployment, where the log emitter is in a windowsservercore-1709 container.
+![deployment-scenario-linux-windows][deployment-scenario-linux-windows]
+
+***
 ## Building locally
-This assumes that docker is in Linux containers mode, and that we have logged into ACR
+This assumes that we have docker configured, and that we have logged into ACR
 * https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli
+
 ### Build the Emitter Image 
+
+#### Emitter Image - Linux
+This will require that docker is in **Linux Containers** mode.
 
 Make sure we're in the directory for the sample app to emit a log file.  This should be under `.\samples\templates\monitoring\OMS-sidecar-test\Log-Emitter`.
 
 `docker build -t <acr>.azurecr.io/log-emitter:alpine .`
 
+#### Emitter Image - Windows
+This will require that docker is in **Windows Containers** mode.
+
+Make sure we're in the directory for the sample app to emit a log file.  This should be under `.\samples\templates\monitoring\OMS-sidecar-test\Log-Emitter-Windows`.
+
+`docker build -t <acr>.azurecr.io/log-emitter:windowsservercore-1709 .`
+
 ### Build the Log2OMS image
+This will require that docker is in **Linux Containers** mode.
 
 We can simply retag it as well.  This should be under `.\samples\templates\monitoring\OMS-sidecar-test\Log2OMS`.
 
@@ -93,17 +117,31 @@ We can simply retag it as well.  This should be under `.\samples\templates\monit
 ### Push Emitter Image
 `Docker push <acr>.azurecr.io/log-emitter:alpine`
 
+### Push Emitter Windows Image
+`Docker push <acr>.azurecr.io/log-emitter:windowsservercore-1709`
+***
 ## Deployment
+
+We can try a few scenarios.
+
+
 ### Modify Deployment json file
-This should be here: 
+Add in the image location in ACR.
+
+#### For Linux Emitter
+This should be here:
 `.\samples\templates\monitoring\OMS-sidecar-test\deployment-linux.json`
+
+#### For Windows Emitter
+This should be here:
+`.\samples\templates\monitoring\OMS-sidecar-test\deployment-windows.json`
 
 ![json-01][json-01]
 ![json-02][json-02]
 
 We will want to set the environment variables to reflect the OMS workspace.
 ![json-03-environment-variables][json-03-environment-variables]
-
+***
 ## Deployment Steps
 
 ### Setup Service Fabric Mesh CLI
@@ -125,7 +163,7 @@ Create a resource group (RG) to deploy this example or you can use an existing r
 az group create --name MyResourceGroup --location eastus 
 ```
 
-### Create a File Share (1 time)
+### Create a File Share **(1 time)**
 Create a file share in the resource group.  This will be a common share for the emitter and the log2oms sidecar.
 
 #### Create a Storage Account
@@ -152,21 +190,47 @@ az storage share create --name myTestShare --account-key <account-key> --account
 
 We can also create a file share in the portal:
 ![file-share-creation][file-share-creation]
+### Deployment
 
-### Deploy using a file
-
-Please be sure to check the path for the deployment file.
-
-```cli
-az mesh deployment create --resource-group MyResourceGroup --template-file .\samples\templates\monitoring\OMS-sidecar-test\deployment-linux.json
-```
+#### Deployment Parameters **(keep these handy)**
 
 This will prompt for `ACR credentials`:
 
 ![azure-container-registry-keys][azure-container-registry-keys]
 
+We can also pick up the `ACR credentials` using az cli:
+```cli
+az acr credential show -n myAcr
+```
+
 And also for `Storage Account` and `File Share` keys:
 ![deployment-parameters][deployment-parameters]
+
+We can also pick up `Storage Account` keys using az cli:
+```cli
+az storage account keys list -g MyResourceGroup --account-name MyStorageAccount
+```
+### Deploy using a file
+
+Please be sure to check the path for the deployment file.  Please also check the deployment parameters.
+
+#### For Linux Only
+
+```cli
+az mesh deployment create --resource-group MyResourceGroup --template-file .\samples\templates\monitoring\OMS-sidecar-test\deployment-linux.json
+```
+
+### TODO - Windows Only
+Windows only needs log2oms in windowsservercore-1709
+#### For Windows Only
+```cli
+az mesh deployment create --resource-group MyResourceGroup --template-file .\samples\templates\monitoring\OMS-sidecar-test\deployment-windows.json
+```
+
+#### For Linux and Windows
+```cli
+az mesh deployment create --resource-group MyResourceGroup --template-file .\samples\templates\monitoring\OMS-sidecar-test\deployment-linux-windows-two-apps.json
+```
 
 ### Verify deployment
 ```cli 
@@ -193,11 +257,22 @@ To conserve the limited resources assigned for the preview program, delete the r
 ```cli
 az group delete --resource-group MyResourceGroup 
 ```
+***
+### Helpful Debugging Commands
+
+Open up a new CLI window and run the following to get the status of your application deployment.  The app name is also listed in the deployment json.
+
+```cli
+az mesh app show --resource-group <resource group name> --name <application name>
+```
 
 <!-- Images -->
 [json-01]: ./media/appmodel-scenarios-oms-wip/json-01.png
 [json-02]: ./media/appmodel-scenarios-oms-wip/json-02.png
 [json-03-environment-variables]: ./media/appmodel-scenarios-oms-wip/json-03-environment-variables.png
+[deployment-scenario-linux-only]: ./media/appmodel-scenarios-oms-wip/deployment-scenario-linux-only.png
+[deployment-scenario-windows-only]: ./media/appmodel-scenarios-oms-wip/deployment-scenario-windows-only.png
+[deployment-scenario-linux-windows]: ./media/appmodel-scenarios-oms-wip/deployment-scenario-linux-windows.png
 [storage-account-creation]: ./media/appmodel-scenarios-oms-wip/storage-account-creation.png
 [storage-account-keys]: ./media/appmodel-scenarios-oms-wip/storage-account-keys.png
 [file-share-creation]: ./media/appmodel-scenarios-oms-wip/file-share-creation.png
