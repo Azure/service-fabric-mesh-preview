@@ -18,7 +18,6 @@
       "location": "[parameters('location')]",
       "dependsOn": [],
       "properties": {
-        "schemaVersion": "0.0.1",
         "description": "VotingApp Network",
         "addressPrefix": "10.0.0.4/22",
         "ingressConfig": {
@@ -43,7 +42,6 @@
         "Microsoft.ServiceFabric/networks/VotingAppNetwork"
       ],
       "properties": {
-        "schemaVersion": "0.0.1",
         "services": [
           {
             "name": "VotingData",
