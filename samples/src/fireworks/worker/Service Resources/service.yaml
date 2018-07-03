@@ -1,0 +1,21 @@
+﻿## Service definition ##
+application:
+  schemaVersion: 1.0.0-preview1
+  name: Fireworks
+  properties:
+    services:
+      - name: red
+        properties:
+          description: Fireworks red worker container. This container sends a ping message to the web service that counts the worker containers.
+          osType: Windows
+          codePackages:
+            - name: worker
+              image: azure-mesh-fireworks-worker:dev-v1
+              environmentVariables:
+                - name: OBJECT_TYPE
+                  value: red
+              resources:
+                requests:
+                  cpu: 0.5
+                  memoryInGB: 1
+          replicaCount: 1

@@ -1,0 +1,14 @@
+## Network definition ##
+network:
+  schemaVersion: 1.0.0-preview1
+  name: FireworksNetwork
+  properties:
+    description: FireworksNetwork description.
+    addressPrefix: 10.0.0.4/22
+    ingressConfig:
+      layer4:
+        - name: webIngress
+          publicPort: 8080
+          applicationName: Fireworks
+          serviceName: web
+          endpointName: webListener

@@ -1,0 +1,36 @@
+application:
+  schemaVersion: 1.0.0-preview1
+  name: Fireworks
+  properties:
+    description: A sample application that shows multiple types of micro-services. It has a web frontend that displays the fireworks based on the type of the worker services.
+    services:
+      - name: blue
+        properties:
+          description: Fireworks red worker container. This container sends a ping message to the web service that counts the worker containers.
+          osType: Windows
+          codePackages:
+            - name: worker
+              image: azure-mesh-fireworks-worker:dev-v1
+              environmentVariables:
+                - name: OBJECT_TYPE
+                  value: blue
+              resources:
+                requests:
+                  cpu: 0.5
+                  memoryInGB: 1
+          replicaCount: 1
+      - name: green
+        properties:
+          description: Fireworks red worker container. This container sends a ping message to the web service that counts the worker containers.
+          osType: Windows
+          codePackages:
+            - name: worker
+              image: azure-mesh-fireworks-worker:dev-v1
+              environmentVariables:
+                - name: OBJECT_TYPE
+                  value: green
+              resources:
+                requests:
+                  cpu: 0.5
+                  memoryInGB: 1
+          replicaCount: 1

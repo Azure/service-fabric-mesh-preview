@@ -1,0 +1,26 @@
+﻿## Service definition ##
+application:
+  schemaVersion: 1.0.0-preview1
+  name: Fireworks
+  properties:
+    services:
+      - name: web
+        properties:
+          description: Frontend for the fireworks sample application that provides the counts of the worker container via web page. It receives the pings from worker containers and aggregates them. 
+          osType: Windows
+          codePackages:
+            - name: web
+              image: mesh-fireworks-web:dev
+              endpoints:
+                - name: webListener
+                  port: 8080
+              environmentVariables:
+                - name: ASPNETCORE_URLS
+                  value: http://+:8080
+              resources:
+                requests:
+                  cpu: 0.5
+                  memoryInGB: 1
+          replicaCount: 1
+          networkRefs:
+            - name: FireworksNetwork
