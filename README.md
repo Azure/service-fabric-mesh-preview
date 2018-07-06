@@ -54,9 +54,7 @@ A few things to be aware of with this release:
 - Azure CLI (az mesh) currently only supports api version 2018-03-01-privatepreview and namespace Microsoft.ServiceFabric.
 - Visual Studio Tools does not support project created with previous versions. You'll have to migrate your services to a new project.
 
-## Private Preview 3 Capabilities
-
-This release is focused on an experience for developing .net core applications using Visual Studio on Windows. The preview update brings support for creating resource applications in Visual Studio, running and debugging them in a local Service Fabric cluster, and publishing the applications to Azure Service Fabric Mesh.
+The preview has support for creating resource applications in Visual Studio, running and debugging them in a local Service Fabric cluster, and publishing the applications to Azure Service Fabric Mesh.
 
 The applications based on Service Fabric resource model will be able to run in Mesh as well as on your local development environment, standalone clusters, and existing Azure clusters. Currently as part of this private preview, this resource application model is available in Azure Service Fabric Mesh and in the Service Fabric SDK 6.3 preview runtime for Windows clients (OneBox).
 

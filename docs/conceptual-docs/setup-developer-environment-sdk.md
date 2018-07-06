@@ -72,7 +72,7 @@ Restart your computer.
 
 Install the Service Fabric runtime, SDKs, and tools. The different packages will have to be installed in the order outlined below.
 
-1. Download the [Service Fabric Runtime][download-runtime]. Then run it with the **/AcceptEULA** flag from an elevated command line, e.g. c:\users\<you>\downloads\MicrosoftServiceFabric.6.3.116.9494.exe /AcceptEULA
+1. Download the [Service Fabric Runtime][download-runtime]. Then run it with the **/AcceptEULA** flag from an elevated command line, e.g. c:\users\<you>\downloads\MicrosoftServiceFabric.6.3.159.9494.exe /AcceptEULA
 2. Install the [Service Fabric SDK][download-sdk].
 3. Install the [Service Fabric Mesh SDK][download-sdkmesh].
 4. Install the [Visual Studio Service Fabric Tools (preview)][download-tools].
