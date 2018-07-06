@@ -7,7 +7,7 @@ network:
   ingressConfig:
     layer4:
       - name: WebFrontEndIngress
-        publicPort: 20001
+        publicPort: 20002
         applicationName: ServiceFabricMeshApp
         serviceName: WebFrontEnd
         endpointName: WebFrontEndListener
