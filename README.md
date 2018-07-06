@@ -1,8 +1,8 @@
 # Azure Service Fabric Mesh - Private Preview 4
 
-Clisk here for details about the [private preview 4 update](#private-preview-4-updates)
+Click here for details about the [private preview 4 update](#private-preview-4-updates)
 
-Azure Service Fabric Mesh is fully managed service where developers can build and deploy mission critical applications without managing any infrastructure such as VMs, storage, or networking. Mesh is a serverless environment for applications built from microservices.
+Azure Service Fabric Mesh is a fully managed service where developers can build and deploy mission critical applications without managing any infrastructure such as Virtual Machines, storage, or networking. Mesh is a serverless environment for applications built from microservices.
 
 ## We need your feedback to get this right
 
@@ -40,7 +40,8 @@ Here are some of the features you can expect to evaluate and provide feedback on
 
 ## Private Preview 4 Updates
 
-This update includes a lot of stability and reliability fixes for the service along with the following:
+This update includes stability and reliability fixes for the service along with the following:
+
 - Diagnostics improvements for failing applications
 - Introduction of a new ARM api version (2018-07-01-preview)
 - Change of ARM namespace from Microsoft.ServiceFabric to Microsoft.ServiceFabricMesh
@@ -48,9 +49,10 @@ This update includes a lot of stability and reliability fixes for the service al
 - Visual Studio now uses the new namespace and api version
 
 A few things to be aware of with this release:
+
 - The new ARM namespace Microsoft.ServiceFabricMesh can only be used with the api version 2018-07-01-preview. We still support using the previous api version (2018-03-01-privatepreview) and namespace (Microsoft.ServiceFabric).
 - Azure CLI (az mesh) currently only supports api version 2018-03-01-privatepreview and namespace Microsoft.ServiceFabric.
-- Visual Studio Tools does not support project created with previus versions. You'll have to migrate your services to a new project.
+- Visual Studio Tools does not support project created with previous versions. You'll have to migrate your services to a new project.
 
 ## Private Preview 3 Capabilities
 
