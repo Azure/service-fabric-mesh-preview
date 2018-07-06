@@ -44,9 +44,13 @@ This update includes a lot of stability and reliability fixes for the service al
 - Diagnostics improvements for failing applications
 - Introduction of a new ARM api version (2018-07-01-preview)
 - Change of ARM namespace from Microsoft.ServiceFabric to Microsoft.ServiceFabricMesh
-- CLI version 0.7.0 - bug fixes and information on how to get more information on the failed / stuck deployments 
+- CLI version 0.7.0 - bug fixes and information on how to get more information on the failed / stuck deployments
+- Visual Studio now uses the new namespace and api version
 
-The new ARM namespace Microsoft.ServiceFabricMesh can only be used with the api version 2018-07-01-preview. We still support using the previous api version (2018-03-01-privatepreview) and namespace (Microsoft.ServiceFabric).
+A few things to be aware of with this release:
+- The new ARM namespace Microsoft.ServiceFabricMesh can only be used with the api version 2018-07-01-preview. We still support using the previous api version (2018-03-01-privatepreview) and namespace (Microsoft.ServiceFabric).
+- Azure CLI (az mesh) currently only supports api version 2018-03-01-privatepreview and namespace Microsoft.ServiceFabric.
+- Visual Studio Tools does not support project created with previus versions. You'll have to migrate your services to a new project.
 
 ## Private Preview 3 Capabilities
 
