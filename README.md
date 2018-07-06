@@ -1,6 +1,8 @@
-# Azure Service Fabric Mesh - Private Preview 3
+# Azure Service Fabric Mesh - Private Preview 4
 
-Azure Service Fabric Mesh is fully managed service where developers can build and deploy mission critical applications without managing any infrastructure such as VMs, storage, or networking. Mesh is a serverless environment for applications built from microservices.
+Click here for details about the [private preview 4 update](#private-preview-4-updates)
+
+Azure Service Fabric Mesh is a fully managed service where developers can build and deploy mission critical applications without managing any infrastructure such as Virtual Machines, storage, or networking. Mesh is a serverless environment for applications built from microservices.
 
 ## We need your feedback to get this right
 
@@ -36,9 +38,23 @@ Here are some of the features you can expect to evaluate and provide feedback on
 - Reliable Collections for statefulness
 - Cross-zone deployments for HA
 
-## Private Preview 3 Capabilities
+## Private Preview 4 Updates
 
-This release is focused on an experience for developing .net core applications using Visual Studio on Windows. The preview update brings support for creating resource applications in Visual Studio, running and debugging them in a local Service Fabric cluster, and publishing the applications to Azure Service Fabric Mesh.
+This update includes stability and reliability fixes for the service along with the following:
+
+- Diagnostics improvements for failing applications
+- Introduction of a new ARM api version (2018-07-01-preview)
+- Change of ARM namespace from Microsoft.ServiceFabric to Microsoft.ServiceFabricMesh
+- CLI version 0.7.0 - bug fixes and information on how to get more information on the failed / stuck deployments
+- Visual Studio now uses the new namespace and api version
+
+A few things to be aware of with this release:
+
+- The new ARM namespace Microsoft.ServiceFabricMesh can only be used with the api version 2018-07-01-preview. We still support using the previous api version (2018-03-01-privatepreview) and namespace (Microsoft.ServiceFabric).
+- Azure CLI (az mesh) currently only supports api version 2018-03-01-privatepreview and namespace Microsoft.ServiceFabric.
+- Visual Studio Tools does not support project created with previous versions. You'll have to migrate your services to a new project.
+
+The preview has support for creating resource applications in Visual Studio, running and debugging them in a local Service Fabric cluster, and publishing the applications to Azure Service Fabric Mesh.
 
 The applications based on Service Fabric resource model will be able to run in Mesh as well as on your local development environment, standalone clusters, and existing Azure clusters. Currently as part of this private preview, this resource application model is available in Azure Service Fabric Mesh and in the Service Fabric SDK 6.3 preview runtime for Windows clients (OneBox).
 

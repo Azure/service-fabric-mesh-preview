@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.SFApp.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>715a44f3-6534-4bef-b4a8-e41668c4f0bf</ProjectGuid>
+    <SFApplicationProjectVersion>0.7</SFApplicationProjectVersion>
+    <SFApplicationTargetsVersion>0.7</SFApplicationTargetsVersion>
+    <SFApplicationToolingVersion>0.7.0.0</SFApplicationToolingVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App Resources\app.yaml" />
+    <None Include="App Resources\network.yaml" />
+    <None Include="Publish Profiles\cloud.yaml" />
+  </ItemGroup>
+</Project>

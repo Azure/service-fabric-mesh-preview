@@ -36,7 +36,6 @@
       "location": "[parameters('location')]",
       "dependsOn": [],
       "properties": {
-        "schemaVersion": "0.0.1",
         "addressPrefix": "10.0.0.4/22",
         "ingressConfig": {
           "layer4": [
