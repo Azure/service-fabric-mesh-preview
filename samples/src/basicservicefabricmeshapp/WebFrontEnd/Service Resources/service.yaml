@@ -11,18 +11,18 @@ application:
           image: webfrontend:dev
           endpoints:
             - name: WebFrontEndListener
-              port: 20001
+              port: 20002
           environmentVariables:
             - name: ASPNETCORE_URLS
-              value: http://+:20001
+              value: http://+:20002
+#            - name: ApplicationInsights:InstrumentationKey
+#              value: "<Place AppInsights key here, or reference it via a secret>"
             - name: AppName
               value: ServiceFabricMeshApp
             - name: ApiHostPort
-              value: 20006
+              value: 20001
             - name: ServiceName
               value: ToDoService
-#            - name: ApplicationInsights:InstrumentationKey
-#              value: "<Place AppInsights key here, or reference it via a secret>"
           resources:
             requests:
               cpu: 0.5
