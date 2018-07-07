@@ -19,7 +19,7 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
         private const string PING_FUZZ_INTERVAL_MILLIS = "PING_FUZZ_INTERVAL_MILLIS";
         private const string OBJECT_TYPE = "OBJECT_TYPE";
         private const string OBJECT_VERSION = "OBJECT_VERSION";
-        private const string OBJECT_ID = "FABRIC_ID";
+        private const string OBJECT_ID = "Fabric_Id";
 
         private static Random Rand;
         private static int PingIntervalMillis;
