@@ -1,26 +1,28 @@
 ﻿## Service definition ##
 application:
-  schemaVersion: 0.0.1
+  schemaVersion: 1.0.0-preview1
   name: ServiceFabricMeshApp
-  services:
-    - name: ToDoService
-      description: ToDoService description.
-      osType: Windows
-      codePackages:
-        - name: ToDoService
-          image: todoservice:dev
-          endpoints:
-            - name: ToDoServiceListener
-              port: 20006
-          environmentVariables:
-            - name: ASPNETCORE_URLS
-              value: http://+:20006
-#            - name: ApplicationInsights:InstrumentationKey
-#              value: "<Place AppInsights key here, or reference it via a secret>"
-          resources:
-            requests:
-              cpu: 0.5
-              memoryInGB: 1
-      replicaCount: 1
-      networkRefs:
-        - name: ServiceFabricMeshAppNetwork
+  properties:
+    services:
+      - name: ToDoService
+        properties:
+          description: ToDoService description.
+          osType: Windows
+          codePackages:
+            - name: ToDoService
+              image: todoservice:dev
+              endpoints:
+                - name: ToDoServiceListener
+                  port: 20003
+              environmentVariables:
+                - name: ASPNETCORE_URLS
+                  value: http://+:20003
+#                - name: ApplicationInsights:InstrumentationKey
+#                  value: "<Place AppInsights key here, or reference it via a secret>"
+              resources:
+                requests:
+                  cpu: 0.5
+                  memoryInGB: 1
+          replicaCount: 1
+          networkRefs:
+            - name: ServiceFabricMeshAppNetwork
