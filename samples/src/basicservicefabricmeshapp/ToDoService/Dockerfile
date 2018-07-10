@@ -1,6 +1,6 @@
-FROM microsoft/aspnetcore:2.0 AS base
+FROM microsoft/aspnetcore:2.0-nanoserver-1709 AS base
 WORKDIR /app
-EXPOSE 20001
+EXPOSE 20003
 
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src

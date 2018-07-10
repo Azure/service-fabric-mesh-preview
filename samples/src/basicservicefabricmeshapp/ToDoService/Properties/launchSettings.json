@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:2980/",
+      "applicationUrl": "http://localhost:1702/",
       "sslPort": 0
     }
   },
@@ -23,7 +23,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:2981/"
+      "applicationUrl": "http://localhost:1703/"
     },
     "Service Fabric Local Cluster": {
       "commandName": "SFApp",
