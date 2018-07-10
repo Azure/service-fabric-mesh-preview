@@ -4,7 +4,7 @@
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "westus",
+      "defaultValue": "eastus",
       "metadata": {
         "description": "Location of the resources."
       }
@@ -18,7 +18,6 @@
       "location": "[parameters('location')]",
       "dependsOn": [],
       "properties": {
-        "schemaVersion": "0.0.1",
         "addressPrefix": "10.0.0.4/22",
         "ingressConfig": {
           "layer4": [
@@ -53,7 +52,7 @@
               "codePackages": [
                 {
                   "name": "helloWorldCode",
-                  "image": "seabreeze/azure-mesh-helloworld:1.0-alpine",
+                  "image": "seabreeze/azure-mesh-helloworld:1.1-alpine",
                   "endpoints": [
                     {
                       "name": "helloWorldListener",

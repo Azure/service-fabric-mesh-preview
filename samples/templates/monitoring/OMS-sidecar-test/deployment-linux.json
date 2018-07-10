@@ -1,0 +1,195 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "defaultValue": "eastus",
+            "metadata": {
+                "description": "Location of the resources."
+            },
+            "type": "string"
+        },
+        "registry-server": {
+            "metadata": {
+                "description": "Private image registry server. For example, <myacr>.azurecr.io"
+            },
+            "type": "string"
+        },
+        "registry-username": {
+            "metadata": {
+                "description": "User name for the private image registry server. For Azure Container Registry the CLI command 'az acr credential show --name <myacr> --query \"username\"' will show the username."
+            },
+            "type": "string"
+        },
+        "registry-password": {
+            "metadata": {
+                "description": "Password for the private image registry server. For Azure Container Registry the CLI command 'az acr credential show --name <myacr> --query \"passwords[0].value\"' will show the password."
+            },
+            "type": "string"
+        },
+        "storageAccountName": {
+            "metadata": {
+                "description": "Name of Azure storage account for Azure Files volume"
+            },
+            "type": "string"
+        },
+        "storageAccountKey": {
+            "metadata": {
+                "description": "Access key for Azure storage account for Azure Files volume"
+            },
+            "type": "string"
+        },
+        "fileShareName": {
+            "metadata": {
+                "description": "Name of file share for Azure Files volume"
+            },
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2018-03-01-privatepreview",
+            "location": "[parameters('location')]",
+            "name": "omsVolume",
+            "properties": {
+                "azureFileParameters": {
+                    "accountKey": "[parameters('storageAccountKey')]",
+                    "accountName": "[parameters('storageAccountName')]",
+                    "shareName": "[parameters('fileShareName')]"
+                },
+                "description": "Azure Files based volume for udpates service.",
+                "provider": "SFAzureFile"
+            },
+            "type": "Microsoft.ServiceFabric/volumes"
+        },
+        {
+            "apiVersion": "2018-03-01-privatepreview",
+            "dependsOn": [],
+            "location": "[parameters('location')]",
+            "name": "omsNetwork",
+            "properties": {
+                "addressPrefix": "10.0.0.4/22",
+                "ingressConfig": {
+                    "layer4": [
+                        {
+                            "applicationName": "omsApp",
+                            "endpointName": "omsAppListener",
+                            "publicPort": "80",
+                            "serviceName": "omsApp"
+                        }
+                    ]
+                },
+                "schemaVersion": "0.0.1"
+            },
+            "type": "Microsoft.ServiceFabric/networks"
+        },
+        {
+            "apiVersion": "2018-03-01-privatepreview",
+            "dependsOn": [
+                "Microsoft.ServiceFabric/networks/omsNetwork",
+                "Microsoft.ServiceFabric/volumes/omsVolume"
+            ],
+            "location": "[parameters('location')]",
+            "name": "omsApp",
+            "properties": {
+                "description": "SeaBreeze example application with container deployed from private image registry.",
+                "services": [
+                    {
+                        "location": "[parameters('location')]",
+                        "name": "logProducerService",
+                        "properties": {
+                            "codePackages": [
+                                {
+                                    "image": "myacr.azurecr.io/log-emitter:alpine",
+                                    "imageRegistryCredential": {
+                                        "password": "[parameters('registry-password')]",
+                                        "server": "[parameters('registry-server')]",
+                                        "username": "[parameters('registry-username')]"
+                                    },
+                                    "name": "logProducerCode",
+                                    "resources": {
+                                        "requests": {
+                                            "cpu": "1",
+                                            "memoryInGB": "1"
+                                        }
+                                    },
+                                    "volumeRefs": [
+                                        {
+                                            "destinationPath": "/var/logs",
+                                            "name": "[resourceId('Microsoft.ServiceFabric/volumes', 'omsVolume')]"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "Log Producer Forwarder",
+                            "networkRefs": [
+                                {
+                                    "name": "[resourceId('Microsoft.ServiceFabric/networks', 'omsNetwork')]"
+                                }
+                            ],
+                            "osType": "linux",
+                            "replicaCount": "1"
+                           
+                        },
+                        "type": "Microsoft.ServiceFabric/services"
+                    },
+
+                    {
+                        "location": "[parameters('location')]",
+                        "name": "omsService",
+                        "properties": {
+                            "codePackages": [
+                                {
+                                    "image": "myacr.azurecr.io/log2oms:alpine-test",
+                                    "imageRegistryCredential": {
+                                        "password": "[parameters('registry-password')]",
+                                        "server": "[parameters('registry-server')]",
+                                        "username": "[parameters('registry-username')]"
+                                    },
+                                    "name": "omsCode",
+                                    "resources": {
+                                        "requests": {
+                                            "cpu": "1",
+                                            "memoryInGB": "1"
+                                        }
+                                    },
+                                    "volumeRefs": [
+                                        {
+                                            "destinationPath": "/var/logs",
+                                            "name": "[resourceId('Microsoft.ServiceFabric/volumes', 'omsVolume')]"
+                                        }
+                                    ],
+                                    "environmentVariables": [
+                                        {
+                                           "name": "LOG2OMS_WORKSPACE_ID", "value": "55c75996-6b42-48ba-83cb-bb2378d21664"
+                                        },
+                                        {
+                                           "name": "LOG2OMS_WORKSPACE_SECRET", "value": "uZbmCcf1OHGCn8IkTuycmCg6CsCmAO5UFqIc7Qe7jcD9siTDUzUHXIpy8xW1mnFvFFWr6jZw4fPD3bgv9fxEeA=="
+                                        },
+                                        {
+                                           "name": "LOG2OMS_LOG_FILE", "value": "/var/logs/log.txt"
+                                        },
+                                        {
+                                            "name": "LOG2OMS_LOG_TYPE", "value": "updates"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "OMS Forwarder",
+                            "networkRefs": [
+                                {
+                                    "name": "[resourceId('Microsoft.ServiceFabric/networks', 'omsNetwork')]"
+                                }
+                            ],
+                            "osType": "linux",
+                            "replicaCount": "1"
+                           
+                        },
+                        "type": "Microsoft.ServiceFabric/services"
+                    }
+                ]
+            },
+            "type": "Microsoft.ServiceFabric/applications"
+        }
+    ]
+}

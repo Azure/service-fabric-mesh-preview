@@ -1,0 +1,13 @@
+## Network definition ##
+network:
+  schemaVersion: 0.0.1
+  name: ServiceFabricMeshAppNetwork
+  description: ServiceFabricMeshAppNetwork description.
+  addressPrefix: 10.0.0.4/22
+  ingressConfig:
+    layer4:
+      - name: WebFrontEndIngress
+        publicPort: 20002
+        applicationName: ServiceFabricMeshApp
+        serviceName: WebFrontEnd
+        endpointName: WebFrontEndListener

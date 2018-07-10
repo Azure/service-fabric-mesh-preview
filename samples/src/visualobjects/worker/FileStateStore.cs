@@ -47,7 +47,8 @@ namespace VisualObjects.Worker
             if (!File.Exists(this.stateFilePath))
             {
                 Console.WriteLine($"State file {this.stateFilePath} does not exist. Creating new object.");
-                return VisualObject.CreateRandom(Guid.NewGuid().ToString());
+                var obj = VisualObject.CreateRandom(Guid.NewGuid().ToString());
+                await WriteAsync(obj, cancellationToken);
             }
 
             // file exists read it

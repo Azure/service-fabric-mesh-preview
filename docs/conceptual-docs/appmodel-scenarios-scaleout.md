@@ -12,12 +12,12 @@ The `worker` service moves the triangle at a predefined interval in the space an
 ### Base
 Linux: [https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.base.linux.json](https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.base.linux.json)
 
-Linux: [https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.base.windows.json](https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.base.windows.json)
+Windows: [https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.base.windows.json](https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.base.windows.json)
 
 ### Scaled Out
 Linux: [https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.linux.json](https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.linux.json)
 
-Linux: [https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.windows.json](https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.base.windows.json)
+Windows: [https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.windows.json](https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.windows.json)
 
 ## Deployment Steps
 
@@ -74,6 +74,8 @@ Scale the `worker` service to three instances using the following command.
 az mesh deployment create --resource-group <resourceGroupName> --template-uri https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.linux.json
   
 ```
+
+To deploy, Windows application use[https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.windows.json](https://seabreezequickstart.blob.core.windows.net/templates/visualobjects/stateless/mesh_rp.scaleout.windows.json) template. Note for Windows, container images are large compared to Linux, so it may take more time than deploying Linux application.
 
 Once the command return with `"provisioningState": "Succeeded"`,  the browser should be displaying a web page with three triangles moving through the space.
 
