@@ -9,6 +9,25 @@ You can also install and run Azure Service Fabric Mesh CLI on [Cloud Shell](http
 
 2. Remove any previous install of the Azure Service Fabric Mesh CLI module.
 
+Check if the mesh extension is already installed. WIth following command, you can get a list of all installed extensions:
+```cli
+az extension list
+```
+
+If the *mesh* extension is already installed, you will get following result
+```cli
+[
+  . . .
+  {
+    "extensionType": "whl",
+    "name": "mesh",
+    "version": "?.?.?"
+  }
+  . . .
+]
+```
+To remove installed *mesh* extension use following command:
+
 ```cli
 az extension remove --name mesh
 ```
