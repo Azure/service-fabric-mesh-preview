@@ -9,6 +9,19 @@ body {
 	font: 100%/18px helvetica, arial, sans-serif;
 }
 
+#main {
+	content : "";
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 background-image: url('../images/lasvegas.jpg'); 
+	 width: 100%;
+	 height: 100%;
+	 opacity : 0.5;
+	 z-index: 1;
+}
+
 a {
 	color: #2fa1d6;
 	font-weight: bold;
@@ -27,13 +40,6 @@ a:hover {
   background: #000;
   height: 100vh;
   width: 100vw;
-  z-index: 1;
-  position:absolute;
-  background-image: url('../images/lasvegas.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  opacity: 1;
-  filter:alpha(opacity=40);
 }
 		
 canvas {
