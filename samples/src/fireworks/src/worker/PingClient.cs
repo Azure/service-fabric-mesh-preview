@@ -14,8 +14,9 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
     // send ping to counter, until cancellaed
     internal class PingClient
     {
-        private const string OBJECTCOUNTER_ADDRESS = "OBJECTCOUNTER_ADDRESS";
+        private const string OBJECT_COUNTER_ADDRESS = "OBJECT_COUNTER_ADDRESS";
         private const string PING_INTERVAL_MILLIS = "PING_INTERVAL_MILLIS";
+        private const string PING_FAILURE_RETRY_INTERVAL_MILLIS = "PING_FAILURE_RETRY_INTERVAL_MILLIS";
         private const string PING_FUZZ_INTERVAL_MILLIS = "PING_FUZZ_INTERVAL_MILLIS";
         private const string OBJECT_TYPE = "OBJECT_TYPE";
         private const string OBJECT_VERSION = "OBJECT_VERSION";
@@ -23,6 +24,7 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
 
         private static Random Rand;
         private static int PingIntervalMillis;
+        private static int PingFailureRetryIntervalMillis;
         private static int PingFuzzIntervalMillis;
 
         private static readonly string ObjectCounterAddress;
@@ -38,9 +40,9 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
             Rand = new Random();
             ReportError = true;
 
-            if (Environment.GetEnvironmentVariable(OBJECTCOUNTER_ADDRESS) != null)
+            if (Environment.GetEnvironmentVariable(OBJECT_COUNTER_ADDRESS) != null)
             {
-                ObjectCounterAddress = Environment.GetEnvironmentVariable(OBJECTCOUNTER_ADDRESS);
+                ObjectCounterAddress = Environment.GetEnvironmentVariable(OBJECT_COUNTER_ADDRESS);
             }
             else
             {
@@ -55,6 +57,11 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
             if (!int.TryParse(Environment.GetEnvironmentVariable(PING_FUZZ_INTERVAL_MILLIS), out PingFuzzIntervalMillis))
             {
                 PingFuzzIntervalMillis = 2000;
+            }
+
+            if (!int.TryParse(Environment.GetEnvironmentVariable(PING_FAILURE_RETRY_INTERVAL_MILLIS), out PingFailureRetryIntervalMillis))
+            {
+                PingFailureRetryIntervalMillis = 1000;
             }
 
             if (Environment.GetEnvironmentVariable(OBJECT_TYPE) != null)
@@ -91,12 +98,12 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
         public static async Task SendPingAsync(CancellationToken cancellationToken)
         {
             var requestUri = new Uri($"http://{ObjectCounterAddress}/api/values?id={ObjectId}&type={ObjectType}&version={ObjectVersion}");
-            Console.WriteLine($"Sending ping to {requestUri}");
+            Console.WriteLine($"{DateTime.UtcNow}: Sending ping to {requestUri}");
 
             while (!cancellationToken.IsCancellationRequested)
             {
-                await SendData(requestUri, cancellationToken);
-                await Task.Delay(GetDueTime(), cancellationToken);
+                var success = await SendData(requestUri, cancellationToken);
+                await Task.Delay(GetDueTime(success), cancellationToken);
             }
         }
 
@@ -118,7 +125,7 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
                 {
                     if (ReportError)
                     {
-                        Console.WriteLine("Error in sending the data " + response);
+                        Console.WriteLine($"{DateTime.UtcNow}: Error in sending the data {response}");
                         ReportError = false;
                     }
                 }
@@ -132,7 +139,7 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
             {
                 if (ReportError)
                 {
-                    Console.WriteLine("Error in sending the data " + e.Message);
+                    Console.WriteLine($"{DateTime.UtcNow}: Error in sending the data {e.ToString()}");
                     ReportError = false;
                 }
             }
@@ -140,13 +147,22 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
             return false;
         }
 
-        private static TimeSpan GetDueTime()
+        private static TimeSpan GetDueTime(bool success)
         {
-            var dueTimeMillis =
-                Rand.Next(PingFuzzIntervalMillis) +
-                Rand.Next(PingFuzzIntervalMillis);
-
-            return TimeSpan.FromMilliseconds(dueTimeMillis);
+            if (success)
+            {
+                var dueTimeMillis =
+                    Rand.Next(PingIntervalMillis) +
+                    Rand.Next(PingFuzzIntervalMillis);
+                return TimeSpan.FromMilliseconds(dueTimeMillis);
+            }
+            else
+            {
+                var dueTimeMillis =
+                    Rand.Next(PingFailureRetryIntervalMillis) +
+                    Rand.Next(PingFuzzIntervalMillis);
+                return TimeSpan.FromMilliseconds(dueTimeMillis);
+            }
         }
     }
 }

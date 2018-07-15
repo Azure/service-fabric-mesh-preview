@@ -19,7 +19,7 @@ application:
                   value: http://+:8080
               resources:
                 requests:
-                  cpu: 0.5
+                  cpu: 0.25
                   memoryInGB: 1
           replicaCount: 1
           networkRefs:
