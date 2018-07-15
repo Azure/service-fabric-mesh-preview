@@ -187,23 +187,29 @@ function updateCharts() {
 }
 
 function progress() {
-  values1.push({
-    x: new Date(),
-    y: countData[0]
-  });
-  values1.shift();
+  if (countData[0] <= 500) {
+    values1.push({
+      x: new Date(),
+      y: countData[0]
+    });
+    values1.shift();
+  }
 
-  values2.push({
-    x: new Date(),
-    y: countData[1]
-  });
-  values2.shift();
+  if (countData[1] <= 500) {
+    values2.push({
+      x: new Date(),
+      y: countData[1]
+    });
+    values2.shift();
+  }
 
-  values3.push({
-    x: new Date(),
-    y: countData[2]
-  });
-  values3.shift();
+  if (countData[2] <= 500) {
+    values3.push({
+      x: new Date(),
+      y: countData[2]
+    });
+    values3.shift();
+  }
 }
 
 function advance() {
@@ -220,6 +226,9 @@ function drawFireworks() {
     var count = countData[i];
     if (count > 50) {
       count = Math.round(count / 5);
+    }
+    if (count > 400) {
+      count = count * 2;
     }
     fworks.start(count, dataHues[i], fwXStartPositions[i]);
   }
@@ -239,23 +248,20 @@ function updateChartsTitle() {
 function onNewDataReceived(json) {
   data = JSON.parse(json);
   for (var i in data) {
-    if (data[i].counts <= 500) {
-      var id = data[i].type;
-      if (id == "red") {
-        countData[0] = data[i].counts;
-      }
-      else if (id == "green") {
-        countData[1] = data[i].counts;
-      }
-      else if (id == "blue") {
-        countData[2] = data[i].counts;
-      }
-
-      updateChartsTitle();
+    var id = data[i].type;
+    if (id == "red") {
+      countData[0] = data[i].counts;
     }
+    else if (id == "green") {
+      countData[1] = data[i].counts;
+    }
+    else if (id == "blue") {
+      countData[2] = data[i].counts;
+    }
+
+    updateChartsTitle();
   }
 }
-
 
 $(document).ready(function () {
   initialize();

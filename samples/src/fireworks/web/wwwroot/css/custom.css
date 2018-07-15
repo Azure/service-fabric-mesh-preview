@@ -20,6 +20,8 @@ body {
 	 height: 100%;
 	 opacity : 0.5;
 	 z-index: 1;
+	 background-repeat: no-repeat;
+	 background-size: 100% 100%;
 }
 
 a {
