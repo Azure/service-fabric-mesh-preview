@@ -79,10 +79,10 @@ namespace Microsoft.ServiceFabricMesh.Samples.Fireworks.Web
             {
                 while (true)
                 {
-                    byte[] buffer = Encoding.UTF8.GetBytes(objectCounter.GetCountsJson());
-
                     try
                     {
+                        byte[] buffer = Encoding.UTF8.GetBytes(objectCounter.GetCountsJson());
+
                         await webSocket.SendAsync(
                             new ArraySegment<byte>(buffer, 0, buffer.Length),
                             WebSocketMessageType.Text,
@@ -116,15 +116,15 @@ namespace Microsoft.ServiceFabricMesh.Samples.Fireworks.Web
             
             if (!int.TryParse(Environment.GetEnvironmentVariable("OBJECTCOUNTER_ITEM_EXPIRY_INTERVAL_SECONDS"), out int expiryIntervalSeconds))
             {
-                expiryIntervalSeconds = 30;
+                expiryIntervalSeconds = 120;
             }
     
             if (!int.TryParse(Environment.GetEnvironmentVariable("OBJECTCOUNTER_ITEM_EXPIRY_FUZZ_INTERVAL_SECONDS"), out int fuzzIntervalSeconds))
             {
-                fuzzIntervalSeconds = 5;
+                fuzzIntervalSeconds = 30;
             }
 
-            Console.WriteLine($"Creating ObjectCounter: Refresh = {refreshIntervalMillis} milliseconds, Expiry = {expiryIntervalSeconds} seconds, Expiry Fuzz = {fuzzIntervalSeconds} seconds.");
+            Console.WriteLine($"{DateTime.UtcNow}: Creating ObjectCounter: Refresh = {refreshIntervalMillis} milliseconds, Expiry = {expiryIntervalSeconds} seconds, Expiry Fuzz = {fuzzIntervalSeconds} seconds.");
             return new ObjectCounter(expiryIntervalSeconds, fuzzIntervalSeconds, refreshIntervalMillis);
         }
     }

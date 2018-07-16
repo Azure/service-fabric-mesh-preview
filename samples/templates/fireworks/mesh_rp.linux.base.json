@@ -1,0 +1,199 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus",
+      "metadata": {
+        "description": "Location of the resources."
+      }
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2018-07-01-preview",
+      "name": "fireworksNetwork",
+      "type": "Microsoft.ServiceFabricMesh/networks",
+      "location": "[parameters('location')]",
+      "dependsOn": [],
+      "properties": {
+        "addressPrefix": "10.0.0.4/22",
+        "ingressConfig": {
+          "layer4": [
+            {
+              "publicPort": "8080",
+              "applicationName": "fireworksApp",
+              "serviceName": "web",
+              "endpointName": "webListener"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-07-01-preview",
+      "name": "fireworksApp",
+      "type": "Microsoft.ServiceFabricMesh/applications",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "Microsoft.ServiceFabricMesh/networks/fireworksNetwork"
+      ],
+      "properties": {
+        "description": "Service Fabric Mesh Visual Objects Application!",
+        "services": [
+          {
+            "type": "Microsoft.ServiceFabricMesh/services",
+            "location": "[parameters('location')]",
+            "name": "web",
+            "properties": {
+              "description": "Service Fabric Mesh Visual Objects Web Service.",
+              "osType": "linux",
+              "codePackages": [
+                {
+                  "name": "code",
+                  "image": "vipulmmsft/azure-mesh-fireworks-web:0.2-alpine",
+                  "endpoints": [
+                    {
+                      "name": "webListener",
+                      "port": "8080"
+                    }
+                  ],
+                  "environmentVariables": [                    
+                    {
+                      "name": "ASPNETCORE_URLS",
+                      "value": "http://+:8080"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "8",
+                      "memoryInGB": "4"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'fireworksNetwork')]"
+                }
+              ]
+            }
+          },
+          {
+            "type": "Microsoft.ServiceFabricMesh/services",
+            "location": "[parameters('location')]",
+            "name": "worker1",
+            "properties": {
+              "description": "Service Fabric Mesh Visual Objects Worker Service.",
+              "osType": "linux",
+              "codePackages": [
+                {
+                  "name": "code",
+                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.2-strech",
+                  "environmentVariables": [                
+                    {
+                      "name": "OBJECT_TYPE",
+                      "value": "red"
+                    },
+                    {
+                      "name": "OBJECTCOUNTER_ADDRESS",
+                      "value": "web:8080"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "0.25",
+                      "memoryInGB": "0.5"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'fireworksNetwork')]"
+                }
+              ]
+            }
+          },
+          {
+            "type": "Microsoft.ServiceFabricMesh/services",
+            "location": "[parameters('location')]",
+            "name": "worker2",
+            "properties": {
+              "description": "Service Fabric Mesh Visual Objects Worker Service.",
+              "osType": "linux",
+              "codePackages": [
+                {
+                  "name": "code",
+                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.2-strech",
+                  "environmentVariables": [                
+                    {
+                      "name": "OBJECT_TYPE",
+                      "value": "green"
+                    },
+                    {
+                      "name": "OBJECTCOUNTER_ADDRESS",
+                      "value": "web:8080"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "0.25",
+                      "memoryInGB": "0.5"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'fireworksNetwork')]"
+                }
+              ]
+            }
+          },
+          {
+            "type": "Microsoft.ServiceFabricMesh/services",
+            "location": "[parameters('location')]",
+            "name": "worker3",
+            "properties": {
+              "description": "Service Fabric Mesh Visual Objects Worker Service.",
+              "osType": "linux",
+              "codePackages": [
+                {
+                  "name": "code",
+                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.2-strech",
+                  "environmentVariables": [                
+                    {
+                      "name": "OBJECT_TYPE",
+                      "value": "blue"
+                    },
+                    {
+                      "name": "OBJECTCOUNTER_ADDRESS",
+                      "value": "web:8080"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "0.25",
+                      "memoryInGB": "0.5"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'fireworksNetwork')]"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

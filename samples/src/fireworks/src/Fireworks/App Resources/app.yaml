@@ -6,7 +6,7 @@ application:
     services:
       - name: blue
         properties:
-          description: Fireworks red worker container. This container sends a ping message to the web service that counts the worker containers.
+          description: Fireworks blue worker container. This container sends a ping message to the web service that counts the worker containers.
           osType: Windows
           codePackages:
             - name: worker
@@ -14,14 +14,17 @@ application:
               environmentVariables:
                 - name: OBJECT_TYPE
                   value: blue
+
               resources:
                 requests:
-                  cpu: 0.5
-                  memoryInGB: 1
+                  cpu: 0.25
+                  memoryInGB: 0.5
           replicaCount: 1
+          networkRefs:
+            - name: FireworksNetwork
       - name: green
         properties:
-          description: Fireworks red worker container. This container sends a ping message to the web service that counts the worker containers.
+          description: Fireworks green worker container. This container sends a ping message to the web service that counts the worker containers.
           osType: Windows
           codePackages:
             - name: worker
@@ -31,6 +34,8 @@ application:
                   value: green
               resources:
                 requests:
-                  cpu: 0.5
-                  memoryInGB: 1
+                  cpu: 0.25
+                  memoryInGB: 0.5
           replicaCount: 1
+          networkRefs:
+            - name: FireworksNetwork

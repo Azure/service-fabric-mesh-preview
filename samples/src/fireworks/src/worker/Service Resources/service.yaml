@@ -16,6 +16,8 @@ application:
                   value: red
               resources:
                 requests:
-                  cpu: 0.5
-                  memoryInGB: 1
+                  cpu: 0.25
+                  memoryInGB: 0.5
           replicaCount: 1
+          networkRefs:
+            - name: FireworksNetwork
