@@ -224,9 +224,6 @@ function advance() {
 function drawFireworks() {
   for (i in countData) {
     var count = countData[i];
-    if (count > 500)
-      count = 500;
-    
     fworks.start(count, dataHues[i], fwXStartPositions[i]);
   }
 }

@@ -392,6 +392,13 @@ var Fireworks = function () {
     };
 
     self.start = function(count, hue, xStart) {
+        if (self.fireworks && self.fireworks.length >= 500) {
+            return;
+        }
+        
+        if (self.fireworks && self.fireworks.length + count > 500)
+            count = Math.round((count - self.fireworks.length));
+        
         self.init();
 
         var startX = 0;
@@ -415,13 +422,10 @@ var Fireworks = function () {
             targetX = startX + 150;
             friction = 5;
         }
-
-        var i = 0;
-
+        
         while (count--) {
             setTimeout(function () {
                 self.fireworks.push(new Firework(startX + (Math.floor(Math.random() * 100) + 1), self.ch, targetX + rand(-100, 100), (self.ch / 5) + rand(-130, 130), hue, gravity, friction, lineWidth));
-                i = i + 10;
             }, count * 100);
         }
     }
