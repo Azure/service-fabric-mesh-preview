@@ -40,19 +40,19 @@
         "Microsoft.ServiceFabricMesh/networks/fireworksNetwork"
       ],
       "properties": {
-        "description": "Service Fabric Mesh Visual Objects Application!",
+        "description": "Service Fabric Mesh Fireworks Demo App",
         "services": [
           {
             "type": "Microsoft.ServiceFabricMesh/services",
             "location": "[parameters('location')]",
             "name": "web",
             "properties": {
-              "description": "Service Fabric Mesh Visual Objects Web Service.",
+              "description": "Service Fabric Mesh Fireworks Web Service.",
               "osType": "linux",
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "vipulmmsft/azure-mesh-fireworks-web:0.3-alpine",
+                  "image": "vipulmmsft/azure-mesh-fireworks-web:0.4-alpine",
                   "endpoints": [
                     {
                       "name": "webListener",
@@ -63,6 +63,10 @@
                     {
                       "name": "ASPNETCORE_URLS",
                       "value": "http://+:8080"
+                    },
+                    {
+                      "name": "OBJECTCOUNTER_MAX_COUNT_OUTPUT_LIMIT",
+                      "value": "500"
                     }
                   ],
                   "resources": {
@@ -86,12 +90,12 @@
             "location": "[parameters('location')]",
             "name": "worker1",
             "properties": {
-              "description": "Service Fabric Mesh Visual Objects Worker Service.",
+              "description": "Service Fabric Mesh Fireworks Worker Service.",
               "osType": "linux",
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.3-strech",
+                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.4-strech",
                   "environmentVariables": [                
                     {
                       "name": "OBJECT_TYPE",
@@ -119,12 +123,12 @@
             "location": "[parameters('location')]",
             "name": "worker2",
             "properties": {
-              "description": "Service Fabric Mesh Visual Objects Worker Service.",
+              "description": "Service Fabric Mesh Fireworks Worker Service.",
               "osType": "linux",
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.3-strech",
+                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.4-strech",
                   "environmentVariables": [                
                     {
                       "name": "OBJECT_TYPE",
@@ -152,12 +156,12 @@
             "location": "[parameters('location')]",
             "name": "worker3",
             "properties": {
-              "description": "Service Fabric Mesh Visual Objects Worker Service.",
+              "description": "Service Fabric Mesh Fireworks Worker Service.",
               "osType": "linux",
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.3-strech",
+                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.4-strech",
                   "environmentVariables": [                
                     {
                       "name": "OBJECT_TYPE",

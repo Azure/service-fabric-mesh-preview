@@ -129,7 +129,7 @@ namespace Microsoft.ServiceFabricMesh.Samples.Fireworks.Web
                 maxCountOutputLimit = -1;
             }
 
-            Console.WriteLine($"{DateTime.UtcNow}: Creating ObjectCounter: Refresh = {refreshIntervalMillis} milliseconds, Expiry = {expiryIntervalSeconds} seconds, Expiry Fuzz = {fuzzIntervalSeconds} seconds.");
+            Console.WriteLine($"{DateTime.UtcNow}: Creating ObjectCounter: Refresh = {refreshIntervalMillis} milliseconds, Expiry = {expiryIntervalSeconds} seconds, Expiry Fuzz = {fuzzIntervalSeconds} seconds, Max Count Output Limit = {maxCountOutputLimit}.");
             return new ObjectCounter(expiryIntervalSeconds, fuzzIntervalSeconds, refreshIntervalMillis, maxCountOutputLimit);
         }
     }
