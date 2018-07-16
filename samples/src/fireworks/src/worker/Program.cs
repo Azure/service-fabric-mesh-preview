@@ -6,12 +6,14 @@
 namespace Microsoft.ServiceFabricMesh.Fireworks.Worker
 {
     using System.Threading;
+    using Microsoft.ServiceFabricMesh.Fireworks.Common;
 
     class Program
     {
         static void Main(string[] args)
         {
-            PingClient.SendPingAsync(CancellationToken.None).Wait();
+            var pingClient = new PingClient();
+            pingClient.SendPingAsync(CancellationToken.None).Wait();
         }
     }
 }
