@@ -17,8 +17,6 @@ application:
               environmentVariables:
                 - name: ASPNETCORE_URLS
                   value: http://+:8080
-                - name: OBJECT_COUNTER_ADDRESS
-                  value: web:8080
               resources:
                 requests:
                   cpu: 0.25
