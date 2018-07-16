@@ -52,7 +52,7 @@
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "vipulmmsft/azure-mesh-fireworks-web:0.2-alpine",
+                  "image": "vipulmmsft/azure-mesh-fireworks-web:0.3-alpine",
                   "endpoints": [
                     {
                       "name": "webListener",
@@ -91,20 +91,16 @@
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.2-strech",
+                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.3-strech",
                   "environmentVariables": [                
                     {
                       "name": "OBJECT_TYPE",
                       "value": "red"
-                    },
-                    {
-                      "name": "OBJECTCOUNTER_ADDRESS",
-                      "value": "web:8080"
                     }
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "0.25",
+                      "cpu": "0.35",
                       "memoryInGB": "0.5"
                     }
                   }
@@ -128,20 +124,16 @@
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.2-strech",
+                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.3-strech",
                   "environmentVariables": [                
                     {
                       "name": "OBJECT_TYPE",
                       "value": "green"
-                    },
-                    {
-                      "name": "OBJECTCOUNTER_ADDRESS",
-                      "value": "web:8080"
                     }
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "0.25",
+                      "cpu": "0.35",
                       "memoryInGB": "0.5"
                     }
                   }
@@ -165,20 +157,16 @@
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.2-strech",
+                  "image": "vipulmmsft/azure-mesh-fireworks-worker-v1:0.3-strech",
                   "environmentVariables": [                
                     {
                       "name": "OBJECT_TYPE",
                       "value": "blue"
-                    },
-                    {
-                      "name": "OBJECTCOUNTER_ADDRESS",
-                      "value": "web:8080"
                     }
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "0.25",
+                      "cpu": "0.35",
                       "memoryInGB": "0.5"
                     }
                   }
