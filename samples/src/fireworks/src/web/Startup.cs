@@ -124,8 +124,13 @@ namespace Microsoft.ServiceFabricMesh.Samples.Fireworks.Web
                 fuzzIntervalSeconds = 30;
             }
 
+            if (!int.TryParse(Environment.GetEnvironmentVariable("OBJECTCOUNTER_MAX_COUNT_OUTPUT_LIMIT"), out int maxCountOutputLimit))
+            {
+                maxCountOutputLimit = -1;
+            }
+
             Console.WriteLine($"{DateTime.UtcNow}: Creating ObjectCounter: Refresh = {refreshIntervalMillis} milliseconds, Expiry = {expiryIntervalSeconds} seconds, Expiry Fuzz = {fuzzIntervalSeconds} seconds.");
-            return new ObjectCounter(expiryIntervalSeconds, fuzzIntervalSeconds, refreshIntervalMillis);
+            return new ObjectCounter(expiryIntervalSeconds, fuzzIntervalSeconds, refreshIntervalMillis, maxCountOutputLimit);
         }
     }
 }

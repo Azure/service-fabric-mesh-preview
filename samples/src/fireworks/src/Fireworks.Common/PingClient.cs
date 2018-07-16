@@ -14,7 +14,7 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Common
     // send ping to counter, until cancellaed
     public partial class PingClient
     {
-        private const string OBJECT_COUNTER_ADDRESS = "OBJECT_COUNTER_ADDRESS";
+        private const string OBJECTCOUNTER_ADDRESS = "OBJECTCOUNTER_ADDRESS";
 
         private static readonly HttpClient Client;
         private static Random Rand;
@@ -51,9 +51,9 @@ namespace Microsoft.ServiceFabricMesh.Fireworks.Common
 
         private static string GetObjectCounterAddressFromEnvironment()
         {
-            if (Environment.GetEnvironmentVariable(OBJECT_COUNTER_ADDRESS) != null)
+            if (Environment.GetEnvironmentVariable(OBJECTCOUNTER_ADDRESS) != null)
             {
-                return Environment.GetEnvironmentVariable(OBJECT_COUNTER_ADDRESS);
+                return Environment.GetEnvironmentVariable(OBJECTCOUNTER_ADDRESS);
             }
             else
             {

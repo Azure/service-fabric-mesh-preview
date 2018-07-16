@@ -17,16 +17,20 @@ namespace Microsoft.ServiceFabricMesh.Samples.Fireworks.Common
         private readonly TimeSpan refreshInterval;
         private readonly int expirationIntervalInSeconds;
         private readonly int fuzzIntervalInSeconds;
+        private readonly int maxCountOutputLimit;
+
         private string currentJson;
         private bool disposedValue = false; 
 
         public ObjectCounter(
             int expirationIntervalInSeconds = 30,
             int fuzzIntervalInSeconds = 5,
-            long refreshIntervalInMillis = 50)
+            long refreshIntervalInMillis = 50,
+            int maxCountOutputLimit = -1)
         {
             this.expirationIntervalInSeconds = expirationIntervalInSeconds;
             this.fuzzIntervalInSeconds = fuzzIntervalInSeconds;
+            this.maxCountOutputLimit = maxCountOutputLimit;
             this.counts = new ConcurrentDictionary<string, ILivenessCounter<string>>();
             this.currentJson = "[]";
             this.refreshInterval = TimeSpan.FromMilliseconds(refreshIntervalInMillis);
@@ -103,7 +107,13 @@ namespace Microsoft.ServiceFabricMesh.Samples.Fireworks.Common
                     sb.Append("{");
                     sb.Append(key);
                     sb.Append(", \"counts\": ");
-                    sb.Append(counts[key].GetLivingCount());
+                    var count = counts[key].GetLivingCount();
+                    if ((this.maxCountOutputLimit != -1) && (count > this.maxCountOutputLimit))
+                    {
+                        count = this.maxCountOutputLimit;
+                    }
+
+                    sb.Append(count);
                     sb.Append(" },");
                 }
                 sb.Remove(sb.Length - 1, 1);
