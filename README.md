@@ -7,9 +7,9 @@ For more details refer to the blog post - https://azure.microsoft.com/en-us/blog
 
 ## Useful links 
 
-Conceptual Documentation - https://docs.microsoft.com/en-us/azure/service-fabric-mesh/
+Conceptual Documentation - https://docs.microsoft.com/azure/service-fabric-mesh/
 
-API Documentation - https://github.com/Azure/azure-rest-api-specs/tree/master/specification/servicefabricmesh/resource-manager 
+Reference Documentation - https://github.com/Azure/azure-rest-api-specs/tree/master/specification/servicefabricmesh/resource-manager 
 
 Samples - https://github.com/Azure-Samples/service-fabric-mesh 
 
