@@ -224,12 +224,9 @@ function advance() {
 function drawFireworks() {
   for (i in countData) {
     var count = countData[i];
-    if (count > 50) {
-      count = Math.round(count / 5);
-    }
-    if (count > 400) {
-      count = count * 2;
-    }
+    if (count > 500)
+      count = 500;
+    
     fworks.start(count, dataHues[i], fwXStartPositions[i]);
   }
 }
