@@ -1,2 +1,0 @@
-# How to build the application and Docker container image
-The application can be built by running the _build.Windows.cmd_ script on Windows and the _build.Linux.sh_ script on Linux. Running these scripts results in the creation of the _pkg\Windows_ and _pkg\Linux_ folders which contain the application binaries for Windows and Linux respectively. They also contain the _dockerfile_ that can be used to build the Docker container image for the application. After building the application, build the Docker container image and push it to a Docker repository.
