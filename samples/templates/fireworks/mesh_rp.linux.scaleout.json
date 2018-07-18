@@ -104,7 +104,7 @@
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "0.35",
+                      "cpu": "0.25",
                       "memoryInGB": "0.5"
                     }
                   }
@@ -137,7 +137,7 @@
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "0.35",
+                      "cpu": "0.25",
                       "memoryInGB": "0.5"
                     }
                   }
@@ -170,7 +170,7 @@
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "0.35",
+                      "cpu": "0.25",
                       "memoryInGB": "0.5"
                     }
                   }
