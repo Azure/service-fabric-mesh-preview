@@ -8,6 +8,7 @@ namespace AzureFilesVolumeTestApp
     using System;
     using System.IO;
     using System.Threading;
+    using System.Text;
     using System.Reflection;
 
     class Program
@@ -26,7 +27,14 @@ namespace AzureFilesVolumeTestApp
             for(;;)
             {
                 sequenceNumber++;
-                File.WriteAllText(dataFileFullPath, sequenceNumber.ToString());
+
+                using (var file = new FileStream(dataFileFullPath, FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    var bytes = Encoding.ASCII.GetBytes(sequenceNumber.ToString());
+                    file.Write(bytes, 0, bytes.Length);
+                    file.Flush();
+                }
+
                 Thread.Sleep(PauseBetweenUpdatesMillisec);
             }
         }
