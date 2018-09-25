@@ -52,7 +52,7 @@
               "codePackages": [
                 {
                   "name": "code",
-                  "image": "vipulmmsft/azure-mesh-fireworks-web:0.4-alpine",
+                  "image": "vipulmmsft/azure-mesh-fireworks-web:0.1-ignite-alpine",
                   "endpoints": [
                     {
                       "name": "webListener",

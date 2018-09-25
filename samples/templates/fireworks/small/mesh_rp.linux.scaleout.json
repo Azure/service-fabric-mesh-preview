@@ -4,7 +4,6 @@
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "eastus",
       "metadata": {
         "description": "Location of the resources."
       }
@@ -71,7 +70,7 @@
                   ],
                   "resources": {
                     "requests": {
-                      "cpu": "8",
+                      "cpu": "4",
                       "memoryInGB": "4"
                     }
                   }
@@ -110,7 +109,7 @@
                   }
                 }
               ],
-              "replicaCount": "1",
+              "replicaCount": "3",
               "networkRefs": [
                 {
                   "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'fireworksNetwork')]"
@@ -143,7 +142,7 @@
                   }
                 }
               ],
-              "replicaCount": "1",
+              "replicaCount": "3",
               "networkRefs": [
                 {
                   "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'fireworksNetwork')]"
@@ -176,7 +175,7 @@
                   }
                 }
               ],
-              "replicaCount": "1",
+              "replicaCount": "3",
               "networkRefs": [
                 {
                   "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'fireworksNetwork')]"
