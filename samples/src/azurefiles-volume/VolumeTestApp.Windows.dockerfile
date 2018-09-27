@@ -1,5 +1,5 @@
 # escape=`
-# run with : cd pkg/Windows && docker build -t volumetest:wincore1709 -f VolumeTestApp.Windows.dockerfile .
+# run with : pushd pkg\Windows\ && docker build -t volumetest:wincore1709 -f VolumeTestApp.Windows.dockerfile . && popd
 
 FROM microsoft/windowsservercore:1709
 
@@ -31,4 +31,4 @@ ENV ASPNETCORE_URLS=http://+:80 `
 
 ADD bin/ /VolumeTest/Code
 
-ENTRYPOINT ["/VolumeTest/Code/VolumeTestApp"]
+ENTRYPOINT ["/VolumeTest/Code/VolumeTestApp.exe"]
