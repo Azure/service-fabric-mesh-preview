@@ -3,6 +3,6 @@ set -e
 # Any subsequent(*) commands which fail will cause the shell script to exit immediately
 
 pushd linux
-docker build -t azurefilesverifier:linux -f Dockerfile .
+docker build -t filesverifier:linux -f Dockerfile .
 popd
-echo "Image successfully created : name : azurefilesverifier:linux"
+echo "Image successfully created : name : filesverifier:linux"
