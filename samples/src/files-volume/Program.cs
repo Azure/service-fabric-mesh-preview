@@ -8,6 +8,7 @@ namespace AzureFilesVolumeTestApp
     using System;
     using System.IO;
     using System.Threading;
+    using System.Text;
     using System.Reflection;
 
     class Program
@@ -19,14 +20,26 @@ namespace AzureFilesVolumeTestApp
         static void Main(string[] args)
         {
             var codeFolderFullPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Console.WriteLine($"Code dir path {codeFolderFullPath}");
             var volumeTestFolderFullPath = Path.GetDirectoryName(codeFolderFullPath);
-            var dataFileFullPath = Path.Combine(volumeTestFolderFullPath, DataFolderName, DataFileName);
+            var dataFolderFullPath = Path.Combine(volumeTestFolderFullPath, DataFolderName);
+            Console.WriteLine($"Data dir path {dataFolderFullPath}");
+            Directory.CreateDirectory(dataFolderFullPath);
+
+            var dataFileFullPath = Path.Combine(dataFolderFullPath, DataFileName);
 
             var sequenceNumber = File.Exists(dataFileFullPath) ? Int32.Parse(File.ReadAllText(dataFileFullPath)) : 0;
             for(;;)
             {
                 sequenceNumber++;
-                File.WriteAllText(dataFileFullPath, sequenceNumber.ToString());
+
+                using (var file = new FileStream(dataFileFullPath, FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    var bytes = Encoding.ASCII.GetBytes(sequenceNumber.ToString());
+                    file.Write(bytes, 0, bytes.Length);
+                    file.Flush();
+                }
+
                 Thread.Sleep(PauseBetweenUpdatesMillisec);
             }
         }
