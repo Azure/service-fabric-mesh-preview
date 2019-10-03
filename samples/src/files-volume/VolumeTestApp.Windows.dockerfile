@@ -1,8 +1,8 @@
 # escape=`
-# run with : pushd pkg\Windows\ && docker build -t volumetest:sac2016 -f VolumeTestApp.Windows.dockerfile . && popd
+# run with : pushd pkg\Windows\ && docker build -t volumetest:1809 -f VolumeTestApp.Windows.dockerfile . && popd
 
 # Installer image
-FROM microsoft/windowsservercore:ltsc2016 AS installer-env
+FROM mcr.microsoft.com/windows/servercore:ltsc2019 AS installer-env
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
@@ -20,7 +20,9 @@ RUN Invoke-WebRequest -OutFile dotnet.zip https://dotnetcli.blob.core.windows.ne
     Remove-Item -Force dotnet.zip
 
 # Runtime image
-FROM microsoft/nanoserver:sac2016
+FROM mcr.microsoft.com/windows/nanoserver:1809
+
+USER Administrator
 
 COPY --from=installer-env ["dotnet", "C:\\Program Files\\dotnet"]
 
