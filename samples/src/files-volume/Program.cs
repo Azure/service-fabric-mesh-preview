@@ -27,17 +27,38 @@ namespace AzureFilesVolumeTestApp
             Directory.CreateDirectory(dataFolderFullPath);
 
             var dataFileFullPath = Path.Combine(dataFolderFullPath, DataFileName);
+            var sequenceNumber = 0;
+            string fileContent = "";
+            try
+            {
+                if (File.Exists(dataFileFullPath))
+                {
+                    // The content may be empty or non-number, catch the exception to avoid crash
+                    fileContent = File.ReadAllText(dataFileFullPath);
+                    sequenceNumber = Int32.Parse(fileContent);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception {e.ToString()}");
+                Console.WriteLine($"Invalid file content {fileContent}");
+            }
 
-            var sequenceNumber = File.Exists(dataFileFullPath) ? Int32.Parse(File.ReadAllText(dataFileFullPath)) : 0;
             for(;;)
             {
                 sequenceNumber++;
-
-                using (var file = new FileStream(dataFileFullPath, FileMode.OpenOrCreate, FileAccess.Write))
+                try
                 {
-                    var bytes = Encoding.ASCII.GetBytes(sequenceNumber.ToString());
-                    file.Write(bytes, 0, bytes.Length);
-                    file.Flush();
+                    using (var file = new FileStream(dataFileFullPath, FileMode.OpenOrCreate, FileAccess.Write))
+                    {
+                        var bytes = Encoding.ASCII.GetBytes(sequenceNumber.ToString());
+                        file.Write(bytes, 0, bytes.Length);
+                        file.Flush();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Exception {e.ToString()}");
                 }
 
                 Thread.Sleep(PauseBetweenUpdatesMillisec);
